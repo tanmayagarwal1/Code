@@ -22,7 +22,7 @@ def adder(root):
 	if root==None:
 		return 0 
 	else:
-		return root.data+adder(root.left)+ader(root.right)
+		return root.data+adder(root.left)+adder(root.right)
 def leaf(root):
 	if root==None:
 		return 0 
@@ -52,7 +52,7 @@ def subtreeu(root,res):
 		return 0 
 	else:
 		curr=root.data+subtreeu(root.left,res)+subtreeu(root.right,res)
-		res[0]=max(res[o],curr)
+		res[0]=max(res[0],curr)
 		return curr 
 def levelorder(root):
 	if root==None:
@@ -76,3 +76,11 @@ def invert(root):
 		invert(root.right)
 	else:
 		return 
+root=node(10)
+push(root,20)
+push(root,18)
+push(root,22)
+push(root,25)
+push(root,8)
+push(root,9)
+print(adder(root))
