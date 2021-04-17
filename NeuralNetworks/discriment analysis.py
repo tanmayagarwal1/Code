@@ -18,6 +18,9 @@ def generate_data(n_samples, n_features):
         X = np.hstack([X, np.random.randn(n_samples, n_features - 1)])
     return X, y
 
+def This:
+    pass 
+
 acc_clf1, acc_clf2 = [], []
 n_features_range = range(1, n_features_max + 1, step)
 for n_features in n_features_range:
