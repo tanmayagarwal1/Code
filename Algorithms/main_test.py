@@ -1,37 +1,49 @@
-n=8
-def nqueen():
-	b=[[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],
-		[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],
-		[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],
-		[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0]]
-		
-	if nqueenu(b,0)==False:
-		return False 
-	printsol(b)
-def nqueenu(b,col):
-	if col>=n:
-		return True 
-	for i in range(n):
-		if issafe(b,i,col):
-			b[i][col]=1
-			if nqueenu(b,col+1)==True:
-				return True 
-			b[i][col]=0
-	return False
-def issafe(b,row,col):
-	for i in range(col):
-		if b[row][i]==1:
-			return False
-	for i,j in zip(range(row,-1,-1),range(col,-1,-1)):
-		if b[i][j]==1:
-			return False 
-	for i,j in zip(range(row,n),range(col,-1,-1)):
-		if b[i][j]==1:
-			return False 
-	return True 
-def printsol(b):
-	for i in range(n):
-		for j in range(n):
-			print(b[i][j],end=" ")
-		print()
-nqueen()
+class node:
+	def __init__(self,data):
+		self.data=data
+		self.next
+	def append(self,data):
+		if self.head==None:
+			self.head=node(data)
+		else:
+			temp=self.head
+			nn=node(data)
+			while temp.next != None:
+				temp=temp.next 
+			temp.next=nn
+			nn.next=None
+	def show(self):
+		temp=self.head 
+		while temp!=None:
+			print(temp.data)
+			temp=temp.next 
+	def remdup(self):
+		head=self.head 
+		while head.next != None:
+			temp=head.next 
+			pre=temp
+			while temp != None:
+				if temp.data==head.data:
+					pre.next=temp.next 
+					temp=temp.next
+					pre=temp 
+				else:
+					pre=temp 
+					temp=temp.next
+			head=head.next 
+	def oddeve(self):
+		head=self.head 
+		n=self.len()
+		temp=head.next 
+		pre=temp 
+		while temp.next !=None:
+			head.next=temp.next 
+			head=temp
+			temp=temp.next 
+		if n%2==0:
+			head.next=pre 
+			temp.next=None
+		else:
+			temp.next=pre
+			head.next=None
+	
