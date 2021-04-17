@@ -63,5 +63,7 @@ l.append(30)
 l.append(50)
 l.append(70)
 l.append(10)
+l.appen(90)
+
 l.view()
 
