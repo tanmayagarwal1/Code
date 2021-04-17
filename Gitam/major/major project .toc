@@ -1,0 +1,4 @@
+\contentsline {section}{\numberline {1}Introduction and Inspiration}{1}%
+\contentsline {section}{\numberline {2}Bio inspired alogrithm}{2}%
+\contentsline {section}{\numberline {3}Particle swarm optimisation Algorithm}{2}%
+\contentsline {section}{\numberline {4}Input and Output}{3}%
