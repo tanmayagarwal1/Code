@@ -77,5 +77,11 @@ def invert(root):
 	else:
 		return 
 root=node(10)
+push(root,20)
+push(root,18)
+push(root,22)
+push(root,25)
+push(root,30)
+push(root,8)
 push(root,9)
 print(adder(root))
