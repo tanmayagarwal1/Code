@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}NQueens Problem}{2}%
+\contentsline {section}{\numberline {2}MazeSolve}{2}%
+\contentsline {subsection}{\numberline {2.1}Difference between NQueens and MazeSolver}{3}%
+\contentsline {section}{\numberline {3}Gold Mine Problem}{3}%
+\contentsline {section}{\numberline {4}Linked Lists}{4}%
+\contentsline {subsection}{\numberline {4.1}Remove Duplicates Algo}{4}%
+\contentsline {subsection}{\numberline {4.2}Odd Even Algo}{4}%
+\contentsline {section}{\numberline {5}Quick Foot Notes}{5}%

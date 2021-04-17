@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+\normalsize
+\title{TENSOR WORKSHEET}
+\author{TANMAY AGARWAL}
+\date{\today}
+\maketitle
+\begin{abstract}
+In this paper we will be convering most of the tensors and their various transformations. We will also take a look on the dirac notation formalizations
+\end{abstract}
+\tableofcontents
+\section{Initial Tensor And Their Transformations}
+Firstly we will be looking at the tensors which have only one index. Broadly as we all know there are two types of tensors 
+\begin{equation*}
+\text{1.Contra-variant tensors}
+\end{equation*}
+\begin{equation*}
+\text{2.Co-variant tensors}
+\end{equation*}
+In contra-variant tensors the components transfrom in a "contra" manner. If the components increase, their respective products will decrese(If still any confusion please refer the main notes).
+The various Transformations of contra-variant vectors are given as 
+\begin{equation}
+X^{'i}=\frac{\partial X^{'i}}{\partial X^j}\cdot X^j
+\end{equation}
+In co-variant tensors the components trnsform in a "co" manner. If the components increase or decrease, even the products increases or decreses. Their tansformation is 
+\begin{equation}
+X_i^{'}=\frac{\partial X^j}{\partial X_i^{'}}\cdot X^j
+\end{equation}
+These transformations can also be representes as follows 
+\begin{equation}
+X^{,i}=\wedge^{ij}\cdot X^j
+\end{equation}
+and 
+\begin{equation}
+X_i^{'}=\wedge^{ji}\cdot X^j
+\end{equation}
+here 
+\begin{equation}
+\wedge^{\alpha \beta}=\frac{\partial X^{'\alpha}}{\partial X^\beta}
+\end{equation}
+\section{Transformations For Contra Tensors}
+For contra-variant tesnors a list of various transformations are
+\begin{equation}
+x^{'i}=\frac{\partial x^{'i}}{\partial x^j}\cdot x^j \,\,\text{(or)}\,\, x^{'i}=\wedge^{ij}\cdot x^j 
+\end{equation}
+
+\begin{equation}
+A^\alpha = \frac{\partial x^{' \alpha}}{\partial x^\beta}\cdot A^\beta 
+\end{equation}
+
+\begin{equation}
+T^{\alpha \beta}=\frac{\partial x^{' \alpha}}{\partial x^j}\frac{\partial x^{'\beta}}{\partial x^j}\cdot T^{ij} 
+\end{equation}
+or 
+\begin{equation*}
+T^{\alpha \beta}=\wedge^{\alpha i}\wedge^{\beta j}\cdot T^{ij}
+\end{equation*}
+Proceeding
+\begin{equation}
+T^{\alpha \beta}=\frac{\partial y^{\alpha}}{\partial x^i}\frac{\partial y^{\beta}}{\partial x^j}\cdot T^{ij}
+\end{equation}
+here
+\begin{equation*}
+y^{\alpha}=x^{'}
+\end{equation*}
+Moving on, a mixed tensor is defined as
+\begin{equation}
+T_{\beta}^{\alpha}=\frac{\partial x^{ ' \alpha}}{\partial x^i} \frac{\partial x^j}{\partial x^{' \beta}}\cdot T_j^{i}
+\end{equation}
+\section{Transformations For Co-Tensors}
+For Co-variant tensors the list of various transformations are 
+\begin{equation}
+x_i^{'}=\frac{\partial x^j}{\partial x^{'i}}\cdot x_j
+\end{equation}
+
+\begin{equation}
+A_i=\frac{\partial x^j}{\partial x^{'i}}\cdot A_j
+\end{equation}
+
+\begin{equation}
+T_{\alpha \beta}=\frac{\partial x^i}{\partial x^{'\alpha}} \frac{\partial x^j}{\partial x^{'\beta}}\cdot T_{ij}
+\end{equation}
+\begin{equation}
+\Gamma_{\mu \nu}^{\alpha}= \frac{\partial x^\lambda}{\partial x^\alpha} \cdot \frac{\partial^2 x^\alpha}{\partial x^\mu \partial x^\nu}
+\end{equation}
+\begin{equation}
+\sum_{i}{A_i}
+\end{equation}
+\end{document}

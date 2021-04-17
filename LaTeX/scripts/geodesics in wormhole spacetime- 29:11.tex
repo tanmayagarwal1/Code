@@ -1,0 +1,193 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{braket}
+\begin{document}
+\title{Angular Momentum Complete}
+\author{TANMAY AGARWAL}
+\date{\today}
+\maketitle
+\tableofcontents
+\section{Formalization}
+In this frame we will be formalizing the the angular momentum opertors in 3D.
+First, we know that in general 
+\begin{equation*}
+L=R\times{P}
+\end{equation*}
+From this we formalize the equations for our angular momentum to be 
+\begin{equation}
+L_x=Yp_z \times Zp_y
+L_y=Zp_x\times Xp_z
+L_z=Xp_y\times  Yp_x
+\end{equation}
+also we define the total angular momentum to be 
+\begin{equation}
+\braket{L}^2=\braket{x}^2+\braket{y}^2+\braket{z}^2
+\end{equation}
+The commution relations are as follows 
+\begin{equation}
+[L^2,L_z]=0 
+[L_x,L_y]=i\hbar
+\end{equation}
+From the above, we conclude that there exists common eigen functions for $\braket{L}^2$ and $\braket{L_z}$
+Let $Y_{lm}$ be the common eigen function of them both. The commutation relations of $Y_{lm}$ is 
+\begin{equation}
+[Y_{lm},\braket{L}^2]=0 
+\end{equation}
+Also we define two non Hermitian ladder operators due to the commutation relations as follows
+\begin{equation}
+L_{\pm}=L_x \pm L_y 
+\end{equation}
+Now the commutation relation of $Y_{lm}$ with our ladder operators are
+\begin{equation}
+[Y_{lm},L_{\pm}]=\hbar m
+\end{equation}
+Before moving on lets layout the eigenValues of $Y_{lm}$ when acted upon by the opertors 
+\begin{equation}
+L^2Y_{lm}=\hbar^2l(l+1)
+\end{equation}
+\begin{equation}
+L_zY_{lm}=\hbar mY_{lm}
+\end{equation}
+from this we define the followling relations 
+\begin{equation}
+\text{Let $\psi = L_{\pm}Y_{lm}$}
+\end{equation}
+Hence from here we define the following
+\begin{equation}
+\braket{L}^2 \psi = L^2  L_{\pm} Y_{lm}
+\end{equation}
+
+\begin{equation}
+ [[L^2,L_{\pm}]+L{\pm}]Y_{lm}
+\end{equation}
+
+\begin{equation}
+ [0]+L_{\pm}\hbar^2 l(l+1)Y_lm
+\end{equation}
+From this we see that it$ L^2$ has not effect on the wavefunction if its acted on by $Y_{\pm}$. 
+Now the next thing is 
+\begin{equation}
+L_z\psi=L_zL_{\pm}Y_{lm}
+\end{equation}
+
+\begin{equation}
+[[L_z,L_{\pm}]+L_{\pm}L_z]\,Y_{lm}
+\end{equation}
+
+\begin{equation}
+[\hbar L_{\pm}+L_{\pm}\hbar m]\,Y_{lm}
+\end{equation}
+
+\begin{equation}
+\hbar [m+1]L_{\pm}Y_{lm}
+\end{equation}
+
+\begin{equation}
+ \hbar [m+1] \psi(x)
+\end{equation}
+\section{The Ladder Structure}
+Now we would like to find the possible values of  $m$. To do this we use the expectation values of the opertors.
+\begin{equation}
+\bra{\psi}L^2\ket{\psi}=\bra{\psi}L_{x}^2\ket{\psi}+\bra{\psi}L_{y}^2\ket{\psi}+ \bra{\psi}L_{z}^2\ket{\psi}
+\end{equation}
+This yeilds
+\begin{equation}
+\hbar^2l(l+1) > \hbar^2 m^2
+\end{equation}
+Solving this quadratic equation yields the following 
+\begin{equation}
+m_+= l_+ 
+\end{equation}
+\begin{equation}
+m_-= l_-
+\end{equation}
+This means the maximum value of $m$ is $l_+$ and minimum is $l_-$
+We hence find out that in the ladder of Momentum eigen values, the number of states $N$ is 
+\begin{equation}
+N=2l+1
+\end{equation}
+which means that $l$ can only take integer or half int values
+\begin{equation}
+l=1,1/2,2/3,2,....
+\end{equation}
+NOTE : say$ L = 1$ and $L_z= 1$ . This still does not mean that $L_x$ and $L_y$ will be zero. Lets say in general that $l=m$. Finding the expected values we get 
+\begin{equation}
+\hbar^2 l(l+1)= \bra{\psi}L_{x}^2\ket{\psi}+\bra{\psi}L_{y}^2\ket{\psi}+\hbar^2 m^2
+\end{equation}
+Now as $l=m$
+\begin{equation}
+\bra{\psi}L_{x}^2\ket{\psi}+\bra{\psi}L_{y}^2\ket{\psi}=\hbar^2 l^2+\hbar^2 l - \hbar^2 m^2
+\end{equation}
+\begin{equation}
+\bra{\psi}L_{x}^2\ket{\psi}+\bra{\psi}L_{y}^2\ket{\psi}=\hbar^2 l
+\end{equation}
+If let: The expectation values of $L_x$ and $L_y$ be equal. Then 
+\begin{equation}
+\bra{\psi}L_{x}^2\ket{\psi}=\frac{\hbar^2 l}{2} \text{which is} >0
+\end{equation}
+Hence even if $ L_z=L^2$ there is still non zero expectation values in both $L_x$ and $L_y$
+\section{The 3 Dimensions}
+Now let us move on to discussing the Spherical Harmonics part of angular momentum which is exciting. 
+In here $Y_{lm}$ is a funtion of $\phi$ and $\theta$ . $\phi$ is the angle made at the $x-y$plane and $\theta$ with the $z$ axis. 
+Now our operstors in 3D are
+\begin{equation}
+L_z=\frac{\hbar }{i}\partial_\phi \text{or} L_\phi=-i\hbar\partial_\phi
+\end{equation}
+\begin{equation}
+L_{\pm}={\pm}\hbar e^{{\pm}i\phi}(\pm \partial_\theta + \cot{\theta}\partial_{\phi})
+\end{equation}
+Now  if we use the fact that 
+\begin{equation}
+L_zY_{lm}=\hbar mY_{lm}
+\end{equation}
+Substituting the value of $L_z$ we get 
+\begin{equation}
+Y_{lm}(\theta,\phi)=e^{im\phi}P_{l}(\theta)
+\end{equation}
+Where 
+\begin{equation}
+P_l(\theta)=\text{some unknow dependence on $\theta$}
+\end{equation}
+Now to proceed from here we establish the fact that at $\phi=2\pi$ and $\phi=0$ hence 
+\begin{equation}
+Y_{lm}{\theta,0 }=Y_{lm}(\theta,2\pi)
+\end{equation}
+This is because after one complete rotation it must come back to the same point. 
+Now 
+\begin{equation}
+Y_{lm}{\theta,0)=e^{im0}P_l(\theta) = P_l(\theta}
+\end{equation}
+Similarly 
+\begin{equation}
+Y_{lm}(\theta,2\pi)=
+\begin{cases}
+P_l(\theta) \text{if $m=int$}
+\\
+-P_l(\theta) \text{if $m=$half ints}
+\end{cases}
+\end{equation}
+Now the second case should not be possible. Hence we conclude that 
+\begin{equation}
+\text{$m$ cannot have half int values. Hence $l$ is strictly an integer}
+\end{equation}
+\section{The WaveFunction In 3D}
+Having established this fact we know that $L_+$ acting on $m_+$ will be equal to $0$. Hence by substitution 
+\begin{equation}
+{\pm}e^{im\phi}(\partial_\theta \pm \cot{\theta}\partial_{\phi})(m_+)=0
+\end{equation}
+We find the solutions of this to be associated with legendre polynomials. Hence the properlt NORMALIZED wvefunction is 
+\begin{equation}
+Y_{lm}(\theta,\phi)=(-1)^m \sqrt{\frac{2l+1}{4\pi} \frac{(|l|-|m|)!}{(|l|+|m|)!}}e^{im\phi}P_l^m(\cos{\theta}) 
+\end{equation}
+where $P_l^m(x)=$ associated legendre polynomial and in that $P_l(x)=$ the legendre polynomial solutions and $x=\cos{\theta}$
+\begin{equation}
+P_l^m(x)=(1-x^2)^{\frac{|m|}{2}}\,\frac{\partial^m}{\partial_x^m}p_l(x) 
+\end{equation}
+\begin{equation}
+P_l(x)=\frac{1}{2^x x!}\, \frac{\partial^x}{\partial_x^x}(x^2-1)^x
+\end{equation}
+And the normalization conditon used is 
+\begin{equation}
+\int_{0}^{\pi}\int_{0}^{2\pi}\int_{-\infty}^{\infty}{|Y_{lm}(\theta,\phi)|^2}= 1
+\end{equation}
+\end{document}
