@@ -1,69 +1,39 @@
-class node:
-	def __init__(self,data):
-		self.data=data
-		self.next=None
-class ll:
-	def __init__(self):
-		self.head=None 
-	def append(self,data):
-		if self.head==None:
-			self.head=node(data)
-		else:
-			nn=node(data)
-			temp=self.head 
-			while temp.next != None:
-				temp=temp.next
-			temp.next=nn
-			nn.next=None
-	def view(self):
-		temp=self.head 
-		while temp != None:
-			print(temp.data)
-			temp=temp.next 
-	def len(self):
-		count=0 
-		temp=self.head 
-		while temp != None:
-			count+=1
-			temp=temp.next 
-		return count 
-	def remdup(self):
-		head=self.head 
-		while head.next!=None:
-			temp=head.next 
-			pre=head 
-			while temp != None:
-				if temp.data==head.data:
-					pre.next=temp.next
-					temp=temp.next 
-					pre=temp 
-				else:
-					pre=temp 
-					temp=temp.next 
-			head=head.next
-	def oddeve(self):
-		head=self.head 
-		temp=head.next 
-		pre=temp 
-		n=self.len()
-		while temp.next != None:
-			head.next=temp.next 
-			head=temp 
-			temp=temp.next 
-		if n%2==0:
-			head.next=pre 
-			temp.next=None
-		else:
-			head.next=None
-			temp.next=pre 
-l=ll()
-l.append(10)
-l.append(20)
-l.append(30)
-l.append(50)
-l.append(70)
-l.append(10)
-l.appen(90)
+n=4
+def mazesolver(maze):
+	sol=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+	if mazesolveru(maze,0,0,sol)==False:
+		return False 
+	printsol(sol)
+def mazesolveru(maze,x,y,sol):
+	if x==n-1 and y==n-1 and maze[x][y]==1:
+		sol[x][y]=1
+		return True 
+	if issafe(maze,x,y):
+		if sol[x][y]==1:
+			return False 
+		sol[x][y]=1
+		if mazesolveru(maze,x+1,y,sol):
+			return True 
+		if mazesolveru(maze,x,y+1,sol):
+			return True 
+		if mazesolveru(maze,x-1,y,sol):
+			return True 
+		if mazesolveru(maze,x,y-1,sol):
+			return True 
+		sol[x][y]=0 
+	return False
+def issafe(maze,x,y):
+	if x>=0 and x<n and y>=0 and y<n and maze[x][y]==1:
+		return True 
+	return False 
+def printsol(sol):
+	for i in range(n):
+		for j in range(n):
+			print(sol[i][j],end=" ")
+		print()
 
-l.view()
-
+maze = [  [1, 0, 0, 0],
+          [1, 1, 1, 1],
+          [0, 0, 1, 0],
+          [1, 1, 1, 1] ]
+mazesolver(maze)
