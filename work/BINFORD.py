@@ -122,8 +122,7 @@ def oscillations_detection(previous_ids, ix, iy):
             previous_ids_set.add(index)
     return False
 
-def temp(x):
-    pass
+
 
 def potential_field_planning(sx, sy, gx, gy, ox, oy, reso, rr):
     
@@ -278,4 +277,3 @@ def send_velocity(velocity_x, velocity_y, velocity_z, duration):
     for x in range(0,duration):
         vehicle.send_mavlink(msg)
         time.sleep(1)
-#DONE 
