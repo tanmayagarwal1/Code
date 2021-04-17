@@ -1,0 +1,38 @@
+class polygon: 
+    def __init__(self, side):
+        self.s=side 
+
+    def area(self):
+        return self.s**2 
+
+class area(polygon):
+    __priv=10 
+    def __init__(self,side,first,last):
+        self.first=first
+        self.last=last
+        super().__init__(side)
+
+    def vol(self):
+        return self.s**3 
+
+    @property
+    def fullname(self):
+        return '{} {}'.format(self.first,self.last)
+    @fullname.setter
+    def fullname(self,str):
+        first,last=str.split(" ")
+        self.first=first
+        self.last=last
+
+    def show(self):
+        print(self.__priv)
+        
+
+        
+x=area(3,"tanmay","agarwal")
+#print(x.fullname)  
+#x.fullname='shivika garg'
+#print(x.fullname)        
+x.show()       
+
+        

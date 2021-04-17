@@ -1,0 +1,17 @@
+import random
+for i in range(100):
+	Age = random.randint(25,85)
+	sex = random.randint(0,1)
+	cp  = random.randint(0,3)
+	Trestbps = random.randint(90,200)
+	chol= random.randint(120,580)
+	Fbs = random.randint(0,1)
+	Restecg = random.randint(0,2)
+	thalach= random.randint(70,210)
+	Exang= random.randint(0,1)
+	slope = random.randint(0,2)
+	ca = random.randint(0,2)
+	thal = random.randint(1,7)
+	target = random.randint(0,1)
+	print(f'Age: {Age}\nSex: {sex}\nCp:{cp}\nTrestbps: {Trestbps}\nChol: {chol}\nFbs: {Fbs}\nRestecg: {Restecg}\nThalach: {thalach}\nExang: {Exang}\nSlope: {slope}\nCa: {ca}\nThal: {thal}\nTarget: {target}\n')
+	print("------------------")
