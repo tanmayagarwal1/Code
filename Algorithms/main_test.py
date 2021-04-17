@@ -1,39 +1,16 @@
-n=4
-def mazesolver(maze):
-	sol=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
-	if mazesolveru(maze,0,0,sol)==False:
-		return False 
-	printsol(sol)
-def mazesolveru(maze,x,y,sol):
-	if x==n-1 and y==n-1 and maze[x][y]==1:
-		sol[x][y]=1
-		return True 
-	if issafe(maze,x,y):
-		if sol[x][y]==1:
-			return False 
-		sol[x][y]=1
-		if mazesolveru(maze,x+1,y,sol):
-			return True 
-		if mazesolveru(maze,x,y+1,sol):
-			return True 
-		if mazesolveru(maze,x-1,y,sol):
-			return True 
-		if mazesolveru(maze,x,y-1,sol):
-			return True 
-		sol[x][y]=0 
-	return False
-def issafe(maze,x,y):
-	if x>=0 and x<n and y>=0 and y<n and maze[x][y]==1:
-		return True 
-	return False 
-def printsol(sol):
-	for i in range(n):
-		for j in range(n):
-			print(sol[i][j],end=" ")
-		print()
-
-maze = [  [1, 0, 0, 0],
-          [1, 1, 1, 1],
-          [0, 0, 1, 0],
-          [1, 1, 1, 1] ]
-mazesolver(maze)
+def reve(arr):
+	n=len(arr)
+	j=0 
+	i=n-1
+	while i>n//2:
+		if arr[i].isalpha():
+			while j<i:
+				if arr[j].isalpha():
+					arr[i],arr[j]=arr[j],arr[i]
+					j+=1
+					i-=1
+				else: 
+					j+=1
+	return arr
+str="tan$$may"
+print(reve(list(str)))
