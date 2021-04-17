@@ -1,0 +1,43 @@
+\contentsline {section}{\numberline {1}\fontsize {16pt}{12pt}\selectfont {\textbf {INTRODUCTION}}}{5}%
+\contentsline {subsection}{\numberline {1.1}\fontsize {14pt}{12pt}\selectfont {\textbf {PRIMARY OBJECTIVE}}}{6}%
+\contentsline {subsection}{\numberline {1.2}\fontsize {14pt}{12pt}\selectfont {\textbf {MOTIVATION}}}{7}%
+\contentsline {subsection}{\numberline {1.3}\fontsize {14pt}{12pt}\selectfont {\textbf {OUTCOME}}}{8}%
+\contentsline {subsection}{\numberline {1.4}\fontsize {14pt}{12pt}\selectfont {\textbf {APPLICATIONS}}}{9}%
+\contentsline {section}{\numberline {2}\fontsize {16pt}{12pt}\selectfont {\textbf {LITERATURE SURVEY}}}{10}%
+\contentsline {subsection}{\numberline {2.1}\fontsize {14pt}{12pt}\selectfont {\textbf {\textbf {METHODS USED IN RESEARCH PAPERS}}}}{11}%
+\contentsline {subsubsection}{\numberline {2.1.1}\textbf {PERFORMANCE OF ROOT MEAN SQUARE }}{11}%
+\contentsline {subsubsection}{\numberline {2.1.2}\textbf {TEXTURE BASED FEATURE EXTRACTION}}{11}%
+\contentsline {subsubsection}{\numberline {2.1.3}\textbf {GENERAL FEATURE EXTRACTION}}{11}%
+\contentsline {subsubsection}{\numberline {2.1.4}\textbf {CONVERTING CT SCANS TO MONO}}{11}%
+\contentsline {subsubsection}{\numberline {2.1.5}\textbf {IMAGE FILTRATION}}{12}%
+\contentsline {section}{\numberline {3}\fontsize {16pt}{12pt}\selectfont {\textbf {PROBLEM ANALYSIS}}}{13}%
+\contentsline {subsection}{\numberline {3.1}\fontsize {14pt}{12pt}\selectfont {\textbf {PROBELM IDENTIFICATION}}}{13}%
+\contentsline {subsection}{\numberline {3.2}\fontsize {14pt}{12pt}\selectfont {\textbf {ROOT CAUSE}}}{14}%
+\contentsline {subsection}{\numberline {3.3}\fontsize {14pt}{12pt}\selectfont {\textbf {CONSTRAINTS}}}{15}%
+\contentsline {section}{\numberline {4}\fontsize {16pt}{12pt}\selectfont {\textbf {DESIGN}}}{16}%
+\contentsline {subsection}{\numberline {4.1}\fontsize {14pt}{12pt}\selectfont {\textbf {K NEAREST NEIGHBOURS}}}{17}%
+\contentsline {subsection}{\numberline {4.2}\fontsize {14pt}{12pt}\selectfont {\textbf {LOGISTIC REGRESSION}}}{19}%
+\contentsline {subsection}{\numberline {4.3}\fontsize {14pt}{12pt}\selectfont {\textbf {DECISION TREES}}}{22}%
+\contentsline {subsection}{\numberline {4.4}\fontsize {14pt}{12pt}\selectfont {\textbf {RANDOM FOREST CLASSIFIER}}}{25}%
+\contentsline {subsection}{\numberline {4.5}\fontsize {14pt}{12pt}\selectfont {\textbf {SUPPORT VECTOR MACHINES}}}{28}%
+\contentsline {section}{\numberline {5}\fontsize {16pt}{12pt}\selectfont {\textbf {IMPLEMENTATION}}}{31}%
+\contentsline {subsection}{\numberline {5.1}\fontsize {14pt}{12pt}\selectfont {\textbf {THE DATA-SET}}}{31}%
+\contentsline {subsection}{\numberline {5.2}\fontsize {14pt}{12pt}\selectfont {\textbf {PYTHON}}}{32}%
+\contentsline {subsection}{\numberline {5.3}\fontsize {14pt}{12pt}\selectfont {\textbf {JUPYTER NOTEBOOK}}}{33}%
+\contentsline {subsection}{\numberline {5.4}\fontsize {14pt}{12pt}\selectfont {\textbf {SCIKIT LEARN }}}{34}%
+\contentsline {subsection}{\numberline {5.5}\fontsize {14pt}{12pt}\selectfont {\textbf {PANDAS}}}{35}%
+\contentsline {subsection}{\numberline {5.6}\fontsize {14pt}{12pt}\selectfont {\textbf {MATPLOTLIB}}}{36}%
+\contentsline {section}{\numberline {6}\fontsize {16pt}{12pt}\selectfont {\textbf {TESTING AND VALIDATION}}}{37}%
+\contentsline {subsection}{\numberline {6.1}\fontsize {14pt}{12pt}\selectfont {\textbf {TRAINING AND TESTING SPLIT}}}{38}%
+\contentsline {subsection}{\numberline {6.2}\fontsize {14pt}{12pt}\selectfont {\textbf {VISUAL ANALYSIS}}}{39}%
+\contentsline {subsection}{\numberline {6.3}\fontsize {14pt}{12pt}\selectfont {\textbf {TESTING THE MODELS}}}{41}%
+\contentsline {subsubsection}{\numberline {6.3.1}\textbf {K NEAREST NEIGHBOURS }}{41}%
+\contentsline {subsubsection}{\numberline {6.3.2}\textbf {LOGISTIC REGRESSION }}{42}%
+\contentsline {subsubsection}{\numberline {6.3.3}\textbf {DECISION TREE }}{43}%
+\contentsline {subsubsection}{\numberline {6.3.4}\textbf {RANDOM FORESTS }}{44}%
+\contentsline {subsubsection}{\numberline {6.3.5}\textbf {SUPPORT VECTOR MACHINES }}{45}%
+\contentsline {section}{\numberline {7}\fontsize {16pt}{12pt}\selectfont {\textbf {RESULT ANALYSIS}}}{46}%
+\contentsline {subsection}{\numberline {7.1}\fontsize {14pt}{12pt}\selectfont {\textbf {PERFORMANCE SCORE OF EACH MODEL}}}{46}%
+\contentsline {subsection}{\numberline {7.2}\fontsize {14pt}{12pt}\selectfont {\textbf {COMPARISION}}}{47}%
+\contentsline {section}{\numberline {8}\fontsize {16pt}{12pt}\selectfont {\textbf {CONCLUSION}}}{48}%
+\contentsline {section}{\numberline {}\fontsize {16pt}{12pt}\selectfont {\textbf {REFERENCES}}}{49}%

@@ -1,0 +1,504 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.11)  10 DEC 2020 22:01
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**My_proj.tex
+(./My_proj.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06>
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen135
+))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen136
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count175
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count176
+\leftroot@=\count177
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count178
+\DOTSCASE@=\count179
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen137
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count180
+\c@MaxMatrixCols=\count181
+\dotsspace@=\muskip16
+\c@parentequation=\count182
+\dspbrk@lvl=\count183
+\tag@help=\toks16
+\row@=\count184
+\column@=\count185
+\maxfields@=\count186
+\andhelp@=\toks17
+\eqnshift@=\dimen138
+\alignsep@=\dimen139
+\tagshift@=\dimen140
+\tagwidth@=\dimen141
+\totwidth@=\dimen142
+\lineht@=\dimen143
+\@envbody=\toks18
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks20
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen144
+\Gin@req@width=\dimen145
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count187
+\Gm@cntv=\count188
+\c@Gm@tempcnt=\count189
+\Gm@bindingoffset=\dimen146
+\Gm@wd@mp=\dimen147
+\Gm@odd@mp=\dimen148
+\Gm@even@mp=\dimen149
+\Gm@layoutwidth=\dimen150
+\Gm@layoutheight=\dimen151
+\Gm@layouthoffset=\dimen152
+\Gm@layoutvoffset=\dimen153
+\Gm@dimlist=\toks21
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count190
+\l__pdf_internal_box=\box47
+)
+(./My_proj.aux)
+\openout1 = `My_proj.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 9
+.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+) (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count191
+\scratchdimen=\dimen154
+\scratchbox=\box48
+\nofMPsegments=\count192
+\nofMParguments=\count193
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count194
+\MPscratchDim=\dimen155
+\MPnumerator=\count195
+\makeMPintoPDFobject=\count196
+\everyMPtoPDFconversion=\toks23
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(108.405pt, 433.62001pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=433.62001pt
+* \textheight=650.43001pt
+* \oddsidemargin=36.13501pt
+* \evensidemargin=36.13501pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(./My_proj.toc [1
+
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+\tf@toc=\write3
+\openout3 = `My_proj.toc'.
+
+ [2] (./My_proj.lof [3])
+\tf@lof=\write4
+\openout4 = `My_proj.lof'.
+
+ [4] [5]
+Overfull \hbox (22.46693pt too wide) in paragraph at lines 28--29
+[]\OT1/ptm/m/n/14.4 Tumors are of two types be-nign and ma-lig-nant where be-ni
+gn (non-cancerous)
+ []
+
+
+Overfull \hbox (17.94418pt too wide) in paragraph at lines 32--33
+\OT1/ptm/m/n/14.4 Com-puted To-mog-ra-phy (CT scan), MRI (mag-netic res-o-nance
+ imag-ing) through
+ []
+
+[6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16]
+<IMG_8202.png, id=56, 544.0325pt x 272.01625pt>
+File: IMG_8202.png Graphic file (type png)
+<use IMG_8202.png>
+Package pdftex.def Info: IMG_8202.png  used on input line 133.
+(pdftex.def)             Requested size: 326.42201pt x 163.211pt.
+ [17 <./IMG_8202.png>]
+<IMG_8203.png, id=67, 463.7325pt x 319.1925pt>
+File: IMG_8203.png Graphic file (type png)
+<use IMG_8203.png>
+Package pdftex.def Info: IMG_8203.png  used on input line 151.
+(pdftex.def)             Requested size: 231.86568pt x 159.59586pt.
+
+[18 <./IMG_8203.png>]
+<IMG_8204.png, id=72, 471.7625pt x 314.17375pt>
+File: IMG_8204.png Graphic file (type png)
+<use IMG_8204.png>
+Package pdftex.def Info: IMG_8204.png  used on input line 180.
+(pdftex.def)             Requested size: 330.23149pt x 219.92012pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[19] [20 <./IMG_8204.png>] [21]
+<IMG_8205.jpg, id=84, 475.7775pt x 312.16624pt>
+File: IMG_8205.jpg Graphic file (type jpg)
+<use IMG_8205.jpg>
+Package pdftex.def Info: IMG_8205.jpg  used on input line 220.
+(pdftex.def)             Requested size: 333.04196pt x 218.51488pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[22] [23 <./IMG_8205.jpg>] [24] [25]
+<IMG_8206.jpg, id=99, 594.22pt x 445.665pt>
+File: IMG_8206.jpg Graphic file (type jpg)
+<use IMG_8206.jpg>
+Package pdftex.def Info: IMG_8206.jpg  used on input line 269.
+(pdftex.def)             Requested size: 297.10927pt x 222.83195pt.
+ [26 <./IMG_8206.jpg>] [27]
+<IMG_8207.png, id=106, 546.04pt x 536.0025pt>
+File: IMG_8207.png Graphic file (type png)
+<use IMG_8207.png>
+Package pdftex.def Info: IMG_8207.png  used on input line 309.
+(pdftex.def)             Requested size: 191.11685pt x 187.60368pt.
+
+Overfull \hbox (4.56798pt too wide) in paragraph at lines 314--315
+\OT1/ptm/m/n/14.4 the value within the range of [0,1] us-ing the sig-moid func-
+tion. If the squashed
+ []
+
+[28 <./IMG_8207.png>] [29] [30]
+Overfull \hbox (11.30415pt too wide) in paragraph at lines 356--357
+\OT1/ptm/m/n/14.4 We have procurred the data set from an on-line open source gi
+thub $[][]$.
+ []
+
+[31]
+<IMG_8208.png, id=121, 225.84375pt x 225.84375pt>
+File: IMG_8208.png Graphic file (type png)
+<use IMG_8208.png>
+Package pdftex.def Info: IMG_8208.png  used on input line 372.
+(pdftex.def)             Requested size: 158.08954pt x 158.08954pt.
+ [32 <./IMG_8208.png>]
+<IMG_8209.png, id=126, 741.77126pt x 416.55624pt>
+File: IMG_8209.png Graphic file (type png)
+<use IMG_8209.png>
+Package pdftex.def Info: IMG_8209.png  used on input line 384.
+(pdftex.def)             Requested size: 370.88472pt x 208.2776pt.
+ [33 <./IMG_8209.png>]
+<IMG_8210.png, id=131, 1204.5pt x 648.4225pt>
+File: IMG_8210.png Graphic file (type png)
+<use IMG_8210.png>
+Package pdftex.def Info: IMG_8210.png  used on input line 396.
+(pdftex.def)             Requested size: 180.6672pt x 97.25917pt.
+ [34 <./IMG_8210.png>]
+Overfull \hbox (4.82695pt too wide) in paragraph at lines 407--408
+\OT1/ptm/m/n/14.4 In com-puter pro-gram-ming, pan-das is a soft-ware li-brary w
+rit-ten for the Python
+ []
+
+<IMG_8211.png, id=136, 906.38625pt x 340.27126pt>
+File: IMG_8211.png Graphic file (type png)
+<use IMG_8211.png>
+Package pdftex.def Info: IMG_8211.png  used on input line 413.
+(pdftex.def)             Requested size: 362.54808pt x 136.10608pt.
+[35 <./IMG_8211.png>]
+<IMG_8212.png, id=141, 200.75pt x 200.75pt>
+File: IMG_8212.png Graphic file (type png)
+<use IMG_8212.png>
+Package pdftex.def Info: IMG_8212.png  used on input line 427.
+(pdftex.def)             Requested size: 140.52403pt x 140.52403pt.
+
+Overfull \hbox (5.67522pt too wide) in paragraph at lines 432--433
+[]\OT1/ptm/m/n/14.4 Overall toolk-its are avail-able which ex-tend Mat-plotlib 
+func-tion-al-ity. Some
+ []
+
+[36 <./IMG_8212.png>]
+<aft-split.png, id=146, 1114.1625pt x 204.765pt>
+File: aft-split.png Graphic file (type png)
+<use aft-split.png>
+Package pdftex.def Info: aft-split.png  used on input line 446.
+(pdftex.def)             Requested size: 557.0799pt x 102.38223pt.
+ [37 <./aft-split.png>]
+<splitt.png, id=152, 1129.21875pt x 123.46124pt>
+File: splitt.png Graphic file (type png)
+<use splitt.png>
+Package pdftex.def Info: splitt.png  used on input line 460.
+(pdftex.def)             Requested size: 564.608pt x 61.73045pt.
+ [38 <./splitt.png>]
+<co.png, id=157, 1181.41376pt x 815.045pt>
+File: co.png Graphic file (type png)
+<use co.png>
+Package pdftex.def Info: co.png  used on input line 472.
+(pdftex.def)             Requested size: 472.55713pt x 326.01222pt.
+<co2.png, id=158, 1119.18124pt x 701.62125pt>
+File: co2.png Graphic file (type png)
+<use co2.png>
+Package pdftex.def Info: co2.png  used on input line 481.
+(pdftex.def)             Requested size: 447.66457pt x 280.64352pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[39 <./co.png>] [40 <./co2.png>]
+<knn.png, id=167, 1107.13625pt x 249.93375pt>
+File: knn.png Graphic file (type png)
+<use knn.png>
+Package pdftex.def Info: knn.png  used on input line 495.
+(pdftex.def)             Requested size: 442.84665pt x 99.97173pt.
+<knnpred.png, id=168, 1005.7575pt x 616.3025pt>
+File: knnpred.png Graphic file (type png)
+<use knnpred.png>
+Package pdftex.def Info: knnpred.png  used on input line 502.
+(pdftex.def)             Requested size: 402.29587pt x 246.51663pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[41 <./knn.png>]
+<lr.png, id=173, 1114.1625pt x 121.45375pt>
+File: lr.png Graphic file (type png)
+<use lr.png>
+Package pdftex.def Info: lr.png  used on input line 512.
+(pdftex.def)             Requested size: 445.6571pt x 48.58063pt.
+<lr2.png, id=174, 1111.15125pt x 110.4125pt>
+File: lr2.png Graphic file (type png)
+<use lr2.png>
+Package pdftex.def Info: lr2.png  used on input line 516.
+(pdftex.def)             Requested size: 444.45262pt x 44.1642pt.
+<lrtest.png, id=175, 1097.09875pt x 313.17pt>
+File: lrtest.png Graphic file (type png)
+<use lrtest.png>
+Package pdftex.def Info: lrtest.png  used on input line 523.
+(pdftex.def)             Requested size: 438.83173pt x 125.26576pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[42 <./knnpred.png> <./lr.png> <./lr2.png>]
+<dt.png, id=182, 1123.19624pt x 238.8925pt>
+File: dt.png Graphic file (type png)
+<use dt.png>
+Package pdftex.def Info: dt.png  used on input line 533.
+(pdftex.def)             Requested size: 449.27054pt x 95.5553pt.
+<dtreepred.png, id=183, 1099.10625pt x 616.3025pt>
+File: dtreepred.png Graphic file (type png)
+<use dtreepred.png>
+Package pdftex.def Info: dtreepred.png  used on input line 540.
+(pdftex.def)             Requested size: 439.6347pt x 246.51663pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[43 <./lrtest.png> <./dt.png>]
+<rf.png, id=190, 1120.185pt x 246.9225pt>
+File: rf.png Graphic file (type png)
+<use rf.png>
+Package pdftex.def Info: rf.png  used on input line 550.
+(pdftex.def)             Requested size: 448.06606pt x 98.76724pt.
+<rfpred.png, id=191, 1090.0725pt x 326.21875pt>
+File: rfpred.png Graphic file (type png)
+<use rfpred.png>
+Package pdftex.def Info: rfpred.png  used on input line 557.
+(pdftex.def)             Requested size: 436.02127pt x 130.48518pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[44 <./dtreepred.png> <./rf.png>]
+<svm.png, id=197, 1124.2pt x 210.7875pt>
+File: svm.png Graphic file (type png)
+<use svm.png>
+Package pdftex.def Info: svm.png  used on input line 567.
+(pdftex.def)             Requested size: 449.67204pt x 84.3135pt.
+<sv.png, id=198, 1011.78pt x 297.11pt>
+File: sv.png Graphic file (type png)
+<use sv.png>
+Package pdftex.def Info: sv.png  used on input line 574.
+(pdftex.def)             Requested size: 404.70483pt x 118.84189pt.
+ [45 <./rfpred.png> <./svm.png> <./sv.png>]
+<knnp.png, id=205, 1018.80624pt x 69.25874pt>
+File: knnp.png Graphic file (type png)
+<use knnp.png>
+Package pdftex.def Info: knnp.png  used on input line 588.
+(pdftex.def)             Requested size: 458.45857pt x 31.16614pt.
+<lrp.png, id=206, 1007.765pt x 59.22125pt>
+File: lrp.png Graphic file (type png)
+<use lrp.png>
+Package pdftex.def Info: lrp.png  used on input line 596.
+(pdftex.def)             Requested size: 453.49007pt x 26.6493pt.
+<dtp.png, id=207, 1005.7575pt x 64.24pt>
+File: dtp.png Graphic file (type png)
+<use dtp.png>
+Package pdftex.def Info: dtp.png  used on input line 605.
+(pdftex.def)             Requested size: 452.5867pt x 28.90773pt.
+<rfp.png, id=208, 1030.85126pt x 67.25125pt>
+File: rfp.png Graphic file (type png)
+<use rfp.png>
+Package pdftex.def Info: rfp.png  used on input line 613.
+(pdftex.def)             Requested size: 463.87878pt x 30.26277pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<sp.png, id=209, 1015.795pt x 69.25874pt>
+File: sp.png Graphic file (type png)
+<use sp.png>
+Package pdftex.def Info: sp.png  used on input line 621.
+(pdftex.def)             Requested size: 457.10353pt x 31.16614pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[46 <./knnp.png> <./lrp.png> <./dtp.png>]
+<bar.png, id=216, 1120.185pt x 442.65375pt>
+File: bar.png Graphic file (type png)
+<use bar.png>
+Package pdftex.def Info: bar.png  used on input line 632.
+(pdftex.def)             Requested size: 448.06606pt x 177.05835pt.
+ [47 <./rfp.png> <./sp.png> <./bar.png>] [48] [49] (./My_proj.aux) ) 
+Here is how much of TeX's memory you used:
+ 2535 strings out of 480608
+ 34784 string characters out of 5903629
+ 281639 words of memory out of 5000000
+ 18393 multiletter control sequences out of 15000+600000
+ 547328 words of font info for 48 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 30i,6n,25p,928b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local
+/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2020/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2020/texmf-dist/
+fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-dist/fonts/type
+1/urw/times/utmr8a.pfb>
+Output written on My_proj.pdf (49 pages, 3134435 bytes).
+PDF statistics:
+ 264 PDF objects out of 1000 (max. 8388607)
+ 140 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+
