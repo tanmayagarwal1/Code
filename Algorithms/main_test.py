@@ -1,35 +1,20 @@
-import csv 
-import numpy
-from collections import Counter 
-from matplotlib import pyplot as plt 
-plt.style.use('seaborn')
-class plot:
-	def __init__(self,x,y,color="yellow",linestyle='-',marker='.'):
-		self.x=x
-		self.y=y
-		self.color=color 
-		self.linestyle=linestyle
-		self.marker=marker
-	def plot(self):
-		plt.plot(self.x,self.y,color=self.color,linestyle=self.linestyle)
-		plt.tight_layout()
-		plt.show()
-	def __str__(self):
-		return f"The order is x,y,color,linestyle"
-	def splot(self):
-		color=[]
-		for i in self.x:
-			color.append(numpy.random.randint(1,10))
-		plt.scatter(self.x,self.y,c=color,marker=self.marker)
-		plt.tight_layout 
-		plt.show()
-age=[]
-bp=[]
-with open(r"/Users/tanmay/Downloads/heart.csv",'r') as f:
-	reader=csv.DictReader(f)
-	for row in reader:
-		age.append(row['age'])
-		bp.append(row['trestbps'])
-p=plot(age,bp,color="green")
-p.splot()
+def init(self,x,y):
+	self.first=x 
+	self.last=y
+@property 
+def email(self):
+	return self.first+self.last+"@gmail.com"
+@email.setter
+def email(self,sti):
+	x,y=sti.split('.')
+	self.first=x
+	self.last=y 
+def stri(self):
+	return f"""This class is a dynamic class for {(self.first).upper()} and has the following properties : initialise 
+with first and last name and then use email attribute which can also be used 
+to set the name values with the . operator in middle"""
 
+A=type('A',(),{'__init__':init,'email':email,'__str__':stri})
+t=A("shivika","garg")
+t.email="tanmay.Agarwal"
+print(t)
