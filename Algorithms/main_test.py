@@ -1,20 +1,7 @@
-def init(self,x,y):
-	self.first=x 
-	self.last=y
-@property 
-def email(self):
-	return self.first+self.last+"@gmail.com"
-@email.setter
-def email(self,sti):
-	x,y=sti.split('.')
-	self.first=x
-	self.last=y 
-def stri(self):
-	return f"""This class is a dynamic class for {(self.first).upper()} and has the following properties : initialise 
-with first and last name and then use email attribute which can also be used 
-to set the name values with the . operator in middle"""
-
-A=type('A',(),{'__init__':init,'email':email,'__str__':stri})
-t=A("shivika","garg")
-t.email="tanmay.Agarwal"
-print(t)
+def eggmax(n,k):
+	dp=[[0]*(k+1) for i in range(n+1)]
+	for i in range(1,n+1):
+		for j in range(1,k+1):
+			dp[i][j]=dp[i-1][j-1]+dp[i-1][j]+1
+		if dp[i][j]>=n: return i
+print(eggmax(120,2))
