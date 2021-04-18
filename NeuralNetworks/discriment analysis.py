@@ -15,6 +15,31 @@ def generate_data(n_samples, n_features):
    
     X, y = make_blobs(n_samples=n_samples, n_features=1, centers=[[-2], [2]])
     if n_features > 1:
+        X = np.hstack([X, np.random.randn(n, n_features - 1)])
+    return X, y
+
+acc_clf1, acc_clf2 = [], []
+n_features_range = range(1, n_features_max + 1, step)
+for n in n_features_range:
+    score_clf1, score_clf2 = 0, 0
+    for _ in range(n_averages):
+        X, y = generate_data(n_train, n_features)
+
+        clf1 = LinearDiscriminantAnalysis(solver='lsqr', shrinkage='auto').fit(X, y)
+        clf2 = LinearDiscriminantAnalysis(solver='lsqr', shrinkage=None).fit(X, y)
+
+        X, y = generate_data(n_test, n_features)
+        score_clf1 += clf1.score(X, y)
+        score_clf2 += clf2.score(X, y)
+
+    acc_clf1.append(score_clf1 / n_averages)
+    acc_clf2.append(score_clf2 / n_averages)
+
+
+def generate_data(n_samples, n_features):
+   
+    X, y = make_blobs(n_samples=n_samples, n_features=1, centers=[[-2], [2]])
+    if n_features > 1:
         X = np.hstack([X, np.random.randn(n_samples, n_features - 1)])
     return X, y
 
