@@ -5,3 +5,5 @@ def eggmax(n,k):
 			dp[i][j]=dp[i-1][j-1]+dp[i-1][j]+1
 		if dp[i][j]>=n: return i
 print(eggmax(120,2))
+
+####OKAY 
