@@ -57,7 +57,7 @@ y.append(1)
 y.append(1)
 y.append(1)
 y.append(1)
-y.append(1)
+y.append(6)
 
 z=l+y
 z.view()
