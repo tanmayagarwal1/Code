@@ -116,6 +116,12 @@ def eggs(f,n):
 		if dp[i][j]>=f:
 			return i 
 
+"""
+
+PARANTHESIS CHECKER ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+
 def checker(st):
 	q=[]
 	v={'{':'}','(':')','[':']'}
@@ -214,49 +220,49 @@ SORTS : IN DEVELOPMENT  --------------------------------------------------------
 
 """					
 
-	def mergesort(self):
-		if len(self.a)>1:
-			mid=len(self.a)//2
-			l=self.a[:mid]
-			r=self.a[mid:]
-			self.mergesort(l)
-			self.mergesort(r)
-			i=j=k=0
-			while i<len(l) and j<len(r):
-				if l[i]<r[j]:
-					self.a[k]=l[i]
-					i+=1
-				else:
-					self.a[k]=r[j]
-					j+=1
-				k+=1
-			while i<len(l):
+def mergesort(self):
+	if len(self.a)>1:
+		mid=len(self.a)//2
+		l=self.a[:mid]
+		r=self.a[mid:]
+		self.mergesort(l)
+		self.mergesort(r)
+		i=j=k=0
+		while i<len(l) and j<len(r):
+			if l[i]<r[j]:
 				self.a[k]=l[i]
 				i+=1
-				k+=1
-			while j<len(r):
+			else:
 				self.a[k]=r[j]
 				j+=1
-				k+=1
-			return self.a
-	def heapsort(self):
-		n=len(self.a)
-		for i in range(n//2-1,-1,-1):
-			Heapify(self.a,n,i)
-		for i in range(n-1,0,-1):
-			self.a[0],self,a[i]=self.a[i],self.a[0]
-			Heapify(self.a,i,0)
-	def Heapify(self,arr,n,i):
-		large=i 
-		l=2*i+1
-		r=2*i+2
-		if l<n and arr[large]<arr[l]:
-			large=l 
-		if r<n and arr[larhe]<arr[r]:
-			large=r 
-		if large != i:
-			arr[large],arr[i]=arr[i],arr[large]
-			Heapify(arr,n,large)
+			k+=1
+		while i<len(l):
+			self.a[k]=l[i]
+			i+=1
+			k+=1
+		while j<len(r):
+			self.a[k]=r[j]
+			j+=1
+			k+=1
+		return self.a
+def heapsort(self):
+	n=len(self.a)
+	for i in range(n//2-1,-1,-1):
+		Heapify(self.a,n,i)
+	for i in range(n-1,0,-1):
+		self.a[0],self,a[i]=self.a[i],self.a[0]
+		Heapify(self.a,i,0)
+def Heapify(self,arr,n,i):
+	large=i 
+	l=2*i+1
+	r=2*i+2
+	if l<n and arr[large]<arr[l]:
+		large=l 
+	if r<n and arr[large]<arr[r]:
+		large=r 
+	if large != i:
+		arr[large],arr[i]=arr[i],arr[large]
+		Heapify(arr,n,large)
 
 
 
@@ -272,9 +278,9 @@ def st(self,data):
 	self.left=self.right=None
 rnode=type('rnode',(),{'__init__':st})
 
-def push(root):
+def push(root,data):
 	if root==None:
-		return node(data)
+		return rnode(data)
 	else:
 		if root.data<data:
 			root.right=push(root.right,data)
@@ -317,7 +323,7 @@ def height(root):
 	if root==None:
 		return 0 
 	else:
-		l=heigth(root.left)
+		l=height(root.left)
 		r=height(root.right)
 		if l<r:
 			return r+1
@@ -345,6 +351,42 @@ def show(root):
 		show(root.right)
 	else:
 		return 
+
+
+"""
+
+GRAPHS ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+from collections import defaultdict
+
+def tan(self):
+	self.graph=defaultdict(list)
+def append(self,s,d):
+	self.graph[s].append(d)
+def bfs(self,v):
+	q=[]
+	visited=[False]*100
+	visited[v]=True
+	q.append(v)
+	while q:
+		s=q.pop()
+		print(s)
+		for i in self.graph[s]:
+			if visited[i]==False:
+				q.append(i)
+				visited[i]=True 
+def dfs(self,v):
+	s=set()
+	self.dfsu(s,v)
+def dfsu(self,s,v):
+	s.add(v)
+	print(v)
+	for i in self.graph[v]:
+		if i not in s:
+			self.dfsu(s,i)
+
+graph=type('graph',(),{'__init__':tan,'append':append,'bfs':bfs,'dfs':dfs,'dfsu':dfsu})
 
 """ 
 
@@ -482,10 +524,31 @@ l.append(1)
 l.append(1)
 l.append(1)
 l.append(1)
-print(l.ispal())
+#print(l.ispal())
 #arr=[1,2,3,4,213,123,453]
 #a=A(arr)
 #x=a.mergesort()
+
+
+root=rnode(10)
+push(root,20)
+push(root,21)
+push(root,19)
+push(root,18)
+push(root,5)
+
+#levelorder(root)
+
+g=graph()
+g.append(0,1)
+g.append(1,2)
+g.append(1,3)
+g.append(3,4)
+g.append(1,5)
+#g.bfs(0)
+#print()
+#g.dfs(0)
+
 
 
 
