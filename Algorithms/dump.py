@@ -46,20 +46,4 @@ def adder(self,other):
 		temp2=temp2.next
 	return x 
 ll=type('ll',(),{'__init__':ini1,'append':append,'view':view,'lent':lent,'__add__':adder})
-l=ll()
-l.append(1)
-l.append(2)
-l.append(3)
-l.append(4)
-
-y=ll()
-y.append(1)
-y.append(1)
-y.append(1)
-y.append(1)
-y.append(1)
-
-z=l+y
-z.view()
-
 
