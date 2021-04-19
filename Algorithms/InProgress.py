@@ -1,4 +1,12 @@
 m=n=4
+
+"""
+
+NQUEENS  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+
+
 def nqueen():
 	b=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
 	if nqueenu(b,0)==False:
@@ -26,6 +34,15 @@ def issafequeen(b,row,col):
 			return False 
 	return True 
 
+"""
+
+GOLD MINE  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+"""
+
+
+
 def goldmax(gold):
 	gt=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
 	for col in range(n-1,-1,-1):
@@ -47,6 +64,12 @@ def goldmax(gold):
 	for i in range(n):
 		res=max(res,gt[i][0])
 	return res 
+
+"""
+
+MAZE SOLVER  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+"""
 
 def mazesolver(maze):
 	sol=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
@@ -79,6 +102,12 @@ def printsol(sol):
 			print(sol[i][j],end=" ")
 		print()
 
+"""
+
+EGGS  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+
 def eggs(f,n):
 	dp=[[0]*(n+1)for i in range(f+1)]
 	for i in range(1,f+1):
@@ -100,6 +129,13 @@ def checker(st):
 			else:
 				return "Unbalanced\n"
 	return "Balanced\n"
+
+"""
+
+ARRAYS ALGO  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+"""
 
 class A:
 	def __init__(self,a):
@@ -172,8 +208,12 @@ class A:
 				else:
 					continue 
 
-					
-######Sorts Not Woking ##########################
+
+"""
+SORTS : IN DEVELOPMENT  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+"""					
+
 	def mergesort(self):
 		if len(self.a)>1:
 			mid=len(self.a)//2
@@ -218,7 +258,99 @@ class A:
 			arr[large],arr[i]=arr[i],arr[large]
 			Heapify(arr,n,large)
 
-##########################################################
+
+
+
+""" 
+
+TREES  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+
+def st(self,data):
+	self.data=data 
+	self.left=self.right=None
+rnode=type('rnode',(),{'__init__':st})
+
+def push(root):
+	if root==None:
+		return node(data)
+	else:
+		if root.data<data:
+			root.right=push(root.right,data)
+		elif root.data>data:
+			root.left=push(root.left,data)
+		return root 
+def invert(root):
+	if root:
+		root.left,root.right=root.right,root.left
+		invert(root.left)
+		invert(root.right)
+	else:
+		return root 
+def adder(root):
+	if root==None:
+		return 0 
+	else:
+		return root.data + adder(root.left)+adder(root.right)
+def leaf(root):
+	if root==None:
+		return 0 
+	if root.left==None and root.right==None:
+		return 1 
+	else:
+		return leaf(root.left)+leaf(root.right)
+def subtree(root):
+	if root==None:
+		return 0 
+	res=[-9999999]
+	subtreeu(root,res)
+	return res[0]
+def subtreeu(root,res):
+	if root ==None:
+		return 0 
+	else:
+		curr=root.data+subtreeu(root.left,res)+subtreeu(root.right,res)
+		res[0]=max(res[0],curr)
+		return curr 
+def height(root):
+	if root==None:
+		return 0 
+	else:
+		l=heigth(root.left)
+		r=height(root.right)
+		if l<r:
+			return r+1
+		else:
+			return l+1 
+def levelorder(root):
+	if root==None:
+		return 
+	else:
+		h=height(root)
+		for i in range(h):
+			levelorderu(root,i)
+def levelorderu(root,l):
+	if root==None:
+		return 
+	if l==0:
+		print(root.data)
+	else:
+		levelorderu(root.left,l-1)
+		levelorderu(root.right,l-1)
+def show(root):
+	if root:
+		show(root.left)
+		print(root.data)
+		show(root.right)
+	else:
+		return 
+
+""" 
+
+LISTS  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+"""
 
 def sti(self,data):
 	self.data=data
@@ -337,6 +469,11 @@ def delast(self,n):
 ll=type('ll',(),{'__init__':constu,'view':view,'append':append,'len':lent,'remdup':remdup,'oddeven':oddeven,'ispal':ispal,'reve':reve,'compare':compare,'delast':delast})
 
 
+"""
+
+DRIVER CODE ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+"""
 
 
 l=ll()
@@ -345,19 +482,7 @@ l.append(1)
 l.append(1)
 l.append(1)
 l.append(1)
-
-#l.view()
 print(l.ispal())
-
-
-
-
-
-
-
-
-
-
 #arr=[1,2,3,4,213,123,453]
 #a=A(arr)
 #x=a.mergesort()
