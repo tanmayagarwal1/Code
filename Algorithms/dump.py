@@ -1,35 +1,38 @@
-from collections import defaultdict
-class graph:
-	def __init__(self):
-		self.graph=defaultdict(list)
-	def append(self,s,d):
-		self.graph[s].append(d)
-	def bfs(self,v):
-		q=[]
-		visited=[False]*100 
-		visited[v]=True 
-		q.append(v)
-		while q:
-			s=q.pop()
-			print(s)
-			for i in self.graph[s]:
-				if visited[i]==False:
-					q.append(i)
-					visited[i]==True 
-	def dfs(self,v):
-		s=set()
-		self.dfsu(v,s)
-	def dfsu(self,v,s):
-		s.add(v)
-		print(v)
-		for i in self.graph[v]:
-			if i not in s:
-				self.dfsu(i,s)
-g=graph()
-g.append(0,1)
-g.append(1,2)
-g.append(2,3)
-g.append(4,5)
-g.append(1,4)
-g.append(5,0)
-g.bfs(0)
+n=4
+def mazesolver(maze):
+	sol=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+	if mazesolveru(maze,0,0,sol)==False:
+		return False
+	printsol(sol)
+def mazesolveru(maze,x,y,sol):
+	if x==n-1 and y==n-1 and maze[x][y]==1:
+		sol[x][y]=1
+		return True 
+	if issafe(maze,x,y):
+		if sol[x][y]==1:
+			return False 
+		sol[x][y]=1
+		if mazesolveru(maze,x+1,y,sol):
+			return True 
+		if mazesolveru(maze,x,y+1,sol):
+			return True 
+		if mazesolveru(maze,x-1,y,sol):
+			return True 
+		if mazesolveru(maze,x,y-1,sol):
+			return True 
+		sol[x][y]=0 
+	return False 
+def issafe(maze,x,y):
+	if x>=0 and x<n and y>=0 and y<n and maze[x][y]==1:
+		return True 
+	return False 
+def printsol(sol):
+	for i in range(n):
+		for j in range(n):
+			print(sol[i][j],end=" ")
+		print()
+maze = [  [1, 0, 0, 0],
+          [1, 1, 1, 1],
+          [0, 0, 1, 0],
+          [1, 1, 1, 1] ]
+mazesolver(maze)
