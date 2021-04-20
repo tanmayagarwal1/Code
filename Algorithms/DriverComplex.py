@@ -370,12 +370,13 @@ class ll:
 			if midnode != None:
 				midnode.next=second
 				pre.next=midnode
-			pre.next=second
+			else:
+				pre.next=second
 			return res
 	def reve(self,second):
 		temp=second
 		pre=ne=None
-		while temp.next != None:
+		while temp != None:
 			ne=temp.next 
 			temp.next=pre 
 			pre=temp
@@ -383,6 +384,8 @@ class ll:
 		second=pre
 		return second 
 	def compare(self,head1,head2):
+		head1=head1
+		head2=head2
 		while  head1 and head2:
 			if head1.data==head2.data:
 				head1=head1.next
@@ -413,6 +416,7 @@ class ll:
 		temp=self.head 
 		while temp!=None:
 			res=temp.data+res 
+			temp=temp.next 
 		return res 
 
 '''
@@ -561,8 +565,12 @@ def mergesort(arr):
 			k+=1
 			j+=1
 arr=[5,123,24,34,3,4]
-print(trips(arr))
-
-
-
+l=ll()
+l.append(1)
+l.append(1)
+l.append(1)
+l.append(1)
+l.append(1)
+l.append(1)
+print(l.ispal())
 
