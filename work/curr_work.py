@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Nov 23 00:13:50 2020
+Created on Tue April 20 00:13:50 2021
 
-@author: Nikhil
-@BINFORD ROBOTICS
+@author: Tanmay Agarwal 
 
 Potential Field based planner
 
@@ -23,11 +22,9 @@ args=parser.parse_args()
 vehicle=connect(args.connect, baud=921600,wait_ready=True )
 ser=serial.Serial("/dev/ttyACM0",9600,timeout=1)
 
-# Parameters
-KP = 5.0  # attractive potential gain
-ETA = 100.0  # repulsive potential gain
-AREA_WIDTH = 30.0  # potential area width [m]
-# the number of previous positions used to check oscillations
+KP = 5.0 
+ETA = 100.0 
+AREA_WIDTH = 30.0 
 OSCILLATIONS_DETECTION_LENGTH = 3
 
 show_animation = True
@@ -71,8 +68,7 @@ def calc_attractive_potential(x, y, gx, gy):
     return 0.5 * KP * np.hypot(x - gx, y - gy)
 
 
-def calc_repulsive_potential(x, y, ox, oy, rr):
-    # search nearest obstacle
+def calc_repulsive_potential(x, y, ox, oy, rr)
     minid = -1
     dmin = float("inf")
     for i, _ in enumerate(ox):
@@ -81,7 +77,6 @@ def calc_repulsive_potential(x, y, ox, oy, rr):
             dmin = d
             minid = i
 
-    # calc repulsive potential
     dq = np.hypot(x - ox[minid], y - oy[minid])
 
     if dq <= rr:
@@ -94,7 +89,6 @@ def calc_repulsive_potential(x, y, ox, oy, rr):
 
 
 def get_motion_model():
-    # dx, dy
     motion = [[1, 0],
               [0, 1],
               [-1, 0],
@@ -113,7 +107,7 @@ def oscillations_detection(previous_ids, ix, iy):
     if (len(previous_ids) > OSCILLATIONS_DETECTION_LENGTH):
         previous_ids.popleft()
 
-    # check if contains any duplicates by copying into a set
+
     previous_ids_set = set()
     for index in previous_ids:
         if index in previous_ids_set:
@@ -126,12 +120,10 @@ def oscillations_detection(previous_ids, ix, iy):
 
 def potential_field_planning(sx, sy, gx, gy, ox, oy, reso, rr):
     
-    # calc potential field
+
     pmap, minx, miny = calc_potential_field(gx, gy, ox, oy, reso, rr, sx, sy)
     initi_distX = 0
-    initi_distY = 0
-
-    # search path
+    initi_distY =
     d = np.hypot(sx - gx, sy - gy)
     ix = round((sx - minx) / reso)
     iy = round((sy - miny) / reso)
@@ -139,8 +131,7 @@ def potential_field_planning(sx, sy, gx, gy, ox, oy, reso, rr):
     giy = round((gy - miny) / reso)
 
     if show_animation:
-        draw_heatmap(pmap)
-        # for stopping simulation with the esc key.
+        draw_heatmap(pm
         plt.gcf().canvas.mpl_connect('key_release_event',
                 lambda event: [exit(0) if event.key == 'escape' else None])
         plt.plot(ix, iy, "*k")
@@ -152,16 +143,13 @@ def potential_field_planning(sx, sy, gx, gy, ox, oy, reso, rr):
 
 
     while d >= reso:
-        #check if there is an obstacle
         i = int(ser.readline().decode('utf-8').rstrip())
         if i < 150:
             oX.append(sx + (i/100)+0.1)
             oY.append(sy)
         else:
             dummy = 1
-        # calc potential field
         pmap, minx, miny = calc_potential_field(gx, gy, ox, oy, reso, rr, sx, sy)
-        # search path
         d = np.hypot(sx - gx, sy - gy)
         ix = round((sx - minx) / reso)
         iy = round((sy - miny) / reso)
@@ -169,7 +157,6 @@ def potential_field_planning(sx, sy, gx, gy, ox, oy, reso, rr):
         giy = round((gy - miny) / reso)
         if show_animation:
             draw_heatmap(pmap)
-            # for stopping simulation with the esc key.
             plt.gcf().canvas.mpl_connect('key_release_event',
                    lambda event: [exit(0) if event.key == 'escape' else None])
             plt.plot(ix, iy, "*k")
@@ -180,7 +167,7 @@ def potential_field_planning(sx, sy, gx, gy, ox, oy, reso, rr):
             inx = int(ix + motion[i][0])
             iny = int(iy + motion[i][1])
             if inx >= len(pmap) or iny >= len(pmap[0]) or inx < 0 or iny < 0:
-                p = float("inf")  # outside area
+                p = float("inf") 
                 print("outside potential!")
             else:
                 p = pmap[inx][iny]
@@ -194,15 +181,15 @@ def potential_field_planning(sx, sy, gx, gy, ox, oy, reso, rr):
         yp = iy * reso + miny
         sx = xp
         sy = yp
-        V_x = sx - initi_distX #speed in M/s
-        V_y = sy - initi_distY #speed in M/s
+        V_x = sx - initi_distX
+        V_y = sy - initi_distY 
         time_duration = 1
         Vx=goatMap_x(V_x)
         Vy=goatMap_y(V_y)
         vehicle.channels.overrides['2'] = Vx
         vehicle.channels.overrides['1'] = Vy
         time.sleep(1)
-        #send_velocity(V_x,V_y,0,time_duration)
+      
         
         
         print("velocity in x :", V_x)
@@ -235,21 +222,19 @@ def draw_heatmap(data):
 def main():
     print("potential_field_planning start")
 
-    sx = 0.0  # start x position [m]
-    sy = 0.0  # start y positon [m]
-    gx = 7.0  # goal x position [m]
-    gy = 0.0  # goal y position [m]
-    grid_size = 0.3  # potential grid size [m]
-    robot_radius = 1.2  # robot radius [m] = obstacle radius[m] + extra gap[m] + drone radius[m]
+    sx = 0.0 
+    sy = 0.0 
+    gx = 7.0 
+    gy = 0.0 
+    grid_size = 0.3 
+    robot_radius = 1.2  
 
-    ox = oX #[14,15,16,14,15,16,14,15,16]  # obstacle x position list [m]
-    oy = oY #[0,0,0,-0.5,-0.5,-0.5,0.5,0.5,0.5]  # obstacle y position list [m]
+    ox = oX
+    oy = oY
     
     if show_animation:
         plt.grid(True)
-        plt.axis("equal")
-
-    # path generation
+        plt.axis("equal"
     _, _ = potential_field_planning(
         sx, sy, gx, gy, ox, oy, grid_size, robot_radius)
 
@@ -264,16 +249,14 @@ if __name__ == '__main__':
 
 def send_velocity(velocity_x, velocity_y, velocity_z, duration):
     msg = vehicle.message_factory.set_position_target_local_ned_encode(
-        0,       # time_boot_ms (not used)
-        0, 0,    # target system, target component
-        mavutil.mavlink.MAV_FRAME_LOCAL_NED, # frame
-        0b0000111111000111, # type_mask (only speeds enabled)
-        0, 0, 0, # x, y, z positions (not used)
-        velocity_x, velocity_y, velocity_z, # x, y, z velocity in m/s
-        0, 0, 0, # x, y, z acceleration (not supported yet, ignored in GCS_Mavlink)
-        0, 0)    # yaw, yaw_rate (not supported yet, ignored in GCS_Mavlink) 
-
-    # send command to vehicle on 1 Hz cycle
+        0,    
+        0, 0,   
+        mavutil.mavlink.MAV_FRAME_LOCAL_NED,
+        0b0000111111000111,
+        0, 0, 0,
+        velocity_x, velocity_y, velocity_z, 
+        0, 0, 0, 
+        0,
     for x in range(0,duration):
         vehicle.send_mavlink(msg)
         time.sleep(1)
