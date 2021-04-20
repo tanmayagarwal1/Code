@@ -290,7 +290,7 @@ class ll:
 	def __init__(self):
 		self.head=None
 	def append(self,data):
-		if self.head=None:
+		if self.head==None:
 			self.head=node(data)
 		else:
 			temp=self.head
@@ -370,12 +370,13 @@ class ll:
 			if midnode != None:
 				midnode.next=second
 				pre.next=midnode
-			pre.next=second
+			else:
+				pre.next=second
 			return res
 	def reve(self,second):
 		temp=second
 		pre=ne=None
-		while temp.next != None:
+		while temp != None:
 			ne=temp.next 
 			temp.next=pre 
 			pre=temp
@@ -383,6 +384,8 @@ class ll:
 		second=pre
 		return second 
 	def compare(self,head1,head2):
+		head1=head1
+		head2=head2
 		while  head1 and head2:
 			if head1.data==head2.data:
 				head1=head1.next
@@ -413,6 +416,7 @@ class ll:
 		temp=self.head 
 		while temp!=None:
 			res=temp.data+res 
+			temp=temp.next 
 		return res 
 
 '''
@@ -460,7 +464,7 @@ def trips(arr):
 					k-=1
 	return False
 
-def rempdup(arr):
+def remdup(arr):
 	for i in range(len(arr)-1,0,-1):
 		j=0 
 		while j<i:
@@ -534,7 +538,7 @@ def Heapify(arr,n,i):
 	while r<n and arr[large]<arr[r]:
 		large=r
 	if large != i :
-		arr[large],arr[i]=arr[i],ar[large]
+		arr[large],arr[i]=arr[i],arr[large]
 		Heapify(arr,n,large)
 def mergesort(arr):
 	if len(arr)>1:
@@ -560,7 +564,13 @@ def mergesort(arr):
 			arr[k]=r[j]
 			k+=1
 			j+=1
-
-
-
+arr=[5,123,24,34,3,4]
+l=ll()
+l.append(1)
+l.append(1)
+l.append(1)
+l.append(1)
+l.append(1)
+l.append(1)
+print(l.ispal())
 
