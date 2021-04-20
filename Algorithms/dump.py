@@ -76,8 +76,7 @@ push(root,11)
 push(root,12)
 push(root,9)
 push(root,8)
-push(root,6)
-x=levelorder(root)
+
 
 l=ll()
 l.make(x)
