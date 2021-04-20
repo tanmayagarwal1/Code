@@ -290,7 +290,7 @@ class ll:
 	def __init__(self):
 		self.head=None
 	def append(self,data):
-		if self.head=None:
+		if self.head==None:
 			self.head=node(data)
 		else:
 			temp=self.head
@@ -460,7 +460,7 @@ def trips(arr):
 					k-=1
 	return False
 
-def rempdup(arr):
+def remdup(arr):
 	for i in range(len(arr)-1,0,-1):
 		j=0 
 		while j<i:
@@ -534,7 +534,7 @@ def Heapify(arr,n,i):
 	while r<n and arr[large]<arr[r]:
 		large=r
 	if large != i :
-		arr[large],arr[i]=arr[i],ar[large]
+		arr[large],arr[i]=arr[i],arr[large]
 		Heapify(arr,n,large)
 def mergesort(arr):
 	if len(arr)>1:
@@ -560,6 +560,8 @@ def mergesort(arr):
 			arr[k]=r[j]
 			k+=1
 			j+=1
+arr=[5,123,24,34,3,4]
+print(trips(arr))
 
 
 
