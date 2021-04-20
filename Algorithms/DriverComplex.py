@@ -2,7 +2,7 @@
 
 
 AUTHOR : Tanmay Agarwal ; 20 April 2021
-@Cmplex Algoithms 
+@Complex Algoithms 
 Maintained at a git repo
 
 
