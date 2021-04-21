@@ -1,5 +1,6 @@
 m=n=4
 
+
 """
 
 NQUEENS  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -216,43 +217,42 @@ class A:
 
 
 """
-SORTS : IN DEVELOPMENT  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+SORTS   ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 """					
 
-def mergesort(self):
-	if len(self.a)>1:
-		mid=len(self.a)//2
-		l=self.a[:mid]
-		r=self.a[mid:]
-		self.mergesort(l)
-		self.mergesort(r)
-		i=j=k=0
+def mergesort(arr):
+	if len(arr)>1:
+		mid=len(arr)//2
+		l=arr[:mid]
+		r=arr[mid :]
+		mergesort(l)
+		mergesort(r)
+		i=j=k=0 
 		while i<len(l) and j<len(r):
 			if l[i]<r[j]:
-				self.a[k]=l[i]
+				arr[k]=l[i]
 				i+=1
 			else:
-				self.a[k]=r[j]
+				arr[k]=r[j]
 				j+=1
 			k+=1
 		while i<len(l):
-			self.a[k]=l[i]
+			arr[k]=l[i]
 			i+=1
-			k+=1
+			j+=1
 		while j<len(r):
-			self.a[k]=r[j]
+			arr[k]=r[j]
 			j+=1
 			k+=1
-		return self.a
-def heapsort(self):
-	n=len(self.a)
+def heapsort(arr):
+	n=len(arr)
 	for i in range(n//2-1,-1,-1):
-		Heapify(self.a,n,i)
+		Heapify(arr,n,i)
 	for i in range(n-1,0,-1):
-		self.a[0],self,a[i]=self.a[i],self.a[0]
-		Heapify(self.a,i,0)
-def Heapify(self,arr,n,i):
+		arr[0],arr[i]=arr[i],arr[0]
+		Heapify(arr,i,0)
+def Heapify(arr,n,i):
 	large=i 
 	l=2*i+1
 	r=2*i+2
@@ -263,7 +263,6 @@ def Heapify(self,arr,n,i):
 	if large != i:
 		arr[large],arr[i]=arr[i],arr[large]
 		Heapify(arr,n,large)
-
 
 
 
@@ -549,6 +548,9 @@ g.append(1,5)
 #print()
 #g.dfs(0)
 
+a=[1,213,2,42,3,31]
+mergesort(a)
+print(a)
 
 
 
