@@ -136,6 +136,21 @@ def checker(st):
 	return True 
 
 '''
+12
+'''
+
+import numpy as np 
+run_max=np.maximum.accumulate 
+def water_collector(height):
+	if not height:
+		return 0 
+	a=np.array(height)
+	global_max=np.argmax(a)
+	return np.sum(run_max(a[:global_max])-a[:global_max],dtype=np.int64)+\
+			np.sum(run_max(a[:global_max:-1])-a[:global_max:-1],dtype=np.int64)
+
+
+'''
 6
 '''
 from collections import defaultdict
@@ -572,5 +587,4 @@ l.append(1)
 l.append(1)
 l.append(1)
 l.append(1)
-print(l.ispal())
 
