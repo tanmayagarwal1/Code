@@ -117,6 +117,23 @@ def eggs(f,n):
 		if dp[i][j]>=f:
 			return i 
 
+
+"""
+
+RAIN WATER COLLECTOR ----------------------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+import numpy as np 
+run_max=np.maximum.accumulate 
+def water_collector(height):
+	if not height:
+		return 0 
+	a=np.array(height)
+	global_max=np.argmax(a)
+	return np.sum(run_max(a[:global_max])-a[:global_max],dtype=np.int64)+\
+			np.sum(run_max(a[:global_max:-1])-a[:global_max:-1],dtype=np.int64)
+
+
 """
 
 PARANTHESIS CHECKER ----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -387,6 +404,9 @@ def dfsu(self,s,v):
 
 graph=type('graph',(),{'__init__':tan,'append':append,'bfs':bfs,'dfs':dfs,'dfsu':dfsu})
 
+
+
+
 """ 
 
 LISTS  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -548,9 +568,6 @@ g.append(1,5)
 #print()
 #g.dfs(0)
 
-a=[1,213,2,42,3,31]
-mergesort(a)
-print(a)
 
 
 
