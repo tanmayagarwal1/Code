@@ -1,4 +1,27 @@
-m=n=4
+"""
+
+
+AUTHOR : Tanmay Agarwal ; 20 April 2021
+@InProgress 
+
+ABSTRACT : A culmination of algorithms and strutures that can be used as chunks of any code
+           for present or future purposes. This code driver will be updated reglarly with 
+           systematic optimisations and with new and advanced algorithms. If, cloned from 
+           the git repo, and in the perspective of contribution, kindly make sure the
+           contributions are throroughly tested out on a sub-branch and well optimised 
+           algorithms are implemented. 
+		   Conversely, each and every algorithm also has its own seprate code file  which can be 
+		   looked up at the git repo 
+
+
+NOTE : It has a similar sibling by the name of @DriverComplex. It is a brute force file, best
+	   used for testing out rapid models(Not so well optimised)
+
+SOURCING : Maintained at a git repo @CODE 
+
+
+
+"""
 
 
 """
@@ -6,7 +29,7 @@ m=n=4
 NQUEENS  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 """
-
+m=n=4
 
 def nqueen():
 	b=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
@@ -153,6 +176,22 @@ def checker(st):
 			else:
 				return "Unbalanced\n"
 	return "Balanced\n"
+
+"""
+
+ENCODING ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+
+def encoding(newmap,sti):
+    ogmap='abcdefghijklmnopqrstuvwxyz'
+    q=[]
+    d=dict(zip(newmap,ogmap))
+    for i in sti: 
+        q.append(d[i])
+    s=''.join(q)
+    return s 
+
 
 """
 
