@@ -1,28 +1,27 @@
 """
 
+AUTHOR :   Tanmay Agarwal 
 
-AUTHOR : Tanmay Agarwal ; 20 April 2021
-@InProgress 
+DATE :     20 April 2021 ( DATE OF ORGINATION )
 
-ABSTRACT : A culmination of algorithms and strutures that can be used as chunks of any code
+FILE :     @InProgress 
+
+ABSTRACT : A culmination of algorithms and strutures that can be used as chunks of code
            for present or future purposes. This code driver will be updated reglarly with 
-           systematic optimisations and with new and advanced algorithms. If, cloned from 
+           systematic optimisations and with new advanced algorithms. If, cloned from 
            the git repo, and in the perspective of contribution, kindly make sure the
-           contributions are throroughly tested out on a sub-branch and well optimised 
-           algorithms are implemented. 
+           contributions are thoroughly tested out on a sub-branch and well optimised 
+           algorithms are implemented before a pull request has been issued. 
 		   Conversely, each and every algorithm also has its own seprate code file  which can be 
 		   looked up at the git repo 
 
 
-NOTE : It has a similar sibling by the name of @DriverComplex. It is a brute force file, best
-	   used for testing out rapid models(Not so well optimised)
+NOTE : 	   It has a similar sibling by the name of @DriverComplex. It is a brute force file, best
+	       used for testing out rapid models ( Not so well optimised )
 
 SOURCING : Maintained at a git repo @CODE 
 
-
-
 """
-
 
 """
 
@@ -102,7 +101,7 @@ def mazesolver(maze):
 	printsol(sol)
 def mazsolveru(maze,x,y,sol):
 	if x==n-1 and y==n-1 and maze[x][y]==1:
-		sol[x][y]==1
+		sol[x][y]=1
 		return True 
 	if issafe(maze,x,y):
 		sol[x][y]=1
@@ -267,7 +266,7 @@ class A:
 			while j<n:
 				if self.a[i]==self.a[j]:
 					print(f"{self.a[i]} is a dup")
-					j+=1					
+					j+=1			
 				else:
 					j+=1
 	def reve(self):
@@ -614,11 +613,6 @@ l.append(1)
 l.append(1)
 l.append(1)
 l.append(1)
-#print(l.ispal())
-#arr=[1,2,3,4,213,123,453]
-#a=A(arr)
-#x=a.mergesort()
-
 
 root=rnode(10)
 push(root,20)
@@ -627,7 +621,6 @@ push(root,19)
 push(root,18)
 push(root,5)
 
-#levelorder(root)
 
 g=graph()
 g.append(0,1)
@@ -635,9 +628,7 @@ g.append(1,2)
 g.append(1,3)
 g.append(3,4)
 g.append(1,5)
-#g.bfs(0)
-#print()
-#g.dfs(0)
+
 
 g = graph1(9)
 g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
@@ -650,7 +641,6 @@ g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
           [8, 11, 0, 0, 0, 0, 1, 0, 7],
           [0, 0, 2, 0, 0, 0, 6, 7, 0]
           ]
-
 
 
 
