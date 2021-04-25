@@ -1,6 +1,5 @@
 """
 
-
 AUTHOR :   Tanmay Agarwal 
 
 DATE :     20 April 2021 ( DATE OF ORGINATION )
@@ -22,9 +21,8 @@ NOTE : 	   It has a similar sibling by the name of @DriverComplex. It is a brute
 
 SOURCING : Maintained at a git repo @CODE 
 
-
-
 """
+
 """
 
 NQUEENS  ---------------------------------------------------------------------------------------------------------------------------------------------------------------
