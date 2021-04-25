@@ -10,7 +10,7 @@ ABSTRACT : A culmination of algorithms and strutures that can be used as chunks 
            for present or future purposes. This code driver will be updated reglarly with 
            systematic optimisations and with new advanced algorithms. If, cloned from 
            the git repo, and in the perspective of contribution, kindly make sure the
-           contributions are throroughly tested out on a sub-branch and well optimised 
+           contributions are thoroughly tested out on a sub-branch and well optimised 
            algorithms are implemented before a pull request has been issued. 
 		   Conversely, each and every algorithm also has its own seprate code file  which can be 
 		   looked up at the git repo 
