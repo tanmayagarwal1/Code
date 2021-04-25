@@ -267,7 +267,7 @@ class A:
 			while j<n:
 				if self.a[i]==self.a[j]:
 					print(f"{self.a[i]} is a dup")
-					j+=1					
+					j+=1			
 				else:
 					j+=1
 	def reve(self):
@@ -650,7 +650,6 @@ g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
           [8, 11, 0, 0, 0, 0, 1, 0, 7],
           [0, 0, 2, 0, 0, 0, 6, 7, 0]
           ]
-
 
 
 
