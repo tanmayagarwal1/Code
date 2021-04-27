@@ -113,6 +113,21 @@ def water_collector(height):
 	return np.sum(run_max(a[:global_max])-a[:global_max],dtype=np.int64)+\
 			np.sum(run_max(a[:global_max:-1])-a[:global_max:-1],dtype=np.int64)
 
+def lcs(x,y):
+	n=len(x)
+	m=len(y)
+	lcs=[[0 for i in range(m+1)]for j in range(n+1)]
+	for i in range(n+1):
+		for j in range(m+1):
+			if i==0 and j==0:
+				lcs[i][j]=0 
+			elif x[i-1]==y[j-1]:
+				lcs[i][j]=lcs[i-1][j-1]+1
+			else:
+				lcs[i][j]=max(lcs[i-1][j],lcs[i][j-1])
+	return lcs[n][m] 
+
+
 class graph:
 	def __init__(self,v):
 		self.v=v
@@ -507,8 +522,7 @@ l1.append(5)
 l1.append(6)
 
 l3=l+l1
-l3.view()
 
 
-
+print(lcs('tanmay','agarwal'))
 
