@@ -149,6 +149,24 @@ def water_collector(height):
 	return np.sum(run_max(a[:global_max])-a[:global_max],dtype=np.int64)+\
 			np.sum(run_max(a[:global_max:-1])-a[:global_max:-1],dtype=np.int64)
 
+'''
+13
+'''
+def lcs(x,y):
+	n=len(x)
+	m=len(y)
+	lcs=[[0 for i in range(n+1)]for j in range(m+1)]
+	for i in range(m+1):
+		for j in range(n+1):
+			if i==0 or j==0:
+				lcs[i][j]=0 
+			elif x[j-1]==y[i-1]:
+				lcs[i][j]=lcs[i-1][j-1]+1
+			else:
+				lcs[i][j]=max(lcs[i-1][j],lcs[i][j-1])
+	return lcs[m][n]
+
+
 
 '''
 6
@@ -263,7 +281,7 @@ def innvert(root):
 		invert(root.right)
 	else:
 		return 
-def max(root):
+def maxi(root):
 	if root==None:
 		return 0
 	if root.right==None:
