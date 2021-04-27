@@ -1,14 +1,13 @@
 n=4
 def printSolution( sol ):
-     
-    for i in sol:
-        for j in i:
-            print(str(j) + " ", end ="")
-        print("")
+    for i in range(n):
+        for j in range(n):
+            print(sol[i][j],end=" ")
+        print()
 def mazesolver(maze):
-    sol=[[0 for i in range(4)]for j in range(4)]
+    sol=[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
     if mazesolveutil(maze,0,0,sol)==False:
-        print("no solution")
+        return False 
     printSolution(sol) 
 def issafe(maze,x,y):
     if x >= 0 and x<n and y >= 0 and y<n and maze[x][y]==1:
@@ -21,8 +20,7 @@ def mazesolveutil(maze,x,y,sol):
     if issafe(maze,x,y)==True:
         if sol[x][y]==1:        	
             return False 
-        sol[x][y]=1
-        
+        sol[x][y]=1        
         if mazesolveutil(maze,x+1,y,sol)==True:
             return True
         if mazesolveutil(maze,x,y+1,sol)==True:
@@ -32,7 +30,7 @@ def mazesolveutil(maze,x,y,sol):
         if mazesolveutil(maze,x,y-1,sol)==True:
             return True
         sol[x][y]=0
-        return False
+    return False
 
 maze = [  [1, 0, 0, 0],
           [1, 1, 1, 1],
