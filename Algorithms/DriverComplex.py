@@ -192,7 +192,24 @@ def Houses(arr,budget):
 		res=max(res,q[i])
 	return res 
 
+'''
 
+15
+'''
+
+def unique(arr):
+	n=len(arr)
+	s=set()
+	for i in range(n-1,0,-1):
+		j=0 
+		while j<i:
+			if arr[i]==arr[j]:
+				s.add(arr[j])
+				j+=1
+			j+=1
+	for i in range(n):
+		if arr[i] not in s:
+			print(arr[i])
 
 '''
 6
@@ -657,4 +674,4 @@ l.append(1)
 l.append(1)
 l.append(1)
 l.append(1)
-print(Houses(arr,100))
+

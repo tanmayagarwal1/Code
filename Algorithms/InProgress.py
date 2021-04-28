@@ -375,6 +375,20 @@ def window_max(arr,k):
 			q.append(arr[i+k])
 	return maximum
 
+#Unique elements in string 
+def unique(arr):
+	n=len(arr)
+	s=set()
+	for i in range(n-1,0,-1):
+		j=0 
+		while j<i:
+			if arr[j]==arr[i]:
+				s.add(arr[j])
+				j+=1
+			j+=1
+	for i in range(n):
+		if arr[i] not in s:
+			print(arr[i])
 
 """
 SORTS   ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -717,6 +731,5 @@ g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
           ]
 
 a=[213,4,23213,1234,312,3123,3242,3213,214213,12314,32]
-print(Houses(a,20000))
 
 
