@@ -210,6 +210,35 @@ class graph1:
 
 """
 
+GOOGLE KICKSTART HOUSE BUYING PROBLEM 
+
+"""
+
+def Houses(arr,budget):
+	n=len(arr)
+	q=[]
+	for i in range(n-1,-1,-1):
+		if arr[i]>budget:
+			continue
+		initial=arr[i]
+		count=1 
+		for j in range(n):
+			if i==j:
+				continue
+			if arr[j]+initial<=budget:
+				initial=initial+arr[j]
+				count+=1
+		q.append(count)
+	if not q:
+		return 0 
+	res=q[0]
+	for i in range(len(q)):
+		res=max(res,q[i])
+	return res 
+
+
+"""
+
 PARANTHESIS CHECKER ----------------------------------------------------------------------------------------------------------------------------------------------------
 
 """
@@ -688,5 +717,6 @@ g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
           ]
 
 a=[213,4,23213,1234,312,3123,3242,3213,214213,12314,32]
+print(Houses(a,20000))
 
 
