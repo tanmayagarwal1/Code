@@ -322,6 +322,30 @@ class A:
 				else:
 					continue 
 
+#WINDOW SLIDING ALGORITHMS
+def window_sum(arr,k): # This is used to get the maximum sum of the given window size subarray 
+	n=len(arr)
+	window_max=sum(arr[:k])
+	maximum=float('-inf')
+	for i in range(n-k):  #n-k will give us the number of times the window needs to move. Hence loop is of n-k 
+		window_max=window_max-arr[i]+arr[i+k] #subtract the first element and add the next element
+		maximum=max(maximum,window_max)
+	return maximum
+
+def window_max(arr,k):
+	n=len(arr)
+	q=[]
+	maximum=float('-inf')
+	for i in range(k): #Initialise the queue with the elements the window size covers 
+		q.append(arr[i])
+	for i in range(n-k+1):
+		for j in range(k):
+			maximum=max(maximum,q[j])
+		q.pop(0)
+		if i+k<n:
+			q.append(arr[i+k])
+	return maximum
+
 
 """
 SORTS   ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -662,5 +686,7 @@ g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
           [8, 11, 0, 0, 0, 0, 1, 0, 7],
           [0, 0, 2, 0, 0, 0, 6, 7, 0]
           ]
+
+a=[213,4,23213,1234,312,3123,3242,3213,214213,12314,32]
 
 

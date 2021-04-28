@@ -549,6 +549,32 @@ def target(arr,sum):
 				return i,j 
 			else:
 				continue 
+
+def window_max_sum(arr,k):
+	n=len(arr)
+	res=0
+	window_max=sum(arr[:k])
+	for i in range(n-k):
+		window_max=window_max-arr[i]+arr[i+k]
+		res=max(res,window_max)
+	return res 
+
+def windwo_max_element(arr,k):
+	n=len(arr)
+	q=[]
+	res=float('-inf') 
+	for i in range(k):
+		q.append(arr[i])
+	for i in range(n-k+1):
+		for j in range(k):
+			res=max(res,q[j])
+		q.pop(0)
+		if i+k<n:
+			q.append(arr[i+k])
+	return res 
+
+
+
 '''
 
 11
@@ -597,7 +623,7 @@ def mergesort(arr):
 			arr[k]=r[j]
 			k+=1
 			j+=1
-arr=[5,123,24,34,3,4]
+arr=[5,123,24,34,3,4,324234,1]
 l=ll()
 l.append(1)
 l.append(1)
@@ -606,3 +632,4 @@ l.append(1)
 l.append(1)
 l.append(1)
 
+print(windwo_max_element(arr,2))
