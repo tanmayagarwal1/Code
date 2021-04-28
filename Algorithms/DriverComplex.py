@@ -166,6 +166,32 @@ def lcs(x,y):
 				lcs[i][j]=max(lcs[i-1][j],lcs[i][j-1])
 	return lcs[m][n]
 
+'''
+
+14
+'''
+def Houses(arr,budget):
+	n=len(arr)
+	q=[]
+	for i in range(n-1,-1,-1):
+		if arr[i]>budget:
+			continue
+		initial= arr[i]
+		count=1
+		for j in range(n):
+			if i==j:
+				continue
+			if arr[j]+initial<budget:
+				initial=initial+arr[j]
+				count+=1
+		q.append(count)
+	if not q:
+		return 0 
+	res=q[0]
+	for i in range(len(q)):
+		res=max(res,q[i])
+	return res 
+
 
 
 '''
@@ -623,7 +649,7 @@ def mergesort(arr):
 			arr[k]=r[j]
 			k+=1
 			j+=1
-arr=[5,123,24,34,3,4,324234,1]
+arr=[90,20,40,90]
 l=ll()
 l.append(1)
 l.append(1)
@@ -631,5 +657,4 @@ l.append(1)
 l.append(1)
 l.append(1)
 l.append(1)
-
-print(windwo_max_element(arr,2))
+print(Houses(arr,100))
