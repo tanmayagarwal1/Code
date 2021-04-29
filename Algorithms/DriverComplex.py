@@ -212,6 +212,28 @@ def unique(arr):
 			print(arr[i])
 
 '''
+
+16
+'''
+def Blocks(arr,interests):
+	count=0 
+	q=[]
+	for i in range(len(arr)):
+		q.append(0)
+	for i in arr:
+		for j,k in i.items():
+			for z in range(len(interests)):
+				if j==interests[z] and k==True:
+					q[count]+=1
+		count +=1 
+	res=q[0]
+	for i in range(len(q)):
+		res=max(res,q[i])
+	return (q.index(res))+1
+
+
+
+'''
 6
 '''
 from collections import defaultdict
@@ -674,4 +696,6 @@ l.append(1)
 l.append(1)
 l.append(1)
 l.append(1)
+
+
 
