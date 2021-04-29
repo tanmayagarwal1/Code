@@ -481,6 +481,17 @@ class ll:
 			temp=ne
 		second=pre
 		return second 
+	def rotate(self,k):
+		temp=nth=self.head
+		count=0
+		while temp.next != None:
+			temp=temp.next 
+		temp.next=self.head 
+		while count<k-1:
+			count+=1
+			nth=nth.next
+		self.head=nth.next 
+		nth.next=None
 	def compare(self,head1,head2):
 		head1=head1
 		head2=head2
@@ -696,6 +707,8 @@ l.append(1)
 l.append(1)
 l.append(1)
 l.append(1)
+l.rotate(2)
+l.view()
 
 
 

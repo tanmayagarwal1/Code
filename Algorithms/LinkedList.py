@@ -130,6 +130,18 @@ class ll:
             temp=temp.next
             count+=1
         pre.next=temp.next
+    def rotate(self,k):
+        temp=self.head 
+        count=0
+        while temp.next!=None:
+            temp=temp.next
+        temp.next=self.head 
+        nth=self.head 
+        while count<k-1:
+            count+=1
+            nth=nth.next 
+        self.head=nth.next 
+        nth.next=None
 
 
 
@@ -220,10 +232,7 @@ li4.append(3)
 li4.append(4)
 li4.append(5)
 li4.append(6)
-li4.append(1)
-li4.append(8)
-li4.append(9)
-li4.remdup()
+li4.rotate(2)
 li4.show()
 #############################
 li2.dele(3)
