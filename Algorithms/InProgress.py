@@ -210,7 +210,7 @@ class graph1:
 
 """
 
-GOOGLE KICKSTART HOUSE BUYING PROBLEM 
+GOOGLE KICKSTART HOUSE BUYING PROBLEM -----------------------------------------------------------------------------------------------------------------------------------
 
 """
 
@@ -236,6 +236,28 @@ def Houses(arr,budget):
 		res=max(res,q[i])
 	return res 
 
+"""
+
+GOOGLE CODING - INTEREST BLOCKS ----------------------------------------------------------------------------------------------------------------------------------------
+
+"""
+
+def Blocks(arr,interests):
+	q=[]
+	for i in range(len(arr)):
+		q.append(0)
+	count=0 
+	for i in arr:
+		for j,k in i.items():
+			for z in range(len(interests)):
+				if j==interests[z] and k==True:
+					q[count]+=1
+		count +=1
+	res=q[0]
+	for i in range(len(q)):
+		res=max(res,q[i])
+	return (q.index(res))+1
+					
 
 """
 
@@ -731,5 +753,19 @@ g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
           ]
 
 a=[213,4,23213,1234,312,3123,3242,3213,214213,12314,32]
+
+
+
+
+
+arr=[{'gym':False,'school':True,'store':False},  \
+	 {'gym':True,'school':False,'store':False},  \
+     {'gym':True,'school':True,'store':False},   \
+     {'gym':False,'school':True,'store':False},  \
+     {'gym':False,'school':True,'store':True},]
+
+
+interests=['gym','store']
+print(Blocks(arr,interests))
 
 
