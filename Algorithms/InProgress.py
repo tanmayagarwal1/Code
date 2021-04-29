@@ -694,7 +694,19 @@ def compare(self,head,second):
 			return False 
 	if head1==None and head2==None:
 		return True 
-
+def rotate(self,k):
+	n=self.len()
+	count=0 
+	temp=self.head 
+	while temp.next != None:
+		temp=temp.next 
+	temp.next=self.head 
+	nth=self.head 
+	while count<k-1:
+		count+=1
+		nth=nth.next 
+	self.head=nth.next 
+	nth.next=None
 def delast(self,n):
 	k=self.len()
 	res=k-n 
@@ -706,7 +718,9 @@ def delast(self,n):
 		temp=temp.next 
 	pre.next= temp.next 
 	temp.next=None
-ll=type('ll',(),{'__init__':constu,'view':view,'append':append,'len':lent,'remdup':remdup,'oddeven':oddeven,'ispal':ispal,'reve':reve,'compare':compare,'delast':delast})
+ll=type('ll',(),{'__init__':constu,'view':view,'append':append,'len':lent, \
+				 'remdup':remdup,'oddeven':oddeven,'ispal':ispal,'reve':reve,\
+				 'compare':compare,'delast':delast,'rotate':rotate})
 
 
 """
@@ -718,10 +732,12 @@ DRIVER CODE --------------------------------------------------------------------
 
 l=ll()
 l.append(1)
-l.append(1)
-l.append(1)
-l.append(1)
-l.append(1)
+l.append(2)
+l.append(3)
+l.append(4)
+l.append(5)
+l.rotate(2)
+l.view()
 
 root=rnode(10)
 push(root,20)
@@ -766,6 +782,5 @@ arr=[{'gym':False,'school':True,'store':False},  \
 
 
 interests=['gym','store']
-print(Blocks(arr,interests))
 
 
