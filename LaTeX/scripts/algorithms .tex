@@ -1,6 +1,7 @@
 \documentclass{article}
 \newcommand{\nd}{\noindent}
 \usepackage{amsmath}
+\usepackage{garamondlibre}
 \parskip 3mm
 \begin{document}
 \title{ALGORITHMS}
@@ -65,6 +66,37 @@ which is the prev pointer. Hence we say if list is even : head.next=pre and temp
 
 \nd else if the list is odd, temp is the last odd node. hence temp.next= pre and head.next = None 
  
+ \section{Unique Algorithms} 
+ 
+In this section I will cover a few unique and different algorithms. 
+\subsection{Max Houses listing - Google Kickstart}
+\subsubsection{Problem Details}
+In this problem we are given an array and a budget. The array contains listing of the houses. Now we need to output how many total number of houses can be bought based on our current budget.
+
+\subsubsection{solution}
+we initialise an empty queue in the beginning. Then we start our i index from the last to go all the way to the first(Can be done from first to last too). We check whether the current value at i exceeds our budget or not. If yes, we skip this value of i and move on to the next one. If no, we declare an initial variable which is nothing but the initial value of the house we bought. Now we also start count=1 becasue we have bought the house that i currently receides on. Now we start j from 0 all the way through to the end. If i==j, we just skip that value of j. Now if the value of $initial+arr[j]<budget$, new initial value will be $initial+arr[j]$ and count will be incremented(as we have now procured this house). we continue this loop. Now when we come out of the j loop we append the count value to q. This will be done for all the count values in i loop. This is done so that we know how many houses can be bought when we start from different i values. In the end we take the maximum element from q and display it. If q is empty that means that we cannot buy any house, and we return 0 
+
+\subsection{Blocks}
+\subsubsection{Problem Details}
+In this problem we are given a list of dictionaries and an array which contains the places of interests to us. Each new dictionary represents a block for a place which have gyms, schools etc etc. Now we need tp write a code to find out which block is best situated for us to buy a house in given our interests. 
+
+\subsubsection{Solution}
+We first define a function which takes the array of dictionaries and the interests as input. Now we initialise a queue with 0's to the length of the array. each index in our queue is an analogy to a block. Now we define count to use as an index into the queue. Initially looping over the array gives us dictionaries. Hence 'i' is a dictionary. Now for every key and value in that dictionaries, We check whether they match our interests, and if they do we also check whether that particular value is True. If Yes, we increment the value at that block's index in the queue(which is accessed using count). Finally count is incremented, Specifying that we are moving to the next block and finally the INDEX of max element of queue is returned. Index specifies the block number and hence index is returned. (We add 1 to the index so that its more human readable)
+
+\subsection{Window Sliding Algorithm}
+In this type of problem we basically initialise an analogue to a window which is a queue. As we will see in one of the problems, initialising a queue is not important. The size of this queue, or the window, will be explicitly specified by the user. Now one major difference is whatever main loop we run, the running of the loop condition will be n-k times where n is the length of the original array and k is the length of the window we are sliding over it. To move a window we have to remove the first element and add the i+k'th element. (i is the variable being iterated over n-k times)
+
+\subsubsection{Sum of a given subarray(Window)}
+In this problem we need to find the maximum subarray of the required size. The size will be explicitly specified by the user and the subarray is is treated as a window. Now instead of initialising a queue(window max) to the first k elements of the array, we initialise a variable which will be equal to the sum of the first k elements of the main array. Now we start a loop which will run n-k times and over each iteration we update the $window max$ by subtracting the first element of the array, arr[i] and adding the $i+k'th$ element. This is nothing but a double edged queue and our answer will be the maximum of all the iterations 
+
+\subsubsection{Max Element in an array using Window sliding} 
+The problem description is pretty self contained. Now we first initialise a queue with the first k elements of the array. Now we loop over n-k+1 times. (If we don't add +1 we will be skipping the last element). Now we start another loop within our main loop which runs over the length of k and we find the max element. Then after we come out of the second loop we remove the first element using .pop(0) and add the i+k'th element. Before adding we check whether or not we are exceeding 'n' or not. 
+
+\subsection{String starting with}
+In This algorithm we are given an array of strings and we need to find which of the strings in the array match the other given separate string. To to this we loop over the array using 'i' which gives us access to individual strings and then we loop over the length of the other string using j. We say that if i[j]==sti[j](If the two match) then increment a count. Else, We break because we want the words to match in order(The first letter of the string in the array must match the first letter of our explicit string). Then inside the second loop itself we check, if count==len(sti), which means all starting elements match, we append the array string in a queue and finally return the queue
+
+
+
 
 
 \section{Quick Foot Notes}

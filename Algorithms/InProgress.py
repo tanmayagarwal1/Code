@@ -412,6 +412,21 @@ def unique(arr):
 		if arr[i] not in s:
 			print(arr[i])
 
+#Strings startign with Algorithm 
+def StartingWith(arr,sti):
+	n=len(arr)
+	q=[]
+	for i in arr:
+		count=0 
+		for j in range(len(sti)):
+			if i[j]==sti[j]:
+				count+=1
+			else:
+				break 
+			if count==len(sti):
+				q.append(i)
+	return q 
+
 """
 SORTS   ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -782,5 +797,7 @@ arr=[{'gym':False,'school':True,'store':False},  \
 
 
 interests=['gym','store']
+
+
 
 
