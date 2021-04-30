@@ -1,3 +1,7 @@
+"""
+If in detail refer Algorithm Documentation. 
+
+"""
 def maxSum(arr,k):
 	n=len(arr)
 	window=sum(arr[:k])

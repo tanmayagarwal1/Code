@@ -231,6 +231,24 @@ def Blocks(arr,interests):
 		res=max(res,q[i])
 	return (q.index(res))+1
 
+'''
+
+17
+'''
+def StartingWith(arr,sti):
+	q=[]
+	n=len(arr)
+	for i in arr:
+		count=0 
+		for j in range(len(sti)):
+			if i[j]==sti[j]:
+				count+=1
+			else:
+				break 
+			if count==len(sti):
+				q.append(i)
+	return q 
+
 
 
 '''
