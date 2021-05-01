@@ -561,7 +561,16 @@ def show(root):
 		show(root.right)
 	else:
 		return 
-
+def kthanc(root,v,k):
+	if root == None:
+		return None
+	if(root.data == v or (kthanc(root.left,v,k)) or (kthanc(root.right,v,k))):
+		if k[0]>0:
+			k[0]-=1
+		elif k[0]==0:
+			print(root.data)
+			return None 
+		return root 
 
 """
 
