@@ -33,7 +33,7 @@ str="[{}]"
 print(isvalid(str))
 
 #EGGS_MAX 
-print(superEggDrop(2,100))
+print(superEggDrop(100,2))
 
 #WATER_COLLECTOR
 print(water_collector([0,1,0,2,1,0,1,3,2,1,2,1]))
@@ -117,9 +117,9 @@ g.append(1,2)
 g.append(1,3)
 g.append(3,4)
 g.append(1,5)
-g.bfs()
+g.bfs(0)
 print()
-g.dfs()
+g.dfs(0)
 
 #Graph for dijkstra 
 g = graph(9)

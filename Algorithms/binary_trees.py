@@ -142,6 +142,16 @@ def height(root):
             return l+1
         else: 
             return r+1
+def kthanc(root,v,k):
+    if root == None:
+        return None
+    if(root.data == v or (kthanc(root.left,v,k)) or (kthanc(root.right,v,k))):
+        if k[0]>0:
+            k[0]-=1
+        elif k[0]==0:
+            print(root.data)
+            return None 
+        return root 
 
 root=node(5)
 push(root,10)

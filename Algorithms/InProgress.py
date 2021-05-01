@@ -561,7 +561,16 @@ def show(root):
 		show(root.right)
 	else:
 		return 
-
+def kthanc(root,v,k):
+	if root == None:
+		return None
+	if(root.data == v or (kthanc(root.left,v,k)) or (kthanc(root.right,v,k))):
+		if k[0]>0:
+			k[0]-=1
+		elif k[0]==0:
+			print(root.data)
+			return None 
+		return root 
 
 """
 
@@ -744,59 +753,6 @@ DRIVER CODE --------------------------------------------------------------------
 
 """
 
-
-l=ll()
-l.append(1)
-l.append(2)
-l.append(3)
-l.append(4)
-l.append(5)
-l.rotate(2)
-l.view()
-
-root=rnode(10)
-push(root,20)
-push(root,21)
-push(root,19)
-push(root,18)
-push(root,5)
-
-
-
-g=graph()
-g.append(0,1)
-g.append(1,2)
-g.append(1,3)
-g.append(3,4)
-g.append(1,5)
-
-
-g = graph1(9)
-g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
-          [4, 0, 8, 0, 0, 0, 0, 11, 0],
-          [0, 8, 0, 7, 0, 4, 0, 0, 2],
-          [0, 0, 7, 0, 9, 14, 0, 0, 0],
-          [0, 0, 0, 9, 0, 10, 0, 0, 0],
-          [0, 0, 4, 14, 10, 0, 2, 0, 0],
-          [0, 0, 0, 0, 0, 2, 0, 1, 6],
-          [8, 11, 0, 0, 0, 0, 1, 0, 7],
-          [0, 0, 2, 0, 0, 0, 6, 7, 0]
-          ]
-
-a=[213,4,23213,1234,312,3123,3242,3213,214213,12314,32]
-
-
-
-
-
-arr=[{'gym':False,'school':True,'store':False},  \
-	 {'gym':True,'school':False,'store':False},  \
-     {'gym':True,'school':True,'store':False},   \
-     {'gym':False,'school':True,'store':False},  \
-     {'gym':False,'school':True,'store':True},]
-
-
-interests=['gym','store']
 
 
 

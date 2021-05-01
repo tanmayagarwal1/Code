@@ -717,16 +717,6 @@ def mergesort(arr):
 			arr[k]=r[j]
 			k+=1
 			j+=1
-arr=[90,20,40,90]
-l=ll()
-l.append(1)
-l.append(1)
-l.append(1)
-l.append(1)
-l.append(1)
-l.append(1)
-l.rotate(2)
-l.view()
 
 
 
