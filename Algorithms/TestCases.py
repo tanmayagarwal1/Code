@@ -134,6 +134,16 @@ g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
           [0, 0, 2, 0, 0, 0, 6, 7, 0]
           ]
 
+##MINIMUM COST 
+cost= [[1, 2, 3],
+       [4, 8, 2],
+       [1, 5, 3]]
+
+print(minimumCostPath(cost, 2, 2))
+
+#REGULAR EXPRESSION 
+print(regularexpression("mississippi","mis*is*ip*."))
+
 
 
 

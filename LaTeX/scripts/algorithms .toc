@@ -1,19 +1,25 @@
-\contentsline {section}{\numberline {1}NQueens Problem}{2}%
-\contentsline {section}{\numberline {2}MazeSolve}{2}%
-\contentsline {subsection}{\numberline {2.1}Difference between NQueens and MazeSolver}{3}%
-\contentsline {section}{\numberline {3}Gold Mine Problem}{3}%
-\contentsline {section}{\numberline {4}Linked Lists}{4}%
-\contentsline {subsection}{\numberline {4.1}Remove Duplicates Algo}{4}%
-\contentsline {subsection}{\numberline {4.2}Odd Even Algo}{4}%
-\contentsline {section}{\numberline {5}Unique Algorithms}{5}%
-\contentsline {subsection}{\numberline {5.1}Max Houses listing - Google Kickstart}{5}%
-\contentsline {subsubsection}{\numberline {5.1.1}Problem Details}{5}%
-\contentsline {subsubsection}{\numberline {5.1.2}solution}{5}%
-\contentsline {subsection}{\numberline {5.2}Blocks}{5}%
-\contentsline {subsubsection}{\numberline {5.2.1}Problem Details}{5}%
-\contentsline {subsubsection}{\numberline {5.2.2}Solution}{6}%
-\contentsline {subsection}{\numberline {5.3}Window Sliding Algorithm}{6}%
-\contentsline {subsubsection}{\numberline {5.3.1}Sum of a given subarray(Window)}{6}%
-\contentsline {subsubsection}{\numberline {5.3.2}Max Element in an array using Window sliding}{6}%
-\contentsline {subsection}{\numberline {5.4}String starting with}{7}%
-\contentsline {section}{\numberline {6}Quick Foot Notes}{7}%
+\contentsline {section}{\numberline {1}NQueens Problem}{3}%
+\contentsline {section}{\numberline {2}MazeSolve}{3}%
+\contentsline {subsection}{\numberline {2.1}Difference between NQueens and MazeSolver}{4}%
+\contentsline {section}{\numberline {3}Gold Mine Problem}{4}%
+\contentsline {section}{\numberline {4}Linked Lists}{5}%
+\contentsline {subsection}{\numberline {4.1}Remove Duplicates Algo}{5}%
+\contentsline {subsection}{\numberline {4.2}Odd Even Algo}{5}%
+\contentsline {section}{\numberline {5}Unique Algorithms}{6}%
+\contentsline {subsection}{\numberline {5.1}Max Houses listing - Google Kickstart}{6}%
+\contentsline {subsubsection}{\numberline {5.1.1}Problem Details}{6}%
+\contentsline {subsubsection}{\numberline {5.1.2}solution}{6}%
+\contentsline {subsection}{\numberline {5.2}Blocks}{6}%
+\contentsline {subsubsection}{\numberline {5.2.1}Problem Details}{6}%
+\contentsline {subsubsection}{\numberline {5.2.2}Solution}{7}%
+\contentsline {subsection}{\numberline {5.3}Window Sliding Algorithm}{7}%
+\contentsline {subsubsection}{\numberline {5.3.1}Sum of a given subarray(Window)}{7}%
+\contentsline {subsubsection}{\numberline {5.3.2}Max Element in an array using Window sliding}{7}%
+\contentsline {subsection}{\numberline {5.4}String starting with}{8}%
+\contentsline {section}{\numberline {6}Dynamic Programming}{8}%
+\contentsline {subsection}{\numberline {6.1}Least Common Subsequence}{8}%
+\contentsline {subsection}{\numberline {6.2}Eggs Dropping}{9}%
+\contentsline {subsection}{\numberline {6.3}Minimum Cost Path}{9}%
+\contentsline {subsection}{\numberline {6.4}Gold Mine}{10}%
+\contentsline {subsection}{\numberline {6.5}Regular Expression Matching (Leetcode Hard)}{10}%
+\contentsline {section}{\numberline {7}Quick Foot Notes}{11}%
