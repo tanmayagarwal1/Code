@@ -1,7 +1,6 @@
 \documentclass{article}
 \newcommand{\nd}{\noindent}
 \usepackage{amsmath}
-\usepackage{garamondlibre}
 \parskip 3mm
 \begin{document}
 \title{ALGORITHMS}
@@ -95,8 +94,70 @@ The problem description is pretty self contained. Now we first initialise a queu
 \subsection{String starting with}
 In This algorithm we are given an array of strings and we need to find which of the strings in the array match the other given separate string. To to this we loop over the array using 'i' which gives us access to individual strings and then we loop over the length of the other string using j. We say that if i[j]==sti[j](If the two match) then increment a count. Else, We break because we want the words to match in order(The first letter of the string in the array must match the first letter of our explicit string). Then inside the second loop itself we check, if count==len(sti), which means all starting elements match, we append the array string in a queue and finally return the queue
 
+\section{Dynamic Programming} 
+In This section I will be going through dynamic programming related algorithms, and explain how the tables are being declared(Their range) and also the basic logic behind each problem. Else the problems themselves are pretty self contained.
 
+\subsection{Least Common Subsequence}
+In this problem we define a function which takes two strings namely : X and Y. Now we find the lengths of X and Y respectively. Let the length of X be m and length of Y be n. We create a dp array of zero's like :
+lcs=[[0 for j in range(m+1)]0 for i in range(n+1)] \textbf{Notice that the outside loops will have the number of rows}. i.e : our array has n+1 rows and m+1 cols. Don't forget this. 
 
+\nd Now the first question is why are we initialising to the lengths of m+1 and n+1 and not just m and n only. This is becuase for our dynamic programming solution to work, we need the dp array to have an extra row and column which will be initialised to all zeros. This extra row and column is the 0th row and the 0th column. Hence we start our for loops now. 
+
+\nd The for loops are : First will be the row loop : for i in range(n+1) and next will be the cols loop : for j in range(m+1)
+Now we say that if i or j is 0,  lcs[i][j]=0. This just shows that we are initialising the entire 0th row and 0th col to 0. This step can be skipped(but it is not skipped in the code) by changing our for loop values to (1,n+1) and (1,m+1), because while creating the array itself we have initialised everything to zero. 
+
+\nd The next step is pretty trivial. If the strings match, we fill the table with diagonal element +1 or if they don't we take the maximum of the upper and the left element. 
+
+\nd Note that strings are compared with $x[i-1]==y[j-1]$. We have to keep i-1 and j-1 as, when we start comparing our i and j will be starting from 1(As the i and j's zero value is gone in assigning zeros in the table) but we want the strings to be compared from the start which is their zeroth index. Hence i-1 and j-1. 
+
+\nd Also note that when we use i to index into X and j to index into y, make sure that i and j are the indexes looping over their indexed string lengths. Means as length of X is m, and i is used to index into x(x[i-1]), i must be in the m+1 for loop and same for Y.
+
+\subsection{Eggs Dropping} 
+In this problem we are given number of floors : f, and the number of eggs : n. We use the same approach as LCS. We first define a dp array with 0's for f+1 rows and n+1 cols. Remember from above that the number of rows loops comes outside. Now we skip the part we did not in LCS. Instead of starting our loops from 0, we start from 1 as the 0'th row and cols have already been initialised with zero at the time of declaration. 
+
+\nd The condition to update any of the cell is .. nothing. We just iteratively say that dp[i][j]dp[i-1][j-1]+dp[i-1][j]+1. The dp[i-1][j-1] stands for egg break than go down. The second dp[i-1][j] signifies that no egg break hence, go down and +1 is for the current floor count. 
+
+\nd If $dp[i][j]>=f$, we return i 
+
+\subsection{Minimum Cost Path} 
+We are given a 3xs matrix named Cost. We need to output the minimum cost it will take to traverse the grid from the start point(0,0) to the given points(x,y)
+This problem is slightly different from The above two. In this problem also we define a dp array. But here we do not need an extra row and a column to be initialised to zero. Hence the size of array declaration is m and n only( and not m+1 and n+1 like previous two)(Here m and n are pre-defined sizes and global variables which specify number of columns and row). Now here what we do is the first element of the dp array will be the same as the first element of the cost array(Starting Point). Then we explicitly first will out the first row, and then the first column and then the rest of the array. 
+
+\nd So first we declare only one for loop going over the 0th row only. Hence for i in range(m) : dp[0][i]=dp[0][i-1]+cost[0][i]
+That is the 0th row is filled with the cost+ the previous dp col value. 
+
+\nd Same for the 0th col. For i in range(m): dp[i][0]=dp[i-1][0]+cost[i][0]
+
+\nd Now as the 0th row and col are filled we start our nested for loop with 1,m and 1,n and fill the dp with the minimum of dp's left,right and diagonal adding the current cost to it. 
+
+We return dp[x][y]
+
+\subsection{Gold Mine} 
+
+Even the gold mine problem is a dynamic programming problem which is similar to the previous one and not the first two, but it has already been discussed with great rigour in section 3. Please refer to that 
+
+\subsection{Regular Expression Matching (Leetcode Hard)}
+Given an input string (s) and a pattern (p), implement regular expression matching with support for '.' and '*' where: 
+\begin{equation*}
+\cdot \,\,\,\,\,\ \text{Matches any single character}
+\end{equation*}
+\begin{equation*}
+* \,\,\,\,\, \text{Matches zero or more of the preceding element.}
+\end{equation*}
+
+The matching should cover the entire input string (not partial).
+
+\nd Now this problem lives up to its reputation of being a hard leet code problem. To solve this we use the similar array declaration of the first two problem( Which means we declare one extra row and column), To make things easier, let the columns represent the pattern, and rows be the string. Which means if the length of pattern in x and string is y, then cols=x+1 and rows=y+1. But in this problem instead of initialising to 0's we initialise to False, as the answer is boolean
+
+\nd \textbf{NOTE : This is an emphasis of what has been said in the first problem itself. The ith element of the string or the pattern is represented as the i+1'th element in the dp array as it has m+1 and n+1, rows and cols. Hence in a loop(the loop begins from one obviously) the first string element will be i-1 and the previous string element will be i-2 and so on}
+
+\nd After declaring the array we set the dp[0][0] to be True. Then we only iterate over the cols of the 0th row to check for * in the pattern string. If there is * then the dp array value at that cell will be equal to the second previous one. This means : for i in range(1,m): if pattern[i-1]=='*' : dp[0][i]=dp[0][i-2]  
+
+\nd Next we start our nested loop from again..1. Now if the pattern is . or the string matches with the pattern element, dp of the current cell will be equal to the dp of the diagonal element 
+
+\nd if the pattern is *, initially we assign the secind previous value of dp to the current value of dp. Then we check if the previous value of pattern(This will be j-2 index) is equal to . or the previous of pattern matches the current of string, then we assign the top value of dp to current value of dp. 
+
+\nd In the end we return dp[m][n]
 
 
 \section{Quick Foot Notes}

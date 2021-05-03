@@ -1,3 +1,8 @@
+'''
+This file contains a few Dynamic programming examples in one 
+
+'''
+
 def regularexpression(sti,pattern):
 	m=len(sti)
 	n=len(pattern)
@@ -11,8 +16,8 @@ def regularexpression(sti,pattern):
 			if pattern[j-1]=='.' or (sti[i-1]==pattern[j-1]):
 				dp[i][j]=dp[i-1][j-1]
 			if pattern[j-1]=='*':
-				dp[i][j]=dp[i][j-2]
-				if pattern[j-2]=='.' or sti[i-1]==pattern[j-2]:
+				dp[i][j]=dp[i][j-2] # If * assign the secind previous 
+				if pattern[j-2]=='.' or sti[i-1]==pattern[j-2]: # Check for matching with second previous in pattern sring 
 					dp[i][j]=dp[i-1][j]
 	return dp[m][n]
 

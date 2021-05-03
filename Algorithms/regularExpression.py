@@ -10,7 +10,7 @@ def regularexpression(sti,pattern):
             dp[0][i]=dp[0][i-2]
     for i in range(1,m+1):
         for j in range(1,n+1):
-            if pattern[j-1]==0 or(sti[i-1]==pattern[j-1]):
+            if pattern[j-1]=='.' or(sti[i-1]==pattern[j-1]):
                 dp[i][j]=dp[i-1][j-1]
             elif pattern[j-1]=='*':
                 dp[i][j]=dp[i][j-2]
