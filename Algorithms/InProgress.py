@@ -697,6 +697,7 @@ def ispal(self):
 		else:
 			pre.next=second
 		return res 
+
 def reve(self,second):
 	temp=second
 	pre=ne=None
@@ -718,6 +719,31 @@ def compare(self,head,second):
 			return False 
 	if head1==None and head2==None:
 		return True 
+
+def numComponents(self,arr):
+ #This is a leet code problem to find connected components given an array subset
+	s=set()
+	d=dict()
+	for i in arr:
+		s.add(i)
+		d[i]=False 
+	temp=self.head 
+	count=0 
+	while temp.next != None:
+		if temp.data in s and temp.next.data in s:
+			count+=1 
+			s.remove(temp.data)
+			d[temp.data]=True 
+			d[temp.next.data]=True 
+			temp=temp.next 
+		else:
+			temp=temp.next 
+	for i,j in d.items():
+		if j==False:
+			count+=1
+	return count
+
+
 def rotate(self,k):
 	n=self.len()
 	count=0 
