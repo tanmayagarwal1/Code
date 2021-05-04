@@ -33,7 +33,7 @@ str="[{}]"
 print(isvalid(str))
 
 #EGGS_MAX 
-print(superEggDrop(100,2))
+print(egg_max(100,2))
 
 #WATER_COLLECTOR
 print(water_collector([0,1,0,2,1,0,1,3,2,1,2,1]))
@@ -67,6 +67,7 @@ print(dups(1))
 
 #KADENS 
 a=[123,2324,3212,32,-132,-12312,234,-213,23,232,-23,12,3123,12,-23,13,-32134324]
+print(kadens(a))
 
 #TARGET SUM 
 a=[123,4,3212,334,123,123,43,3,123,234]
@@ -142,7 +143,7 @@ cost= [[1, 2, 3],
 print(minimumCostPath(cost, 2, 2))
 
 #REGULAR EXPRESSION 
-print(regularexpression("mississippi","mis*is*ip*."))
+print(regularexpression("c","a*c"))
 
 
 
