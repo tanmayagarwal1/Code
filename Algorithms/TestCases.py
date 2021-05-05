@@ -84,7 +84,7 @@ print(subarraysum([1,2,3,4,5,6,7,8,9,10,11],3))
 print(maxelement([1,2,3,4,5,6,7,8,9,10,11],3))
 
 #STRING STARTING WITH 
-print(Startingwith(['tanmay','shivika','tanuuuu'],'tan'))
+print(StartingWith(['tanmay','shivika','tanuuuu'],'tan'))
 
 
 #LISTS 
