@@ -29,8 +29,8 @@ heapsort(a)
 print(a)
 
 #PARANTHESIS
-str="[{}]"
-print(isvalid(str))
+sti="[{}]"
+print(checker(sti))
 
 #EGGS_MAX 
 print(egg_max(100,2))
@@ -63,7 +63,7 @@ print(trips(a))
 
 #DUPS 
 a=[1,1,2,34,34,231,21]
-print(dups(1))
+dups(a) # Print statement already in the fucntion 
 
 #KADENS 
 a=[123,2324,3212,32,-132,-12312,234,-213,23,232,-23,12,3123,12,-23,13,-32134324]
@@ -75,13 +75,13 @@ t=46
 print(target(a,t))
 
 #UNIQUE 
-print(unique('tanmay'))	
+unique('tanmay') #Print statement in function 
 
 #WINDOW MAX 
-'''add functions name'''([1,2,3,4,5,6,7,8,9,10,11],3)
+print(subarraysum([1,2,3,4,5,6,7,8,9,10,11],3))
 
 #SUBARRAY SUM(WINDOW)
-'''add functions name'''([1,2,3,4,5,6,7,8,9,10,11],3)
+print(maxelement([1,2,3,4,5,6,7,8,9,10,11],3))
 
 #STRING STARTING WITH 
 print(Startingwith(['tanmay','shivika','tanuuuu'],'tan'))
@@ -140,12 +140,14 @@ cost= [[1, 2, 3],
        [4, 8, 2],
        [1, 5, 3]]
 
-print(minimumCostPath(cost, 2, 2))
+print(minimumPath(cost, 2, 2))
 
 #REGULAR EXPRESSION 
 print(regularexpression("c","a*c"))
 
+#LCS 
 
+print(lcs('tanmay','shivika'))
 
 
 
