@@ -7,22 +7,22 @@ def ClosedIslands(grid):
 	for i in range(1,n):
 		for j in range(1,m):
 			if grid[i][j]==0:
-				if IsClosedIsland(grid,i,j):
+				if self.IsClosedIsland(grid,i,j):
 					count+=1
 	return count
 
-def IsClosedIsland(grid,i,j):
+def IsClosedIsland(self,grid,i,j):
 	if grid[i][j]!=0:
 		return True 
-	if Onperimeter(grid,i,j):
+	if self.Onperimeter(grid,i,j):
 		return False 
 	grid[i][j]=-1
-	left=IsClosedIsland(grid,i+1,j)
-	right=IsClosedIsland(grid,i-1,j)
-	up=IsClosedIsland(grid,i,j+1)
-	down=IsClosedIsland(grid,i,j-1)
+	left=self.IsClosedIsland(grid,i+1,j)
+	right=self.IsClosedIsland(grid,i-1,j)
+	up=self.IsClosedIsland(grid,i,j+1)
+	down=self.IsClosedIsland(grid,i,j-1)
 	return right and left and up and down 
-def Onperimeter(grid,i,j):
+def Onperimeter(self,grid,i,j):
 	if i==0 or j==0 or i==len(grid)-1 or j==len(grid[0])-1:
 		return True  
 	return False
