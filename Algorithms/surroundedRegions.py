@@ -28,7 +28,7 @@ def checker(grid,i,j):
 	if i<0 or i>=len(grid) or j<0 or j>=len(grid[0]) or grid[i][j] != "O":
 		return 
 	grid[i][j]="$"
-	neighbours=((0,1),(0,-1),(1,0),(-1,0),)
+	neighbours=((0,1),(0,-1),(1,0),(-1,0))
 	for dx, dy in neighbours: 
 		checker(grid , i+dx , j+dy)
 	return 
@@ -44,5 +44,4 @@ grid = [ ["X","X","X","X"],
 		 ["X","O","O","X"],
          ["X","X","O","X"],
          ["X","O","X","X"]]
-
 IsSurround(grid)
