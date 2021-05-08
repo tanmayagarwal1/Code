@@ -1,0 +1,31 @@
+\contentsline {section}{\numberline {1}\textbf {\fontsize {15pt}{12pt}\selectfont {ABSTRACT}}}{5}{section.1}%
+\contentsline {section}{\numberline {2}\textbf {\fontsize {15pt}{12pt}\selectfont {INTRODUCTION}}}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}\textbf {\fontsize {14pt}{12pt}\selectfont {MOTIVATION}}}{7}{subsection.2.1}%
+\contentsline {section}{\numberline {3}\textbf {\fontsize {15pt}{12pt}\selectfont {LITERATURE REVIEW}}}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}\textbf {\fontsize {14pt}{12pt}\selectfont {METHODS USED IN BASE PAPER}}}{9}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}\textbf {PEDAGOGICAL METHODS OF MINING DATA}}{9}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}\textbf {SELECTING FEATRES BASED ON SPECTRAL CLASSIFICATION}}{9}{subsubsection.3.1.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}\textbf {INTRICACIES IN THE SIGMOID PARAMETERS}}{9}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}\textbf {DEPLOYMENT OF ITERATIVE DICHOTOMISER 3}}{10}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}\textbf {GAUSSIAN KERNEL PARAMETERS}}{10}{subsubsection.3.1.5}%
+\contentsline {section}{\numberline {4}\textbf {\fontsize {15pt}{12pt}\selectfont {PROBLEM IDENTIFICATION}}}{11}{section.4}%
+\contentsline {subsection}{\numberline {4.1}\textbf {\fontsize {14pt}{12pt}\selectfont {OBJECTIVE}}}{12}{subsection.4.1}%
+\contentsline {section}{\numberline {5}\textbf {\fontsize {15pt}{12pt}\selectfont {SYSTEM METHODOLOGY}}}{13}{section.5}%
+\contentsline {subsection}{\numberline {5.1}\textbf {\fontsize {14pt}{12pt}\selectfont {DATA CLEANING}}}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}\textbf {\fontsize {14pt}{12pt}\selectfont {TRAIN AND TEST SPLIT}}}{16}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}\textbf {\fontsize {14pt}{12pt}\selectfont {MODEL FITTING AND TESTING}}}{17}{subsection.5.3}%
+\contentsline {section}{\numberline {6}\textbf {\fontsize {15pt}{12pt}\selectfont {TECHNOLOGY DESIGN}}}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}\textbf {\fontsize {14pt}{12pt}\selectfont {ENVIRONEMNT SETUP}}}{19}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}\textbf {\fontsize {14pt}{12pt}\selectfont {LIBRARIES AND DEPENDENCIES}}}{21}{subsection.6.2}%
+\contentsline {section}{\numberline {7}\textbf {\fontsize {15pt}{12pt}\selectfont {IMPLEMENTATION}}}{22}{section.7}%
+\contentsline {subsection}{\numberline {7.1}\textbf {\fontsize {14pt}{12pt}\selectfont {CODE}}}{23}{subsection.7.1}%
+\contentsline {subsubsection}{\numberline {7.1.1}\textbf {DATA PREPROCESSING}}{24}{subsubsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.2}\textbf {\fontsize {14pt}{12pt}\selectfont {TESTING}}}{27}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}\textbf {TESTING THE BASE PAPER MODELS}}{27}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}\textbf {DESIGNING AND TESTING PROPOSED MODELS}}{29}{subsubsection.7.2.2}%
+\contentsline {paragraph}{ARTIFICIAL NEURAL NETWORKS}{29}{section*.18}%
+\contentsline {paragraph}{PARTICLE SWARM OPTIMIZATION}{32}{section*.20}%
+\contentsline {section}{\numberline {8}\textbf {\fontsize {15pt}{12pt}\selectfont {RESULTS AND VALIDATION}}}{37}{section.8}%
+\contentsline {section}{\numberline {9}\textbf {\fontsize {15pt}{12pt}\selectfont {CONCLUSION}}}{38}{section.9}%
+\contentsline {subsection}{\numberline {9.1}\textbf {\fontsize {14pt}{12pt}\selectfont {FUTURE SCOPE}}}{39}{subsection.9.1}%
+\contentsline {section}{\numberline {10}\textbf {\fontsize {15pt}{12pt}\selectfont {REFERENCES}}}{40}{section.10}%
