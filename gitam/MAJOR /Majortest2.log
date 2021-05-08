@@ -1,0 +1,575 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.11)  8 MAY 2021 11:37
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**Majortest2.tex
+(./Majortest2.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06>
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/adjustbox/adjustbox.sty
+Package: adjustbox 2019/01/04 v1.2 Adjusting TeX boxes (trim, clip, ...)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks15
+\XKV@tempa@toks=\toks16
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count175
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/adjustbox/adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/adjustbox/trimclip.sty
+Package: trimclip 2018/04/08 v1.1 Trim and clip general TeX material
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/collectbox/collectbox.sty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box45
+)
+\tc@llx=\dimen137
+\tc@lly=\dimen138
+\tc@urx=\dimen139
+\tc@ury=\dimen140
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen141
+\adjbox@Height=\dimen142
+\adjbox@Depth=\dimen143
+\adjbox@Totalheight=\dimen144
+\adjbox@pwidth=\dimen145
+\adjbox@pheight=\dimen146
+\adjbox@pdepth=\dimen147
+\adjbox@ptotalheight=\dimen148
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count176
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/varwidth/varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box46
+\sift@deathcycles=\count177
+\@vwid@loff=\dimen149
+\@vwid@roff=\dimen150
+))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen151
+))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen152
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count178
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count179
+\leftroot@=\count180
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count181
+\DOTSCASE@=\count182
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box47
+\strutbox@=\box48
+\big@size=\dimen153
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count183
+\c@MaxMatrixCols=\count184
+\dotsspace@=\muskip16
+\c@parentequation=\count185
+\dspbrk@lvl=\count186
+\tag@help=\toks18
+\row@=\count187
+\column@=\count188
+\maxfields@=\count189
+\andhelp@=\toks19
+\eqnshift@=\dimen154
+\alignsep@=\dimen155
+\tagshift@=\dimen156
+\tagwidth@=\dimen157
+\totwidth@=\dimen158
+\lineht@=\dimen159
+\@envbody=\toks20
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen160
+\captionmargin@=\dimen161
+\captionwidth=\dimen162
+\caption@tempdima=\dimen163
+\caption@indent=\dimen164
+\caption@parindent=\dimen165
+\caption@hangindent=\dimen166
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count190
+\c@continuedfloat=\count191
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
+\c@subfigure=\count192
+\c@subtable=\count193
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count194
+\Gm@cntv=\count195
+\c@Gm@tempcnt=\count196
+\Gm@bindingoffset=\dimen167
+\Gm@wd@mp=\dimen168
+\Gm@odd@mp=\dimen169
+\Gm@even@mp=\dimen170
+\Gm@layoutwidth=\dimen171
+\Gm@layoutheight=\dimen172
+\Gm@layouthoffset=\dimen173
+\Gm@layoutvoffset=\dimen174
+\Gm@dimlist=\toks22
+)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count197
+\l__pdf_internal_box=\box49
+)
+(./Majortest2.aux
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+
+LaTeX Warning: Label `fig:test1' multiply defined.
+
+
+LaTeX Warning: Label `fig:test2' multiply defined.
+
+)
+\openout1 = `Majortest2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
+2.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+(/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count198
+\scratchdimen=\dimen175
+\scratchbox=\box50
+\nofMPsegments=\count199
+\nofMParguments=\count266
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count267
+\MPscratchDim=\dimen176
+\MPnumerator=\count268
+\makeMPintoPDFobject=\count269
+\everyMPtoPDFconversion=\toks24
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 470.89313pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 652.70622pt, 71.13188pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=470.89313pt
+* \textheight=652.70622pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-38.1381pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(./Majortest2.toc
+Overfull \hbox (18.55548pt too wide) in paragraph at lines 7--7
+ [][] []\OT1/ptm/b/n/14.4 SELECTING FEATRES BASED ON SPEC-TRAL CLAS- 
+ []
+
+[1
+
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+\tf@toc=\write3
+\openout3 = `Majortest2.toc'.
+
+
+[2] (./Majortest2.lof [3])
+\tf@lof=\write4
+\openout4 = `Majortest2.lof'.
+
+ [4] [5] [6] [7] [8] [9] [10] [11] [12]
+<flow.png, id=42, 644.1666pt x 429.2838pt>
+File: flow.png Graphic file (type png)
+<use flow.png>
+Package pdftex.def Info: flow.png  used on input line 97.
+(pdftex.def)             Requested size: 386.50294pt x 257.57227pt.
+ [13 <./flow.png>]
+<datacleaning.png, id=49, 644.1666pt x 431.211pt>
+File: datacleaning.png Graphic file (type png)
+<use datacleaning.png>
+Package pdftex.def Info: datacleaning.png  used on input line 112.
+(pdftex.def)             Requested size: 354.29272pt x 237.16678pt.
+ [14 <./datacleaning.png>]
+<visual.png, id=54, 1275.76625pt x 735.74875pt>
+File: visual.png Graphic file (type png)
+<use visual.png>
+Package pdftex.def Info: visual.png  used on input line 125.
+(pdftex.def)             Requested size: 408.25354pt x 235.4444pt.
+ [15 <./visual.png>]
+<split.png, id=59, 644.1666pt x 429.2838pt>
+File: split.png Graphic file (type png)
+<use split.png>
+Package pdftex.def Info: split.png  used on input line 138.
+(pdftex.def)             Requested size: 354.29272pt x 236.10681pt.
+ [16 <./split.png>]
+<models.png, id=64, 644.1666pt x 429.2838pt>
+File: models.png Graphic file (type png)
+<use models.png>
+Package pdftex.def Info: models.png  used on input line 151.
+(pdftex.def)             Requested size: 483.12376pt x 321.96205pt.
+ [17 <./models.png>]
+Overfull \hbox (1.79552pt too wide) in paragraph at lines 164--165
+\OT1/ptm/m/n/14.4 We have also im-ple-mented the par-ti-cle swarm op-ti-mi-sa-t
+ion al-go-rithms from scratch
+ []
+
+[18]
+<python.png, id=72, 225.84375pt x 225.84375pt>
+File: python.png Graphic file (type png)
+<use python.png>
+Package pdftex.def Info: python.png  used on input line 178.
+(pdftex.def)             Requested size: 169.38239pt x 169.38239pt.
+ [19 <./python.png>]
+<colab2.png, id=78, 778.91pt x 344.28625pt>
+File: colab2.png Graphic file (type png)
+<use colab2.png>
+Package pdftex.def Info: colab2.png  used on input line 194.
+(pdftex.def)             Requested size: 272.62259pt x 120.50198pt.
+ [20 <./colab2.png>]
+<tf.png, id=83, 770.88pt x 433.62pt>
+File: tf.png Graphic file (type png)
+<use tf.png>
+Package pdftex.def Info: tf.png  used on input line 212.
+(pdftex.def)             Requested size: 153.03882pt x 86.08066pt.
+<sk.png, id=84, 1204.5pt x 648.4225pt>
+File: sk.png Graphic file (type png)
+<use sk.png>
+Package pdftex.def Info: sk.png  used on input line 218.
+(pdftex.def)             Requested size: 153.03882pt x 82.37842pt.
+ [21 <./tf.png> <./sk.png>]
+[22]
+<part1.png, id=93, 1280.785pt x 698.61pt>
+File: part1.png Graphic file (type png)
+<use part1.png>
+Package pdftex.def Info: part1.png  used on input line 248.
+(pdftex.def)             Requested size: 448.28146pt x 244.51715pt.
+ [23 <./part1.png>]
+<part3.png, id=98, 1315.91624pt x 722.7pt>
+File: part3.png Graphic file (type png)
+<use part3.png>
+Package pdftex.def Info: part3.png  used on input line 265.
+(pdftex.def)             Requested size: 282.53516pt x 155.16794pt.
+
+Overfull \hbox (47.0886pt too wide) in paragraph at lines 265--266
+ [][] 
+ []
+
+<part4.png, id=99, 1322.9425pt x 733.74126pt>
+File: part4.png Graphic file (type png)
+<use part4.png>
+Package pdftex.def Info: part4.png  used on input line 271.
+(pdftex.def)             Requested size: 282.53516pt x 156.69887pt.
+
+Overfull \hbox (47.0886pt too wide) in paragraph at lines 271--272
+ [][] 
+ []
+
+[24 <./part3.png> <./part4.png>]
+<part5.png, id=105, 903.375pt x 668.4975pt>
+File: part5.png Graphic file (type png)
+<use part5.png>
+Package pdftex.def Info: part5.png  used on input line 288.
+(pdftex.def)             Requested size: 316.18599pt x 233.97763pt.
+ [25 <./part5.png>]
+<part7.png, id=111, 666.49pt x 366.36874pt>
+File: part7.png Graphic file (type png)
+<use part7.png>
+Package pdftex.def Info: part7.png  used on input line 299.
+(pdftex.def)             Requested size: 233.275pt x 128.23097pt.
+ [26 <./part7.png>]
+<1.png, id=116, 831.105pt x 136.51pt>
+File: 1.png Graphic file (type png)
+<use 1.png>
+Package pdftex.def Info: 1.png  used on input line 314.
+(pdftex.def)             Requested size: 457.10916pt x 75.08072pt.
+ [27 <./1.png>]
+<dt.png, id=121, 993.7125pt x 180.675pt>
+File: dt.png Graphic file (type png)
+<use dt.png>
+Package pdftex.def Info: dt.png  used on input line 332.
+(pdftex.def)             Requested size: 329.62375pt x 59.93169pt.
+
+Overfull \hbox (94.17719pt too wide) in paragraph at lines 332--333
+ [][] 
+ []
+
+<kn.png, id=122, 993.7125pt x 180.675pt>
+File: kn.png Graphic file (type png)
+<use kn.png>
+Package pdftex.def Info: kn.png  used on input line 338.
+(pdftex.def)             Requested size: 329.62375pt x 59.93169pt.
+
+Overfull \hbox (94.17719pt too wide) in paragraph at lines 338--339
+ [][] 
+ []
+
+<lr.png, id=123, 991.705pt x 169.63374pt>
+File: lr.png Graphic file (type png)
+<use lr.png>
+Package pdftex.def Info: lr.png  used on input line 349.
+(pdftex.def)             Requested size: 329.62375pt x 56.38309pt.
+
+Overfull \hbox (94.17719pt too wide) in paragraph at lines 349--350
+ [][] 
+ []
+
+<sv.png, id=124, 993.7125pt x 180.675pt>
+File: sv.png Graphic file (type png)
+<use sv.png>
+Package pdftex.def Info: sv.png  used on input line 355.
+(pdftex.def)             Requested size: 329.62375pt x 59.93169pt.
+
+Overfull \hbox (94.17719pt too wide) in paragraph at lines 355--356
+ [][] 
+ []
+
+[28 <./dt.png> <./kn.png> <./lr.png> <./sv.png>] [29]
+<nn.png, id=138, 1162.3425pt x 668.4975pt>
+File: nn.png Graphic file (type png)
+<use nn.png>
+Package pdftex.def Info: nn.png  used on input line 400.
+(pdftex.def)             Requested size: 464.92877pt x 267.39426pt.
+ [30 <./nn.png>] [31]
+Overfull \hbox (0.35483pt too wide) in paragraph at lines 416--417
+\OT1/ptm/m/n/14.4 elim-i-nate the prob-lem of tra-di-tional op-ti-mi-sa-tion he
+uris-tic al-go-rithms, Bio-inspired
+ []
+
+[32] [33]
+<ps1.png, id=156, 185.0112pt x 161.8848pt>
+File: ps1.png Graphic file (type png)
+<use ps1.png>
+Package pdftex.def Info: ps1.png  used on input line 448.
+(pdftex.def)             Requested size: 164.81187pt x 144.2178pt.
+<ps2.png, id=157, 184.5294pt x 131.0496pt>
+File: ps2.png Graphic file (type png)
+<use ps2.png>
+Package pdftex.def Info: ps2.png  used on input line 454.
+(pdftex.def)             Requested size: 204.83736pt x 145.48076pt.
+<imp.png, id=158, 559.08875pt x 135.50626pt>
+File: imp.png Graphic file (type png)
+<use imp.png>
+Package pdftex.def Info: imp.png  used on input line 464.
+(pdftex.def)             Requested size: 335.45583pt x 81.30437pt.
+<par.png, id=159, 724.7075pt x 515.9275pt>
+File: par.png Graphic file (type png)
+<use par.png>
+Package pdftex.def Info: par.png  used on input line 476.
+(pdftex.def)             Requested size: 235.44656pt x 167.61147pt.
+<swa.png, id=160, 724.7075pt x 512.91624pt>
+File: swa.png Graphic file (type png)
+<use swa.png>
+Package pdftex.def Info: swa.png  used on input line 482.
+(pdftex.def)             Requested size: 235.44656pt x 166.6332pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[34 <./ps1.png> <./ps2.png> <./imp.png>]
+<vari.png, id=165, 721.69624pt x 155.58125pt>
+File: vari.png Graphic file (type png)
+<use vari.png>
+Package pdftex.def Info: vari.png  used on input line 494.
+(pdftex.def)             Requested size: 433.02109pt x 93.34946pt.
+ [35 <./par.png> <./swa.png> <./vari.png>]
+<driver.png, id=172, 1068.99374pt x 308.15125pt>
+File: driver.png Graphic file (type png)
+<use driver.png>
+Package pdftex.def Info: driver.png  used on input line 506.
+(pdftex.def)             Requested size: 427.58992pt x 123.2583pt.
+ [36 <./driver.png>] [37]
+Overfull \hbox (4.24413pt too wide) in paragraph at lines 556--557
+\OT1/ptm/m/n/14.4 puts. Our neu-ral net-works out-per-form them all and high pa
+r-al-leliz-abil-ity is achieved
+ []
+
+[38] [39] (./Majortest2.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4705 strings out of 480608
+ 72281 string characters out of 5903629
+ 317721 words of memory out of 5000000
+ 20521 multiletter control sequences out of 15000+600000
+ 549933 words of font info for 58 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 55i,8n,96p,890b,416s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
+e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/
+2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
+020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2020/texmf-
+dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on Majortest2.pdf (39 pages, 2176351 bytes).
+PDF statistics:
+ 218 PDF objects out of 1000 (max. 8388607)
+ 115 compressed objects within 2 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+

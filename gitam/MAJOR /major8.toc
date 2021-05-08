@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}\textbf {\fontsize {15pt}{12pt}\selectfont {ABSTRACT}}}{5}%
+\contentsline {section}{\numberline {2}\textbf {\fontsize {15pt}{12pt}\selectfont {INTRODUCTION}}}{6}%
+\contentsline {subsection}{\numberline {2.1}\textbf {\fontsize {14pt}{12pt}\selectfont {MOTIVATION}}}{7}%
+\contentsline {section}{\numberline {3}\textbf {\fontsize {15pt}{12pt}\selectfont {LITERATURE REVIEW}}}{8}%
+\contentsline {subsection}{\numberline {3.1}\textbf {\fontsize {14pt}{12pt}\selectfont {METHODS USED IN BASE PAPER}}}{9}%
+\contentsline {subsubsection}{\numberline {3.1.1}\textbf {DATA MINING TECHNIQUES}}{9}%
+\contentsline {subsubsection}{\numberline {3.1.2}\textbf {SPECTRAL FEATURE SELECTION}}{9}%
+\contentsline {subsubsection}{\numberline {3.1.3}\textbf {INFLUENCE OF THE SIGMOID FUNCTION PARAMETERS}}{9}%
+\contentsline {subsubsection}{\numberline {3.1.4}\textbf {IMPLEMENTATION OF ID-3 LEARNING ALGORITHM}}{10}%
+\contentsline {subsubsection}{\numberline {3.1.5}\textbf {GAUSSIAN KERNEL PARAMETERS}}{10}%
+\contentsline {section}{\numberline {4}\textbf {\fontsize {15pt}{12pt}\selectfont {PROBLEM IDENTIFICATION}}}{11}%
+\contentsline {subsection}{\numberline {4.1}\textbf {\fontsize {14pt}{12pt}\selectfont {OBJECTIVE}}}{12}%
+\contentsline {section}{\numberline {5}\textbf {\fontsize {15pt}{12pt}\selectfont {System Methodology}}}{13}%
+\contentsline {subsection}{\numberline {5.1}\textbf {\fontsize {14pt}{12pt}\selectfont {DATA CLEANING}}}{14}%
+\contentsline {subsection}{\numberline {5.2}\textbf {\fontsize {14pt}{12pt}\selectfont {TRAIN AND TEST SPLIT}}}{16}%
+\contentsline {subsection}{\numberline {5.3}\textbf {\fontsize {14pt}{12pt}\selectfont {MODEL FITTING AND TESTING}}}{17}%
+\contentsline {section}{\numberline {6}\textbf {\fontsize {15pt}{12pt}\selectfont {TECHNOLOGY DESIGN}}}{18}%
+\contentsline {subsection}{\numberline {6.1}\textbf {\fontsize {14pt}{12pt}\selectfont {ENVIRONEMNT SETUP}}}{19}%
+\contentsline {subsection}{\numberline {6.2}\textbf {\fontsize {14pt}{12pt}\selectfont {LIBRARIES AND DEPENDENCIES}}}{21}%
+\contentsline {section}{\numberline {7}\textbf {\fontsize {15pt}{12pt}\selectfont {IMPLEMENTATION}}}{22}%
+\contentsline {subsection}{\numberline {7.1}\textbf {\fontsize {14pt}{12pt}\selectfont {CODE}}}{23}%
+\contentsline {subsubsection}{\numberline {7.1.1}\textbf {DATA PREPROCESSING}}{24}%
+\contentsline {subsection}{\numberline {7.2}\textbf {\fontsize {14pt}{12pt}\selectfont {TESTING}}}{27}%
+\contentsline {subsubsection}{\numberline {7.2.1}\textbf {TESTING THE BASE PAPER MODELS}}{27}%
+\contentsline {subsubsection}{\numberline {7.2.2}\textbf {DESIGNING AND TESTING PROPOSED MODELS}}{29}%
+\contentsline {paragraph}{ARTIFICIAL NEURAL NETWORKS}{29}%
+\contentsline {paragraph}{PARTICLE SWARM OPTIMIZATION}{32}%
