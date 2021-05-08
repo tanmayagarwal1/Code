@@ -135,12 +135,6 @@ def mincost(grid,x,y):
 		for j in range(1,n):
 			dp[i][j]=min(dp[i-1][j-1],dp[i-1][j],dp[i][j-1])+grid[i][j]
 	return dp[x][y]
-##MINIMUM COST 
-cost= [[1, 2, 3],
-       [4, 8, 2],
-       [1, 5, 3]]
-
-print(mincost(cost, 2, 2))
 
 class graph:
 	def __init__(self,v):
@@ -167,15 +161,268 @@ class graph:
 	def printsol(self,dist):
 		for i in range(self.v):
 			print(f"{i} : {dist[i]}")
-g = graph(9)
-g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
-          [4, 0, 8, 0, 0, 0, 0, 11, 0],
-          [0, 8, 0, 7, 0, 4, 0, 0, 2],
-          [0, 0, 7, 0, 9, 14, 0, 0, 0],
-          [0, 0, 0, 9, 0, 10, 0, 0, 0],
-          [0, 0, 4, 14, 10, 0, 2, 0, 0],
-          [0, 0, 0, 0, 0, 2, 0, 1, 6],
-          [8, 11, 0, 0, 0, 0, 1, 0, 7],
-          [0, 0, 2, 0, 0, 0, 6, 7, 0]
-          ]
-g.shortestPath(0)
+from collections import defaultdict
+class graph1:
+	def __init__(self):
+		self.graph=defaultdict(list)
+	def append(self,s,d):
+		self.graph[s].append(d)
+	def bfs(self,s):
+		q=[]
+		visited=[False]*1000
+		visited[s]=True 
+		q.append(s)
+		while q:
+			s=q.pop(0)
+			print(s)
+			for i in self.graph[s]:
+				if visited[i]==False:
+					q.append(i)
+					visited[i]=True 
+	def dfs(self,v):
+		s=set()
+		self.dfsu(s,v)
+	def dfsu(self,s,v):
+		s.add(v)
+		print(v)
+		for i in self.graph[v]:
+			if i not in s:
+				self.dfsu(s,i)
+
+def NumIslands(grid):
+	m=len(grid)
+	n=len(grid[0])
+	if m==0 or n==0:
+		return -1 
+	grid=[[int(grid[i][j])for j in range(n)]for i in range(m)]
+	count=0 
+	for i in range(m):
+		for j in range(n):
+			if grid[i][j]==1:
+				count+= IsIslandHelper(grid,i,j)
+	return count 
+
+def IsIslandHelper(grid, i, j):
+	if i<0 or i>=len(grid) or j<0 or j>=len(grid[0]) or grid[i][j] != 1:
+		return  0 
+	grid[i][j]=-1 
+	neighbours=((0,1),(0,-1),(1,0),(-1,0))
+	for dx, dy in neighbours:
+		IsIslandHelper(grid, i+dx, j+dy)
+	return 1 
+
+def Surrounded(grid):
+	m=len(grid)
+	n=len(grid[0])
+	if m==0 or n==0:
+		return -1 
+	for i in range(m):
+		if grid[i][0] == "O":
+			SurroundedHelper(grid, i, 0)
+	for i in range(m):
+		if grid[i][n-1] == "O":
+			SurroundedHelper(grid, i, n-1)
+	for i in range(n):
+		if grid[0][i] == "O":
+			SurroundedHelper(grid, 0, i)
+	for i in range(n):
+		if grid[m-1][i] == "O":
+			SurroundedHelper(grid, m-1, i)
+	for i in range(m):
+		for j in range(n):
+			if grid[i][j] == -1 :
+				grid[i][j]= "O"
+			elif grid[i][j] == "O":
+				grid[i][j] = "X"
+	printgrid(grid)
+
+def SurroundedHelper(grid, i, j):
+	if i<0 or i>=len(grid) or j<0 or j>=len(grid[0]) or grid[i][j] != "O":
+		return 
+	grid[i][j] = -1
+	neighbours = ((0,1),(0,-1),(1,0),(-1,0))
+	for dx, dy in neighbours :
+		SurroundedHelper(grid, i+dx, j+dy)
+	return 
+def printgrid(grid):
+	for i in range(len(grid)):
+		for j in range(len(grid[0])):
+			print(grid[i][j],end=" ")
+		print()
+def SpiralMatrix(grid):
+	m=len(grid)
+	n=len(grid[0])
+	if m==0 or n==0 :
+		return -1 
+	arr=[]
+	Top, Bottom, Left, Right, max_arr = 0, m-1, 0, n-1, m*n
+	while len(arr)<max_arr:
+		for i in range(Left, Right+1):
+			if len(arr)<max_arr:
+				arr.append(grid[Top][i])
+		Top += 1
+
+		for i in range(Top, Bottom+1):
+			if len(arr)<max_arr:
+				arr.append(grid[i][Right])
+		Right -=1
+
+		for i in range(Right, Left-1, -1):
+			if len(arr)<max_arr:
+				arr.append(grid[Bottom][i])
+		Bottom -= 1
+
+		for i in range(Bottom, Top-1, -1):
+			if len(arr)<max_arr:
+				arr.append(grid[i][Left])
+		Left += 1
+	return arr 
+
+def AntiSpiralMatrix(grid):
+	m=len(grid)
+	n=len(grid[0])
+	if m==0 or n==0:
+		return -1 
+	Top, Bottom, Left, Right, max_arr, arr = 0, m-1, 0, n-1, m*n, []
+	while len(arr)<max_arr:
+		for i in range(Right, Left-1, -1):
+			if len(arr)<max_arr:
+				arr.append(grid[Top][i])
+		Top += 1
+
+		for i in range(Top, Bottom+1):
+			if len(arr)<max_arr:
+				arr.append(grid[i][Left])
+		Left+=1
+
+		for i in range(Left, Right+1):
+			if len(arr)<max_arr:
+				arr.append(grid[Bottom][i])
+		Bottom -=1 
+
+		for i in range(Bottom, Top-1, -1):
+			if len(arr)<max_arr:
+				arr.append(grid[i][Right])
+		Right -=1
+	return arr
+
+
+def Exist(grid, word):
+	m=len(grid)
+	n=len(grid[0])
+	if m==0 or n==0:
+		return -1 
+	count=0 
+	for i in range(m):
+		for j in range(n):
+			if grid[i][j] == word[0] and ExistHelper(grid, i, j, word, count):
+				return True 
+	return False
+
+def ExistHelper(grid, i, j, word, count):
+	if count == len(word):
+		return True 
+	if i<0 or i>=len(grid) or j<0 or j>=len(grid[0]) or grid[i][j] != word[count]:
+		return False 
+	temp = grid[i][j]
+	grid[i][j] = "#"
+	boolean = ExistHelper(grid, i+1, j, word, count+1) or \
+			  ExistHelper(grid, i, j+1, word, count+1) or \
+			  ExistHelper(grid, i-1, j, word, count+1) or \
+			  ExistHelper(grid, i, j-1, word, count+1)
+	grid[i][j] = temp 
+	return boolean
+
+
+
+board = [["A","B","C","E"],
+		 ["S","F","C","S"],
+		 ["A","D","E","E"]]
+
+#print(Exist(board,"ABCCED"))
+
+
+
+
+class node:
+	def __init__(self,data):
+		self.data=data
+		self.left=self.right=None
+def push(root,data):
+	if root == None:
+		return node(data)
+	else:
+		if root.data<data:
+			root.right=push(root.right,data)
+		elif root.data>data:
+			root.left=push(root.left,data)
+		return root 
+
+def view(root):
+	if root:
+		view(root.left)
+		print(root.data)
+		view(root.right)
+	else:
+		return 
+def dele(root,val):
+	if root.left:
+		root.left=dele(root.left,val)
+	if root.right:
+		root.right=dele(root.right,val)
+	if root.data==val:
+		return None 
+	return root
+
+def kthancestor(root,val,k):
+	if root==None:
+		return None
+	if (root.data==val or (kthancestor(root.left,val,k)) or (kthancestor(root.right,val,k))):
+		if k[0]>0:
+			k[0] -=1
+		elif k[0]==0:
+			print(root.data)
+			return None
+		return root 
+def search(root,val):
+	if root==None:
+		return False 
+	if root.data==val:
+		return True 
+	else:
+		 return search(root.left,val) or search(root.right,val)
+def isSymmetric(root):
+	return isMirror(root.left,root.right)
+def isMirror(root_left, root_right):
+	q=[(root_left,root_right)]
+	while q:
+		x,y = q.pop()
+		if not x and not y:
+			continue 
+		if not x or not y:
+			return False 
+		if x.data != y.data:
+			return False 
+		else:
+			q.append((x.left, y.right))
+			q.append((x.right, y.left))
+		return True 
+
+
+
+
+root=node(5)
+push(root,1)
+push(root,1)
+push(root,1)
+push(root,1)
+push(root,1)
+view(root)
+print(isSymmetric(root))
+#kthancestor(root,10,[1])
+
+
+
+
+
+          
