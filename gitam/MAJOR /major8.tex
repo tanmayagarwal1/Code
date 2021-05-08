@@ -1,0 +1,513 @@
+\documentclass[12pt]{article}
+\usepackage[export]{adjustbox}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage[left=1in,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\newcommand{\nd}{\noindent}
+\newcommand{\secsize}{\fontsize{15pt}{12pt}\selectfont}
+\newcommand{\subsize}{\fontsize{14pt}{12pt}\selectfont}
+\begin{document}
+\large  
+\parskip 3mm 
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\section{\textbf{\secsize{ABSTRACT}}}
+This research is aimed at achieving a detailed data analysis and understanding the effect or parameters key to the survival of a person had they been on the ship. Considering the case of Titanic, a British cruise the analysis will be conducted. The survival prediction is done by applying various machine learning algorithms and neural networks. The bio-inspired algorithms will be implemented to optimise the performance of classifiers. Towards the end, accuracies of different algorithms based on features fed to them will be compared in a tabular form.
+\newpage
+\section{\textbf{\secsize{INTRODUCTION}}}
+In the recent industrial era, where science and technology grows exponentially, commercial civilian transportation has turned into a paramount industry. The modes of travel for civilians have never been this elaborate as they are to date. Transportation has become much more standardised and has resulted in greater movement of high density cluster moment. But with this magnanimous scale, there also comes a boon as a result of  fiddling with the laws of nature 
+
+\nd Disruptive effects on transportation systems are cause by anthropogenic disasters which impact infrastructures, terminals and modes. Every from of transport involves nature as a medium of propagation. Air travel involves movement across the vast blue skies and water transportation involves the abundant water masses on our planet. Whenever mankind has shown pride and pretension on its work, nature has always taught it a lesson.
+
+\nd One of the most critical infrastructure in the modern century is defined to be civilian transportation, since a disruption in one of its components can have significant impact on a plethora of lives
+
+\nd Disaster come in two variants : man made or artificial disasters and natural calamities. Natural disasters include floods, volcanic eruptions and earthquakes while man made disasters include terrorism bombings, nuclear leakage and gas poisoining  Certain natural calamities are inherently cause because of man made drudgery which makes this categorization of disasters a conflict in itself . In this essay on disaster management, we will be talking about the importance of disaster management as well as how well countries are prepared for the upcoming disasters.
+
+\newpage
+
+\subsection{\textbf{\subsize{MOTIVATION}}}
+\nd To mitigate the risk of disasters in commercial or private civilian transportation, the emphasis on disaster management has never been to this magnanimous scale. Disaster Management plays a paramount role to mitigate the risk during the time of a catastrophe. 
+
+\nd Whenever mankind has shown pride and pretension on its work, nature has always taught it a lesson. On 10th april, 1912, the Rms(Royal Mail Ship) Titanic set sail into the vast atlantic ocean. Titanic was termed as the ”unsinkable” ship. The engineers and architects who designed the vessel were so swollen up on their pride that they skimped many safety measures and deployed less life boats on the titanic as it was, the unsinkable. On the night of 14th april, titanic hit an iceberg in the atlantic and sunk. What was the cost of making an unsinkable ship I ask. 1500 dead including men, women and children. The pride of making an unsinkable ship resulted in one of the most deadliest incidents in the history of civilian transportation and the most extravagant sinking of a superliner or cruise ship to date.
+
+\nd This is the major inspiration for our project. After this incident a majority of the work was focused on risk and disaster mitigation for civilian travel methods. We want to develop and deploy a model, that can help the disaster management authorities to mitigate the risk and increase the probability of surviving of the passengers on board a civilian vessel. Even if our model is able to increase the survival rate incase of a disaster, it will be an honour to have worked on it. Our model predicts the probability of survival of each passenger on board using certain attributes and metrics from a given dataset and this probability can be used by risk and disaster management authorities to facilitate the appropriate amounts of safety precautions on board.
+
+\nd Failures are stepping stones to success even if they are never welcomed. The reasons for failure are often highly unambiguous and highly unconditional.It is a trickster with a sense of cunning and irony which takes pride in tripping people when success is right at the end of the tunnel 
+
+\newpage
+
+\section{\textbf{\secsize{LITERATURE REVIEW}}}
+Certain works have been proposed to analyse the data from the titanic, as a result of the incident's unprecedented scale.  Some of the techniques which have been reviewed and executed on the titanic data include a data mining approach to extract cumulative features and highlight higher correlations, using spectral feature selections as a part of scavenging the remains of the ship underneath the atlantic and an approach to normalise the data by using gaussian kernel parameter filtering for implementing on support vector machines. 
+
+\newpage
+
+\subsection{\textbf{\subsize{METHODS USED IN BASE PAPER}}}
+Some of the methods used in base paper include the following approaches 
+
+\subsubsection{\textbf{DATA MINING TECHNIQUES}}
+ International Journal of Research in Engineering and Technology 2.1, published by Jain, Nikita, and Vishal Srivastava, described the use of data mining approach on the titanic dataset. Analyzing various attributes associated with different types of data, falls under the category of data mining. It is a process of finding patterns and combinations, based upon the fact that the symmetry of the patterns is conserved throughout 
+
+\subsubsection{\textbf{SPECTRAL FEATURE SELECTION}}
+In the Proceedings of the 7th International Conference on Software and Information Engineering, Farag, Nadine and Ghada Hassan proposed the use of spectral feature selection for unsupervised and supervised learning. It is one of the techniques used to find relevant features on mixed datasets. For reducing dimensional  hierarchy and for building comprehensible models with highly functional generalization performance, feature selection is used. There are many different feature selection algorithms, which are dependent upon the use case scenario and the heuristics of the problem 
+
+\subsubsection{\textbf{INFLUENCE OF THE SIGMOID FUNCTION PARAMETERS}}
+Han, Jun Morag and Claudio proposed the optimisation of the sigmoid function parameters to influence the speed of the convergence of the global cost on the datasets. The high dimensionality of data poses challenges to learning tasks such as the curse of dimensionality. In the presence of many irrelevant features, learning mod-els tend to overfitting and become less comprehensible. For dimensionality reduction and to identify highly coherent features, feauture selection is used 
+
+\subsubsection{\textbf{IMPLEMENTATION OF ID-3 LEARNING ALGORITHM}}
+Peng, Wei,  Juhua Chen, and Haiping Zhou proposed the implementation if the id-3 decision tree learning algorithm. ID-3 stands for Iterative Dichotomiser 3, which is a classification approach to solving optimisation problems using the greedy approach. One of the major advvantages of this approach is that it generates understandable prediction rules from the dataset
+
+\subsubsection{\textbf{GAUSSIAN KERNEL PARAMETERS}}
+Xiao, Yingchao, et al. proposed the use of gaussian kernel parameters for one support vector machine class and their applications to fault detection. A gaussian is also called as a bell shaped curve, more traditionally, which does an exemplary mode of normalising higher dimensional datasets
+
+\newpage 
+
+\section{\textbf{\secsize{PROBLEM IDENTIFICATION}}}
+One of the major challenges that hinders in providing effective disaster management computation is the lack of advanced computers on board commercial vessels. Surely, the current generation of machines demonstrate abilities to compute large chunks of data, but to date, many of the vessels and aircrafts which are being used for transportations are equipped with aged technology because they have been in service since generations. For such vessels and carriers, computing second order partial derivatives of cost functions which are required for traditional gradient descent algorithms will levy a very high computational price. 
+
+\nd In this case we would like to propose the use of bio inspired algorithms. This comes as an analogue to what to teach us survivability better than the nature itself. Bio Inspired algorithms rely on linear algebra based calculations rather than complex higher order partial derivates, like the stochastic gradient descent. This makes bio inspired algorithms much more computationally feasible than standard backpropogation techniques. 
+
+\nd To mitigate the risk of disasters in commercial or private civilian transportation, the emphasis on disaster management has never been to this magnanimous scale. Disaster Management plays a paramount role to mitigate the risk during the time of a catastrophe. 
+
+\nd After the incident of the titanic a majority of the work was focused on risk and disaster mitigation for civilian travel methods. We want to develop and deploy a model, that can help the disaster management authorities to mitigate the risk and increase the probability of surviving of the passengers on board a civilian vessel. Even if our model is able to increase the survival rate incase of a disaster, it will be an honour to have worked on it. Our model predicts the probability of survival of each passenger on board using certain attributes and metrics from a given dataset and this probability can be used by risk and disaster management authorities to facilitate the appropriate amounts of safety precautions on board.
+
+\newpage
+
+\subsection{\textbf{\subsize{OBJECTIVE}}}
+The preliminary objective of our proposed model is to predict the probability of survival of a passenger on board a civilian vessel based on various attributes. Our aim is to minimise the risk in the transportation industry and be impactful to help save lives of people. Based on the projections of our model, disaster management authorities can understand which group of people have a lower chance of survival during a catastrophe, and they can implement safety measures in advance to increase the probability of survival 
+
+\nd We also propose using computational methods which rely on linear algebra based calculations which have been derived after observing how the nature survives in the wild. This will not only levy minute computational costs but also boost the run time, lowering it down to exponential values 
+
+\nd We want to develop and deploy a model, that can help the disaster management authorities to mitigate the risk and increase the probability of surviving of the passengers on board a civilian vessel. Even if our model is able to increase the survival rate incase of a disaster, it will be an honour to have worked on it. Our model predicts the probability of survival of each passenger on board using certain attributes and metrics from a given dataset and this probability can be used by risk and disaster management authorities to facilitate the appropriate amounts of safety precautions on board.
+
+\nd One of the emerging algorithms which is based on the principles of biological evolutions and inspired from it, are bio-inspired algorithms, which can be used to develop robust techniques. To address the optimal solutions to complex problems, in the recent years, optimisation algorithms based around nature are being implemented. 
+
+\newpage 
+\section{\textbf{\secsize{System Methodology}}}
+In our project we have incorporated industry standards of testing and developing the design of our model . We follow some of the universally accepted guidelines for deploying artificial neural networks and machine learning algorithms. These help in easing our flow of work while providing high quality of throughput.
+
+\nd The abstract level steps of the project development are illustrated in the figure below 
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.6]{flow.png}}
+\caption{Process flow chart}
+\end{figure}
+\end{center}
+
+\nd The broad steps include data manipulation, splitting of the data and testing and fitting of the models. Each of these steps ensure that the consistency in the dataset is maintained and any rogue values are eliminated giving us higher accuracies during the time of testing and training. 
+
+\newpage 
+
+\subsection{\textbf{\subsize{DATA CLEANING}}}
+This is one of the major steps which can make or break the entire model. We need to ensure that at every step in the training and testing phase, the model is provided with clean and consistent data. This includes that all the data fed in must be numerical and not categorical, there must be no missing and null values and that strongly correlated attributes are highlighted. 
+
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.55]{datacleaning.png}}
+\caption{Eviscerating data }
+\end{figure}
+\end{center}
+
+\nd All the steps in the data preprocessing phase ensure that the data is highly consistent throughout. Emphasis is largely made on eliminating any occurring null values. The model does not work well under the influence of null values. Having null values increases the chances of bugs and errors in the data model which is highly non trivial. Also this might be highly non trivial, but null values take up more space than other placeholders
+
+\nd All the steps which ensure that there are no null values in our dataset are taken care in the data preprocessing phase. Not only are the null values truncated, but also categorical data must be replaced with equivalent numerical values. This is ensured by truncating categorical data into numeric counter parts. Machine learning models do not recognise categorical data and hence they are truncated. One example of this is changing the label of male and female to 0 and 1 which stand respectively for their mentioned categorical counter parts.
+
+\nd The next part in this process is data visualisation. Knowing before hand, the attributes which are strongly co-related to each other ensures that the model can be emphasised to use them in the appropriate priority. We can setup a priority in training as to train highly co-related values with much emphasis cause these values have a higher chance of boosting accuracy figures 
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.32]{visual.png}}
+\caption{Data visualising}
+\end{figure}
+\end{center}
+
+\nd Emphasis on highly co-related data yields a higher chance in boosting accuracy metrics as co-related attributes directly impact on the survivability and probability rates.
+
+\newpage
+\subsection{\textbf{\subsize{TRAIN AND TEST SPLIT}}}
+We have split the data into 7:3 ratio in which the former part constitutes the training data and the latter the testing data. This ratio is appropriate the provide enough data in the testing phase such that the model neither overfits not does it under fit. This division is a sweet spot for general machine learning algorithms and works like a charm for our proposed as well as base paper implemented algorithms. 
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.55]{split.png}}
+\caption{split scale}
+\end{figure}
+\end{center}
+
+\nd The main dataset contains 891 rows and 12 columns. After performing a 7:3 split the training data consists of the bulk of 624 rows and 12 columns whereas the testing data consists of 267 rows and 12 columns 
+
+\newpage
+\subsection{\textbf{\subsize{MODEL FITTING AND TESTING}}}
+Now we arrive to the heart of our model, which is the model itself. In this phase we implement both the base paper algorithms which include the machine learning algorithms like support vector machines, decision tree classifiers and such, and also our proposed cutting edge flagship models which are Artificial Neural Networks and Bio-Inspired Particle Swarm Optimisation algorithms. 
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.75]{models.png}}
+\caption{Implemented models}
+\end{figure}
+\end{center}
+
+\nd These models have been implemented to their highest working accuracy with respect to the dataset and have been observed to output desired results with tremendous accuracies. The accuracies of the base paper model also reconcile with the accuracies mentioned in the paper with corrections upto decimal point margin of errors 
+
+\newpage 
+\section{\textbf{\secsize{TECHNOLOGY DESIGN}}}
+We have used collaborative, open source and standardised software for building the model. The heart of this model is the Python programming language and the brain of the model is Tensorflow  and Scikit learn libraries. We have ensured that all the technologies used are open source software, as it can be implemented by any disaster management authorities and scaled vertically or horizontally according to their needs without having to pay a penny. 
+
+\nd We have also used data visualisation libraries like Matplotlib and data handling libraries like Pandas. Pandas help to create data frames which are easier to understand by the models and also easy to maintain and handle any future anomalies. Matplotlib functions help us to find highly co-related attributes by providing with methods which can visualise raw data. 
+
+\nd We have also implemented the particle swarm optimisation algorithms from scratch and have built it on top of bio-isnspired code base. With the culmination of these elaborately defined libraries and tools, we were able to create a model could throughput probability survival rates with extremely precise accuracies. 
+
+\nd Scikit learn is written extensively in python itself, and it uses numpy for higher order calculations likelinear algebra and matrix manipulations. It consists of many classes which can be used to implement both supervised and unsupervised machine learning algorithms. 
+
+\nd Tensorflow is a library specifically designed for building complex neural networks. By using tensorflow one can build convolutional neural networks, Recurrent Neural Networks and can train them using different functions and optimisers. Tensorflow is completely open source and is used throughout the industry to build scalable artificial intelligence models. It is based on differential programming, and it treats objects as tensors. A tensor can be thought of as a high dimensional vector in pure mathematics. 
+
+
+\newpage
+\subsection{\textbf{\subsize{ENVIRONEMNT SETUP}}}
+
+\nd Python is the heart of the model. The entire source code as well as the driver code is written strictly in Python programming language. Python is an interpreter based language which is used to for general as well as scientific programming. It is an high level language which has been built on top of the C programming language 
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.75]{python.png}}
+\caption{Python Programming Language}
+\end{figure}
+\end{center}
+
+\nd Python interpreters are supported for global operating systems and are available for mainstream programming language. It also has many open source reference libraries as well as additional plugins to boost run time like CPython. 
+
+\nd Python has revolutionised how programming at an advanced scale can be implemented at such a collaborative level. It global presence and industry standard as well as open source architecture has enabled it to become on of the leading programming languages in the world. 
+
+\nd We have run the python programming language over the google collaboratory notebooks. Using google colab, it becomes exponentially easier for one to work on collaborative project which specifically involve aspects of data science and artificial intelligence. 
+
+\newpage
+\nd We write the code on the Jupyter notebooks and run it on a collaborative google colabs platform. Google colab provides the necessary tools so the the jupyter notebooks run 100 times faster than any other collborative environment. This is the main reason if have suited to use google colabs to run our Jupyter notebooks 
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.35]{colab2.png}}
+\caption{Google Colab}
+\end{figure}
+\end{center}
+ 
+
+\nd It is highly effective to run arbitrary python code through a web server which specifically include methods of artificial intelligence and data science. It also provides a cloud based graphical processing unit capabilities, so that the system is never handicapped of lack of resources
+\newpage
+\subsection{\textbf{\subsize{LIBRARIES AND DEPENDENCIES}}}
+We have used google Tesorflow and Scikit Learn to implement our models. These libraries are rigorously worked out open source libraries which provide highly effective functions to deploy scalable machine learning and artificial intelligence models. 
+
+\nd Scikit learn is written extensively in python itself, and it uses numpy for higher order calculations like linear algebra and matrix manipulations. It consists of many classes which can be used to implement both supervised and unsupervised machine learning algorithms. 
+\vspace{10mm}
+
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.65\linewidth]{tf.png}
+  \captionof{figure}{Tensorflow}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=.65\linewidth]{sk.png}
+  \captionof{figure}{Scikit Learn }
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\nd Tensorflow is a library specifically designed for building complex neural networks. By using tensorflow one can build convolutional neural networks, Recurrent Neural Networks and can train them using different functions and optimisers. Tensorflow is completely open source and is used throughout the industry to build scalable artificial intelligence models. It is based on differential programming, and it treats objects as tensors. A tensor can be thought of as a high dimensional vector in pure mathematics. 
+
+\nd Using these two libraries as a framework we were able to implement a plethora of machine learning models with extremely high accuracy rates and completely open source in nature. 
+
+\newpage 
+\section{\textbf{\secsize{IMPLEMENTATION}}}
+The model has been implemented with python as the backbone programming language and also using libraries like Tensorflow, Scikit learn and Matplotlib. These libraries provide us with extensive tools and work environments so that the models can be deployed and run easily. 
+
+\nd Python interpreters are supported for global operating systems and are available for mainstream programming language. It also has many open source reference libraries as well as additional plugins to boost run time like CPython. 
+
+\nd Scikit learn is written extensively in python itself, and it uses numpy for higher order calculations like linear algebra and matrix manipulations. It consists of many classes which can be used to implement both supervised and unsupervised machine learning algorithms. 
+
+\nd Tensorflow is a library specifically designed for building complex neural networks. By using tensorflow one can build convolutional neural networks, Recurrent Neural Networks and can train them using different functions and optimisers. Tensorflow is completely open source and is used throughout the industry to build scalable artificial intelligence models. It is based on differential programming, and it treats objects as tensors. A tensor can be thought of as a high dimensional vector in pure mathematics. 
+
+\nd In our project we have incorporated industry standards of testing and developing the design of our model . We follow some of the universally accepted guidelines for deploying artificial neural networks and machine learning algorithms. These help in easing our flow of work while providing high quality of throughput.
+
+\nd In the following sections we will lay out the details of the code and how their design and testing in the said environments went by. 
+
+\newpage
+\subsection{\textbf{\subsize{CODE}}}
+Primarily, in the colab notebook, we start by importing our trivial dependencies which have already been rigorously covered in the previous sections of this documentation. 
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.35]{part1.png}}
+\caption{Importing dependencies and peaking at the dataset}
+\end{figure}
+\end{center}
+ 
+\nd We import Pandas, for data handling, Matplotlib for visualisation and Numpy for matrix manipulations which will be used in data preprocessing phase. Seaborn is a style of matplotlib which gives certain visual appeal to our graphs and plots. 
+\newpage
+\subsubsection{\textbf{DATA PREPROCESSING}}
+Next we move on to the data visualisation phase. In this phase our aim is to understand which attributes are highly co-related to each other and which attributes correspond the most to improving the accuracy of our model. 
+
+\nd Knowing before hand, the attributes which are strongly co-related to each other ensures that the model can be emphasised to use them in the appropriate priority. We can setup a priority in training as to train highly co-related values with much emphasis cause these values have a higher chance of boosting accuracy figures 
+\vspace{10mm}
+\hspace{-5mm}
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.2\linewidth]{part3.png}
+  \captionof{figure}{Data visualisation}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.2\linewidth]{part4.png}
+  \captionof{figure}{Data visualisation }
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\nd After getting around the intricacies of the data, we would like to eliminate any null values or categorical data. For this we look at the type of data value each column holds and check for any null values. If there exist any null values, We will truncate those columns
+
+\nd Emphasis on highly co-related data yields a higher chance in boosting accuracy metrics as co-related attributes directly impact on the survivability and probability rates.
+
+\nd All the steps in the data preprocessing phase ensure that the data is highly consistent throughout. Emphasis is largely made on eliminating any occurring null values. Having null values increases the chances of bugs and errors in the data model which is highly non trivial. Also this might be highly non trivial, but null values take up more space than other placeholders
+
+\nd This is one of the major steps which can make or break the entire model. We need to ensure that at every step in the training and testing phase, the model is provided with clean and consistent data. This includes that all the data fed in must be numerical and not categorical, there must be no missing and null values and that strongly correlated attributes are highlighted.
+
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.35]{part5.png}}
+\caption{Data-type validation}
+\end{figure}
+\end{center}
+
+\nd All the steps which ensure that there are no null values in our dataset are taken care in the data preprocessing phase. Not only are the null values truncated, but also categorical data must be replaced with equivalent numerical values. This is ensured by truncating categorical data into numeric counter parts. Machine learning models do not recognise categorical data and hence they are truncated.
+\newpage 
+\nd After this step we can see that put data has no null values and that it is highly consistent with no categorical attributes too 
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.35]{part7.png}}
+\caption{Validating for null values}
+\end{figure}
+\end{center}
+\newpage 
+\subsection{\textbf{\subsize{TESTING}}}
+\nd We have now successfully truncated all the null and categorical data from our dataset and now we can ensure that our model will be fed with clean and consistent data throughout the entire phase of testing and training. This makes our data highly trivial and ensures consistent accuracies throughout the board 
+
+\subsubsection{\textbf{TESTING THE BASE PAPER MODELS}}
+Now we come to the heart of our project that is to build the models. We start by exporting all our dependencies and also the library Functions. We implement all the algorithms mentioned in the base paper in a sequential order. 
+
+\nd First we perform our train and test split in the ration of 70 and 30 percents respectively. For this we mention the test size in the code as 0.3 and the remaining 0.7 will automatically be reserved for training 
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.55]{1.png}}
+\caption{Train Test and Split formation}
+\end{figure}
+\end{center}
+
+\nd Now its time to move to building the base paper algorithms. With each model, the accuracy is mentioned with the code snippet. The algorithm accuracy reconciles with that mentioned in the base paper with minimal margin of error. 
+
+\nd We start with the decision tree algorithm which yields an accuracy of 85.7 percent, which is in hair thin margin of error. The next algorithm which has been implemented is the k nearest neighbours algorithm which yields an accuracy of 75.6 percent, matching the value of the base paper figures 
+
+\newpage 
+\nd Next we move on to Logistic regression and Support Vector Machines, which yield accuracies of 82 percent and 82.3 percent respectively matching the numbers of the base paper. 
+
+\vspace{10mm}
+\hspace{-5mm}
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.4\linewidth]{dt.png}
+  \captionof{figure}{Decision Trees}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.4\linewidth]{kn.png}
+  \captionof{figure}{K Nearest Neighbours }
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\hspace{-5mm}
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.4\linewidth]{lr.png}
+  \captionof{figure}{Logistic Regression}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.4\linewidth]{sv.png}
+  \captionof{figure}{Support Vector Machine }
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\nd By this we have successfully implemented all the base paper algorithms with the accuracies aligning with the values mentioned in the paper. The algorithm with the highest accuracy in the base paper models was the decision tree classifier coming in at about 85.7 percent accuracy 
+
+\newpage 
+\subsubsection{\textbf{DESIGNING AND TESTING PROPOSED MODELS}}
+After the succesfull implementation of the base paper algorithms its time to implement proposed system designing and testing 
+\paragraph{ARTIFICIAL NEURAL NETWORKS}
+
+Initially we will start by implementing our custom neural network. We have implemented a four layer sequential neural network, with the fourth layer being the output layer and the first layer being the input layer. 
+
+\nd The first layern comprises of 39 Dense neurons. Dense, in neural networks means that all the nodes in this layer will be connected to each node in the next layer. There is a 1 to all relation between each node of first layer to every other node in the next layer and vice versa. The next layer is also a dense layer, but with only 27 neurons. 
+
+\nd Hence, in total, all the 39 neurons of the first layer are connected to all the 27 neurons in the next layer. Hence there are a total of $39*27=1026$ connections between the first two layers
+
+\nd The third layer consists of 19 neurons which are again dense in nature. Which means that these 19 neurons will be connected to each of the previous 27 neurons. Hence in total there are $19*27=513$  connections between the 2nd and third layer. 
+
+\nd Now the final layer consists of only one neuron as it is the output layer. Even this layer is a dense layer which means it is connected to all the previous 19 neurons of the third layer. Hence there are a total of $19*1=19$ connections between the last and third layer. In total our model has $1026+513+19=1558$ connections. 
+
+\nd Moving on to the activation functions, the first layer uses an activation function called Rectified Linear Unit or simply called RELU. Relu, is preferred over the widely using sigmoid function because it avoids the problems of vanishing gradients. Relu takes an input and returns zero, if the value is less than zero, or return the input itself if the value is greater than zero. 
+
+\begin{equation}
+Relu = max(0,x)  \,\,\,\,\ \text{Where x is the input}
+\end{equation}
+
+\nd The second layer uses an activation function called Exponential Linear unit of ELU. Elu is used to avoid the problem of static relu. Elu scales the input by a certain degree to avoid static relu problems 
+
+\begin{equation}
+Elu = 
+\begin{cases}
+x & x\geq 0 \\
+\alpha(e^{x}-1) & x < 0
+\end{cases}
+\end{equation}
+
+\nd The third layer uses the softmax activation function, which turns the entire input into probability density. Softmax is used to parse an input into a probability density than can be later parsed into a sigmoid distribution. 
+
+\nd Finally we compile the model using the Adam optimiser which is used in the place of traditional stochastic gradient descent. Adam has been derived from the phrase Adaptive Motion Estimation. Adam does not have any sort of constraints on hyper parameter tuning as well as they are quite intuitive in nature. It is also not computationally  dense and can be used of large datasets without any hassle. 
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.4]{nn.png}}
+\caption{Compiling the Neural Network}
+\end{figure}
+\end{center}
+
+\nd As illustrated, We have successfully compiled our model and it has been designed to run the test data over 160 epochs. 160 epochs, means that the model will be trained with the dataset over 160 iterations. 
+
+\nd We have used the binary cross entropy as our loss function. The name of the loss function, is what an enthusiast will call a Log Loss. Binary cross entropy is a log loss function, and as we need discrete probabilities as our output, we have avoided using conventional mean squared errors as they are better suited for continuous valued Projections 
+\newpage 
+\paragraph{PARTICLE SWARM OPTIMIZATION}
+is a Bio-inspired heuristic search optimisation algorithm, that has been developed on the grounds of studying and observing the survival nuances of the wild. It is an iterative computational method which finds an optimal solution in a batch of candidate solutions based upon certain constraints which are enforced throughput the problem. 
+
+\nd Bio- inspired Particle Swarm Optimisation, has been developed and modelled on, after observing groups of animals like a flock of birds or a school of fishes. 
+
+\nd Nature has been a source of inspiration for many great endeavours and what better to teach us survival, than the nature itself. Survival instinct can be visualised among a group of animals by observing their behaviour and the way animals in the environment communicate with each other in groups and flocks
+
+\nd To find various optimal solutions upto a diverse degree of optimisation, and to eliminate the problem of traditional optimisation heuristic algorithms, Bio-inspired algorithms are being deployed. To tackle the concerning barriers to traditionally deployed algorithms, biologically synthesised algorithms, show a tremendous promise and a diverse future 
+
+\nd  One of the other main reasons to deploy bio inspired algorithms is that they are computationally less expensive. When compared to traditional algorithms like the Stochastic Gradient Descent algorithm, which uses first and second order partial differential equations for search optimisation, bio inspired algorithms use linear algebra which is not only less expensive on the syste, hardware but also faster to compute. 
+
+\nd Particle Swarm Algorithm is a metaheuristic (Problem independent), bio inspired search optimsiation algorithm. In the early of 1990s, several studies regarding the behaviour of social animal groups were developed. These studies showed that some animals belonging to a certain group, that is, birds and fishes, are able to share information among their group , and such capability yields in these animals a great survival advantage.
+
+\nd In a certain context, the movement of birds is choreographic in nature, as it is synchronised to the stroke of a constant in the view of a maximisation and minimisation problem. 
+\newpage
+\nd To better get a visualisation of this algorithm consider the following scenario. A swarm of birds flying over a place must find a point to land and, in this case, the definition of which point the whole swarm should land is an intricate problem, since it depends on several issues, which includes optimally maximizing the availability of food and also minimizing the risk of existence of predators.
+
+\nd Converging towards the technical details of implementation, The main crux of a Particle Swarm Algorithm include Position Vector, Momentum Vector, Fitness Function, Particles best position, Global Best position. The position vector is the goal of the optimisation problem, The fitness function is the objective function which determines the position, the velocity vector represents the speed at which the swarm moves. The updation occurs as follows 
+
+\begin{equation}
+X^{t+1}_{ij}= X^{t}_{ij}+ V^{t+1}_{ij} 
+\end{equation} 
+\begin{equation}
+V^{t+1}_{ij}= wV^{t}_{ij}+c_1 r^{t}_{1} (pbest_{ij}-X^{t}{ij})+c_2 r^{t}_{2}(gbest_j - X^{t}_{ij})
+\end{equation} 
+
+\nd In an abstract view to optimise a problem tailored for particle swarm optimisation, we initialise a solution space with random population of points, which is analogous to our input data. the next step is updating the position and momentum vectors of each point, enforcing the above updation relations, and generating new solution space which is more optimal than the previous.
+
+\nd Each updated solution space is termed as a generation. We iteratively update the position and global and local solutions of every generations, while keeping every future generation more optimal than its ancestors. In each generation more and more points, which are termed as particles, get more and more optimal and the small local optimisations, turn into vast global optimisations over the course of iteration. 
+
+\nd For each particle in a population, we randomly initialise the position and momentum vectors. Based on these values a fitness function is calculated which describes the optimality of our problem. Then the vectors are updated based on the above rules and then the local fitness function will be calculated. If this new fitness function is more optimal than the previous function, the new local function will be set as the initial function in the next generation. With this small local optimisations translate to large global optimisations. 
+
+\nd The local best functions are updated with force according to the global best functions. Global updations trump Local updations in particle swarm optimisation as illustrated below 
+
+\hspace{-5mm}
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.7\linewidth]{ps1.png}
+  \captionof{figure}{Before updation}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.87\linewidth]{ps2.png}
+  \captionof{figure}{After updation }
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\nd Now we move on to implementing this in out code. We import all the libraries in the first few cells 
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.6]{imp.png}}
+\caption{Importing dependencies}
+\end{figure}
+\end{center}
+
+\nd Next we define two new classes which are particle class and the swarm class. Each class is initially randomly initialised as mentioned in the intricacies of the algorithm. 
+
+\hspace{-5mm}
+\begin{figure}[h]
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.0\linewidth]{par.png}
+  \captionof{figure}{Particle class}
+  \label{fig:test1}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.0\linewidth]{swa.png}
+  \captionof{figure}{Swarm class  }
+  \label{fig:test2}
+\end{minipage}
+\end{figure}
+
+\newpage
+\vspace{10mm}
+\nd The variables are initialised as shown in the snippet. we initialise all the variables as a part of a class of either the swarm or the particle. Local variables are initialised to the particle class and the global variables are initialised to the swarm 
+
+\begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.6]{vari.png}}
+\caption{Global and local variables}
+\end{figure}
+\end{center}
+
+\nd Each updated solution space is termed as a generation. We iteratively update the position and global and local solutions of every generations, while keeping every future generation more optimal than its ancestors. In each generation more and more points, which are termed as particles, get more and more optimal and the small local optimisations, turn into vast global optimisations over the course of iteration. 
+
+\newpage
+\nd Next we call the main driver function and start optimising our solution spaces. In the end we print out the accuracy of our particle swarm optimisation model
+
+ \begin{center}
+\begin{figure}[h]
+\centerline{\includegraphics[scale=.4]{driver.png}}
+\caption{Driver code}
+\end{figure}
+\end{center}
+
+\nd With this we conclude the construction, testing and successful implementation of all our proposed models which display robust techniques and competitive accuracies. 
+
+\end{document}
