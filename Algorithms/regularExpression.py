@@ -5,7 +5,7 @@ def regularexpression(sti,pattern):
     n=len(pattern)
     dp=[[False for _ in range(n+1)]for _ in range(m+1)]
     dp[0][0]=True 
-    for i in range(1,len(dp[0])):
+    for i in range(1,n+1):
         if pattern[i-1]=='*':
             dp[0][i]=dp[0][i-2]
     for i in range(1,m+1):
@@ -19,7 +19,7 @@ def regularexpression(sti,pattern):
 
     return dp[m][n]
 
-print(regularexpression("mississippi","mis*is*ip*."))
+print(regularexpression("c","a*c"))
 
 
 

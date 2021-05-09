@@ -158,9 +158,56 @@ The matching should cover the entire input string (not partial).
 \nd if the pattern is *, initially we assign the secind previous value of dp to the current value of dp. Then we check if the previous value of pattern(This will be j-2 index) is equal to . or the previous of pattern matches the current of string, then we assign the top value of dp to current value of dp. 
 
 \nd In the end we return dp[m][n]
+\section{ Matrix Based Problems } 
+In this section we will cover a few of my favourite matrix based problems. But first we will talk in dept about how to apprach a specific matrix based problem 
+
+\subsection {Approach Strategy}
+Firstly, we will have to find the dimensions of the given matrix. The number of rows is obtained by len(matrix) and the number of columns by len(matrix[0]). After obtaining these values we check whether the matrix is empty or not. If it is, we return a 0. 
+
+\nd Next we start traversing the matrox by our usual double for loops. The traversing loops is problem specific. In some problem we need to pre-process the matrix before we start any kind of traversals. 
 
 
-\section{Quick Foot Notes}
+\nd Now coming to the crux of the matter that is our dfs function. A Depth first search, as the name suggest goes "Depth" First. Which means in the four directions of moving in a matrix ( up, down, left, right ) it goes up first completely until it reaches a terminating condition. Now the "terminating condition" is very important in our dfs function. Without it, the recursion will not terminate.  The terminating condition is usually if the index is out of bounds followed by a problem dependent check. Now we need to be careful about what the function returns 
+\newpage
+\nd To give a blueprint of a dfs function, it namely will consist of four parts : 
+
+\nd 1. Termination Condition 
+
+\nd 2. The recusive part ( Moving along the directions ) 
+
+\nd 3. The return part 
+
+\subsubsection{Terminating Condition }
+This is a check which is used to terminate the recursion if it is violated. a general check includes the bound check which is usually : if $i<0$ or $i \geq len(grid)$ or $ j<0$ or $ j \geq len(grid[0])$  followed by a problem specific check 
+
+\subsubsection{The Recursive Part } 
+This usually consists of four function call : dfs(Up), dfs(down), dfs(Left), dfs(Right). But we condense it using a for loop : 
+Let neighbours = (0,1),(0,-1),(1,0),(-1,0) and we iterate over these neighbours which gives us the four moves themselves. 
+
+\nd \textbf{We also have to change the matrix element to something else to specify that we have already visited a cell}
+
+\nd \textbf{NOTE} : If we use the neighbours approach we cannot go and check the calls, that is : we cannot do up \textbf{and} down \textbf{and} .. For that we have to explicitly assign the functions four times and store their return values in variables, and we do this in a few problems too 
+
+\subsubsection{Return Part } 
+This is the heart of our recursive function. Generally has return declared in two places : One return if the check is True and another at the end of all the recursive functions. If we don't want to return anything and just modify things in place, return can be left blank. 
+
+\nd For counting certain variables, if you want to do an individual count : specify the count inside the dfs function as a parameter and every time we recurse, we increment the count. 
+
+\subsection{Number Of Islands Problem} 
+In this problem we are given a grid of one and zero's. We need to find how many islands exist in the matrix. An island is depeicted by a series of ones. We start this problem using our approach strategy, meaning we specify the base case of the empty matrix and then start our normal double for loops inside which we check : if the current element on the grid is equal to one or not. If it is, the we call our DFS function. 
+
+\nd Now the task of the dfs function is to calculate the number of ones which are together. So at max it can return only a one. If it returns one it means there is a group of islands. So first we start with out bound check could with : If grid[i][j] != 1, then it will return a zero. If the check is false, the first thing we do is change this cell value to -1 or literally anything to specify we have visited this node. Now we call the recursive calls using the niegahbours approach and in the end return a 1. Which means at most it returns one only 
+
+\subsection{Surrounding X's}
+In this problem we have X's and O's. We ignore the O's on the perimeter. Hence we explicitly traverse through the perimeter and change the O's and the O's it connects to, to something else. After we are done traversing the perimeter, we start our double loops and change the somethings values back to O and all the remaining O's to X's. Remember whenever we find an O along the perimeter we call the dfs function to find all the other O's it connects to as they all won't change 
+
+\nd Now the dfs function is pretty trivial, we don't return anything as we just want to modify the matrix in place. We keep a preliminary check coupled with if grid[i][j] != "O" and after the check, we change this grid value and call the recursive functions using the neighbours approach. And that is it 
+
+\subsection{Word Search}
+In this we are given a grid of words. We do our initial things and start our double for loops. After initialsing the double for loops, we check if the the current grid cell matches the first letter of the word \textbf{and} we call our Helper function
+
+\nd In this helper function we first check if the count is equal to the length of the sting. If it is, We return true. Now we define our check, in this check we include if grid[i][j] != word[count] we return False. We use the count itself to index in the word. Now we start our recursion, after changing the current grid cell to something else, and in each recursion call we increment the count value and in the end we return the value of every call "OR'ed"
+\section {Quick Foot Notes }
 In the special reverse function problem we assign an initialise j outside of all the loops because for swapping we do not need the index to start from the first position always. 
 
 \nd But for problems like finding duplicates and triplets and rest, we initialise the j index inside the i loop because we need the j to start from 0 every time the i loop is incremented

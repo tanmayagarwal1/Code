@@ -152,6 +152,48 @@ def kthanc(root,v,k):
             print(root.data)
             return None 
         return root 
+def isValid(root):
+    return IsValidHelper(root, float('-inf'),float('inf'))
+
+def IsValidHelper(root, lower, upper):
+    if root==None:
+        return True 
+    if lower < root < upper :
+        return IsValidHelper(root.left, lower, root.data) and \
+               IsValidHelper(root.right, root.data, upper)
+    else:
+        return False 
+
+def IsSymmetric(root):
+    return IsSymmetricHelper(root.left, root.right)
+
+def IsSymmetricHelper(left_root, right_root):
+    q=[(left_root, right_root)]
+    while q:
+        x, y =q.pop(0)
+        if not x and not y :
+            continue 
+        if not x or y:
+            return False
+        if x.data != y.data:
+            return False
+        else:
+            q.append((x.left, y.right))
+            q.append((x.right, y.left))
+        return True 
+
+def delete(root, n):
+    if root.left:
+        root.left= delete(root.left, n)
+    if root.right: 
+        root.right = delete(root.right, n)
+    if root.data == n:
+        return None
+    return root 
+
+
+
+
 
 root=node(5)
 push(root,10)

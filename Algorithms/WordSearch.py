@@ -18,7 +18,6 @@ def Helper(board, word, i, j, count):
 		return True 
 	if i<0 or i>=len(board) or j<0 or j>=len(board[0]) or board[i][j] != word[count]:
 		return 0 
-	x=board[i][j]
 	board[i][j]="#"
 	neighbours=((0,1),(0,-1),(1,0),(-1,0))
 	boolean= Helper(board,word,i+1,j,count+1) or \
@@ -26,7 +25,6 @@ def Helper(board, word, i, j, count):
 		 	 Helper(board,word,i,j+1,count+1) or \
 		 	 Helper(board,word,i,j-1,count+1)
 
-	board[i][j]=x
 	return boolean
 
 
