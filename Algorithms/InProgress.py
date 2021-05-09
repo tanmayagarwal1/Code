@@ -178,7 +178,7 @@ def water_collector(height):
 
 """
 
-SINGLE SOURCE SHORTEST PATH ( DIJKSTRA'S ) ALGORITHM 
+SINGLE SOURCE SHORTEST PATH ( DIJKSTRA'S ) ALGORITHM --------------------------------------------------------------------------------------------------------------------------
 
 """
 
@@ -207,6 +207,116 @@ class graph1:
 	def printsol(self,dist):
 		for i in range(self.v):
 			print(f"{i} : {dist[i]}")
+
+
+"""
+
+NUMBER OF ISLANDS 
+
+"""
+def NumIslands(grid):
+	m=len(grid)
+	n=len(grid[0])
+	grid=[[int(grid[i][j]) for j in range(n)]for i in range(m)]
+	if m==0 or n==0:
+		return -1
+	count = 0 
+	for i in range(m):
+		for j in range(n):
+			if grid[i][j]==1:
+				count += IslandHelper(grid, i, j)
+	return count 
+
+def IslandHelper(grid, i, j):
+	if i<0 or i>=len(grid) or j<0 or j>=len(grid) or grid[i][j] != 1:
+		return 0
+	grid[i][j] = -1
+	neighbours = ((0,1), (0,-1), (1,0), (-1,0))
+	for dx, dy in neighbours:
+		IslandHelper(grid, i+dx, j+dy)
+	return 1 
+
+
+"""
+
+Surrounded X's and O's --------------------------------------------------------------------------
+
+"""
+def Surrounded(grid):
+	m=len(grid)
+	n=len(grid[0])
+	if m==0 or n==0:
+		return -1 
+	for i in range(n):
+		if grid[0][i] == "O":
+			SurroundHelper(grid, 0, i)
+	for i in range(n):
+		if grid[m-1][i] == "O":
+			SurroundHelper(grid, m-1, i)
+	for i in range(m):
+		if grid[i][0] == "O":
+			SurroundHelper(grid, i, 0)
+	for i in range(m):
+		if grid[i][n-1] == "O":
+			SurroundHelper(grid, i, n-1)
+	for i in range(m):
+		for j in range(n):
+			if grid[i][j] == -1:
+				grid[i][j] = "O"
+			elif grid[i][j] == "O":
+				grid[i][j] = "X"
+	printsolgrid(grid)
+
+def SurroundHelper(grid, i, j):
+	if i<0 or i>=len(grid) or j<0 or j>=len(grid[0]) or grid[i][j] != "O":
+		return False 
+	grid[i][j] = -1 
+	neighbours = ((0,1), (0,-1), (1,0), (-1,0))
+	for dx, dy in neighbours:
+		SurroundHelper(grid, i+dx, j+dy)
+	return 
+def printsolgrid(grid):
+	for i in range(len(grid)):
+		for j in range(len(grid[0])):
+			print(grid[i][j],end=" ")
+		print()
+
+
+"""
+
+SPIRAL MATRIX
+
+"""
+def SpiralMatrix(grid):
+	m=len(grid)
+	n=len(grid[0])
+	if m==0 or n==0:
+		return -1 
+	Top, Bottom, Left, Right, arr, max_size = 0, m-1, 0, n-1, [], m*n
+
+	while len(arr)<max_size:
+		for i in range(Left, Right+1):
+			if len(arr)<max_size :
+				arr.append(grid[Top][i])
+		Top += 1
+
+		for i in range(Top, Bottom+1):
+			if len(arr)<max_size :
+				arr.append(grid[i][Right])
+
+		Right -= 1
+
+		for i in range(Right, Left-1, -1):
+			if len(arr)<max_size :
+				arr.append(grid[Bottom][i])
+		Bottom -= 1
+
+		for i in range(Bottom, Top-1, -1):
+			if len(arr)<max_size :
+				arr.append(grid[i][Left])
+		Left +=1 
+
+	return arr
 
 """
 
@@ -378,8 +488,8 @@ def window_sum(arr,k): # This is used to get the maximum sum of the given window
 	n=len(arr)
 	window_max=sum(arr[:k])
 	maximum=float('-inf')
-	for i in range(n-k):  #n-k will give us the number of times the window needs to move. Hence loop is of n-k 
-		window_max=window_max-arr[i]+arr[i+k] #subtract the first element and add the next element
+	for i in range(n-k):  # n-k will give us the number of times the window needs to move. Hence loop is of n-k 
+		window_max=window_max-arr[i]+arr[i+k] # Subtract the first element and add the next element
 		maximum=max(maximum,window_max)
 	return maximum
 
@@ -387,7 +497,7 @@ def window_max(arr,k):
 	n=len(arr)
 	q=[]
 	maximum=float('-inf')
-	for i in range(k): #Initialise the queue with the elements the window size covers 
+	for i in range(k): # Initialise the queue with the elements the window size covers 
 		q.append(arr[i])
 	for i in range(n-k+1):
 		for j in range(k):
@@ -397,7 +507,7 @@ def window_max(arr,k):
 			q.append(arr[i+k])
 	return maximum
 
-#Unique elements in string 
+# Unique elements in string 
 def unique(arr):
 	n=len(arr)
 	s=set()
@@ -412,7 +522,7 @@ def unique(arr):
 		if arr[i] not in s:
 			print(arr[i])
 
-#Strings startign with Algorithm 
+# Strings starting with Algorithm 
 def StartingWith(arr,sti):
 	n=len(arr)
 	q=[]
@@ -781,7 +891,7 @@ DRIVER CODE --------------------------------------------------------------------
 
 
 """
-Update with NumIslands, Surrounding, ClosedIsalnds, Stairclimber, matrix cycle printing 
+ClosedIsalnds, Stairclimber
 
 """
 

@@ -22,4 +22,12 @@
 \contentsline {subsection}{\numberline {6.3}Minimum Cost Path}{9}%
 \contentsline {subsection}{\numberline {6.4}Gold Mine}{10}%
 \contentsline {subsection}{\numberline {6.5}Regular Expression Matching (Leetcode Hard)}{10}%
-\contentsline {section}{\numberline {7}Quick Foot Notes}{11}%
+\contentsline {section}{\numberline {7} Matrix Based Problems }{11}%
+\contentsline {subsection}{\numberline {7.1}Approach Strategy}{11}%
+\contentsline {subsubsection}{\numberline {7.1.1}Terminating Condition }{12}%
+\contentsline {subsubsection}{\numberline {7.1.2}The Recursive Part }{12}%
+\contentsline {subsubsection}{\numberline {7.1.3}Return Part }{12}%
+\contentsline {subsection}{\numberline {7.2}Number Of Islands Problem}{12}%
+\contentsline {subsection}{\numberline {7.3}Surrounding X's}{13}%
+\contentsline {subsection}{\numberline {7.4}Word Search}{13}%
+\contentsline {section}{\numberline {8}Quick Foot Notes }{14}%

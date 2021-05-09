@@ -16,4 +16,4 @@ def stairs(n):
 		n-=1
 	return j 
 
-print(stairs(2))
+print(stairs(4))
