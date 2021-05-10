@@ -191,7 +191,26 @@ def delete(root, n):
         return None
     return root 
 
-
+def Search(root, n):
+    if not root:
+        return False 
+    if root.data == n:
+        return True 
+    else: 
+        return Search(root.left, n) or Search(root.right, n)
+def Paths(root):
+    if not root:
+        return []
+    if not root.left and not root.right:
+        return [str(root.data)]
+    paths=[]
+    left = Paths(root.left)
+    right = Paths(root.right)
+    for x in left:
+        paths.append(str(root.data)+ '->' +x)
+    for y in right:
+        paths.append(str(root.data)+'->'+x)
+    return paths
 
 
 
