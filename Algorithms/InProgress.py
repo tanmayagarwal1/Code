@@ -682,6 +682,52 @@ def kthanc(root,v,k):
 			return None 
 		return root 
 
+def Search(root, n):
+	if not root:
+		return 
+	if root.data == m:
+		return True 
+	else:
+		return Search(root.left, n) or Search(root.right, n)
+
+def IsValid( root ):
+	return IsValidHelper(root, float('-inf'), float('inf'))
+
+def IsValidHelper(root, lower, upper):
+	if not root:
+		return True 
+	if lower < root < upper :
+		return IsValidHelper(root.left, lower, root.data) and \
+			   IsValidHelper(root.right, root.data, upper)
+	return False 
+
+def Delete(root, n):
+	if root.right:
+		root.right = Delete(root.right, n)
+	if root.left:
+		root.left = Delete(root.left, n)
+	if root.data == n:
+		return None 
+	return root 
+
+def IsSymmetric(root):
+	return IsSymmetricHelper( root.left, root.right )
+
+def IsSymmetricHelper(left_root, right_root):
+	q = [(left_root, right_root)]
+	while q:
+		x, y = q.pop()
+		if not x and not y:
+			continue 
+		if not x or not y:
+			return False 
+		if x.data != y.data:
+			return False 
+		else:
+			q.append((x.left, y.right))
+			q.append((x.right, y.left))
+		return True 
+
 """
 
 GRAPHS ---------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -891,7 +937,7 @@ DRIVER CODE --------------------------------------------------------------------
 
 
 """
-ClosedIsalnds, Stairclimber
+ClosedIsalnds, Stairclimber, Anti Spiral Matrix 
 
 """
 
