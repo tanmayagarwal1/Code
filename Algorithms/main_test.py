@@ -1,197 +1,164 @@
-def Trips(arr):
-    n=len(arr)
-    for i in range(n):
-        arr[i]=arr[i]**2
-    arr.sort()
-    for i in range(n):
-        j=0 
-        k=i-1
-        while j<k:
-            if arr[j] +arr[k] ==arr[i]:
-                return True 
-            else:
-                if arr[j]+arr[k]<=arr[i]:
-                    j+=1
-                else:
-                    k-=1
-    return True 
+class node:
+    def __init__(self,data):
+        self.data=data
+        self.left = self.right = None
+def push(root,data):
+    if root == None:
+        return node(data)
+    else:
+        if root.data < data:
+            root.right = push(root.right,data)
+        elif root.data > data:
+            root.left = push(root.left,data)
+        return root 
+def show(root):
+    if root:
+        show(root.left)
+        print(root.data)
+        show(root.right)
+    else:
+        return 
+def Adder(root):
+    if not root:
+        return 0 
+    else:
+        return root.data + Adder(root.left) + Adder(root.right)
+def Leaf(root):
+    if not root:
+        return 0 
+    if root.left == None and root.right == None:
+        return 1 
+    else:
+        return Leaf(root.left) + Leaf(root.right)
+def subtree(root):
+    if not root:
+        return 0 
+    res=[-99999]
+    subtreeu(root, res)
+    return res[0]
+def subtreeu(root, res):
+    if root == None:
+        return 0 
+    curr = root.data + subtreeu(root.left, res) + subtreeu(root.right, res)
+    res[0] = max(res[0],curr)
+    return curr
+def Height(root):
+    if root==None:
+        return 0 
+    else:
+        l = Height(root.left)
+        r = Height(root.right)
+        if l < r:
+            return r + 1
+        else :
+            return l + 1
+def LevelOrder(root):
+    if not root:
+        return 
+    else:
+        h = Hieght(root)
+        for i in range(h):
+            LevelOrderu(root, i )
 
-def Dups(arr):
-    n=len(arr)
-    s=set()
-    for i in range(n):
-        if arr[i] not in s:
-            s.add(arr[i])
-        else:
-            print(arr[i])
-def dups(arr):
-    n=len(arr)
-    for i in range(n):
-        for j in range(i+1,n):
-            if arr[i]==arr[j]:
-                print(arr[j])
-def rev(sti):
-    n=len(sti)
-    sti=[i for i in sti]
-    j=0
-    for i in range(n-1,n//2,-1):
-        if sti[i].isalpha():
-            while j<i:
-                if sti[j].isalpha():
-                    sti[i], sti[j] = sti[j], sti[i]
-                    j+=1
-                    break
-                else:
-                    j+=1 
-    return sti
+def LevelOrderu(root, l):
+    if not root:
+        return 
+    if l == 0:
+        print(root.data)
+    else:
+        LevelOrderu(root.left, l-1)
+        LevelOrderu(root.right, l-1)
+def Invert(root):
+    if root:
+        root.left, root.right = root.right, root.left
+        Invert(root.left)
+        Invert(root.right)
+    else:
+        return 
+def Maximum(root):
+    if not root:
+        return 
+    if not root.right:
+        print(root.data)
+    else:
+        Maximum(root.right)
+def Kthanc(root, n, k):
+    if not root:
+        return 0 
+    if root.data == n or Kthanc(root.left, n, k) or Kthanc(root.right, n, k):
+        if k[0] > 0 :
+            k[0] -= 1
+        elif k[0] == 0:
+            print(root.data)
+            return None
+        return root 
 
-def Kadens(arr):
-    n=len(arr)
-    i=0 
-    j=arr[i]
-    for k in range(n):
-        j=j+arr[k]
-        if i<j:
-            i=j 
-        if j<0:
-            j=0 
-    return i 
+def IsSymmetric(root):
+    return IsMirror(root.left, root.right)
 
-def UNique(sti):
-    n=len(sti)
-    s, q = set(), []
-    for i in range(n):
-        if sti[i] not in s:
-            s.add(sti[i])
-        else:
-            q.append(sti[i])
-    for i in sti:
-        if i not in q:
-            print(i)
-
-
-def Blocks(arr,interests):
-    q=[]
-    n=len(arr)
-    for i in arr:
-        count=0
-        for j,k in i.items():
-            for z in range(len(interests)):
-                if j==interests[z] and k==True:
-                    count+=1
-        q.append(count)
-    res=q[0]
-    for i in range(len(q)):
-        res=max(res,q[i])
-    return q.index(res)+1 
-
-
-def Houses(arr,b):
-    n=len(arr)
-    q=[]
-    for i in range(n):
-        if arr[i]>b:
+def IsMirror( left_root, right_root):
+    q=[(left_root, right_root)]
+    while q :
+        x, y = left_root, right_root
+        if not x and not y:
             continue 
-        initial = arr[i]
-        count = 1
-        for j in range(n):
-            if i==j:
-                continue
-            if arr[j] + initial <= b:
-                initial= initial + arr[j]
-                count+=1
-        q.append(count)
-    res=q[0]
-    for i in range(len(q)):
-        res=max(res,q[i])
-    return res 
+        if not x or not y:
+            return False 
+        if x.data != y.data :
+            return False 
+        else:
+            q.append((x.left, y.right))
+            q.append((x.right, y.left))
+        return True  
 
-def Subarraysum(arr,k):
-    window_sum=sum(arr[:k])
-    res=0 
-    for i in range(len(arr)-k):
-        window_sum= window_sum -arr[i] + arr[i+k]
-        res=max(res, window_sum)
-    return res 
+def Isvalid(root):
+    return IsCorrect (root, float('-inf'), float('inf'))
 
-def maxelement(arr,k):
-    q=[]
-    n=len(arr)
-    res=0
-    for i in range(k):
-        q.append(arr[i])
-    for i in range(n-k+1):
-        for j in range(k):
-            res=max(res,q[j])
-        q.pop(0)
-        if i+k<n:
-            q.append(arr[i+k])
-    return res 
+def IsCorrect(root, lower, upper):
+    if not root:
+        return True 
+    if lower < root.data < upper :
+        return IsCorrect(root.left, lower, root.data) and IsCorrect(root.right, root.data, upper)
+    return False 
+
+def Delete(root, n):
+    if root.right:
+        root.right = Delete(root.right, n)
+    if root.left :
+         root.left = Delete(root.left, n)
+    if root.data == n:
+        return None
+    return root 
+
+def Search(root, n):
+    if not root :
+        return False
+    if root.data == n:
+        return True 
+    else:
+        return Search(root.left, n) or Search(root.right, n)
+def BuildTree(Preorder, Inorder):
+    dic = dict(zip(Inorder, range(len(Inorder))))
+    len_pre = len(Preorder)
+    return Build(Preorder, Inorder, len_pre, 0, 0, 0)
+
+def Build(Preorder, Inorder, pre_len, pre_index, i, j):
+    if pre_index >= pre_len or i >= j:
+        return 
+    x =  Preorder[pre_index]
+    In_index = dic[x]
+    pre_left = pre_index + 1
+    pre_right = pre_index + max(0, In_index - 1) + 1
+    n= node(x)
+    n.left = build(Preorder,Inorder, pre_len, pre_left, i, In_index - 1)
+    n.right = build(Preorder, Inorder, pre_len, In_index +1, j)
+    return n 
 
 
-def startingWith(arr,pattern):
-    n=len(pattern)
-    q=[]
-    for i in arr:
-        count=0
-        for j in range(len(pattern)):
-            if i[j] == pattern[j]:
-                count +=1
-            else:
-                break 
-            if count == len(pattern):
-                q.append(i)
-    return q 
 
-
-
-def heapsort(arr):
-    n=len(arr)
-    for i in range(n//2-1,-1,-1):
-        Heapify(arr,n,i)
-    for i in range(n-1,0,-1):
-        arr[0], arr[i] = arr[i], arr[0]
-        Heapify(arr, i, 0)
-def Heapify(arr,n,i):
-    large=i 
-    l=2*i+1
-    r=2*i+2
-    if l<n and arr[large]<arr[l]:
-        large = l
-    if r<n and arr[large]<arr[r]:
-        large = r
-    if large != i :
-        arr[large], arr[i] = arr[i], arr[large]
-        Heapify(arr, n, large)
-
-def Mergesort(arr):
-    if len(arr)>1:
-        mid=len(arr)//2
-        l=arr[:mid]
-        r=arr[mid:]
-        Mergesort(l)
-        Mergesort(r)
-        i=j=k=0
-        while i<len(l) and j<len(r):
-            if l[i]<r[j]:
-                arr[k] = l[i]
-                i+=1
-            else:
-                arr[k] = r[j]
-                j+=1
-            k +=1
-        while i<len(l):
-            arr[k] = l[i]
-            i+=1
-            k+=1
-        while j<len(r):
-            arr[k] = r[j]
-            j +=1
-            k +=1
-#HEAPSORT 
-a=[2,4,3,6,5,8,7]
-Mergesort(a)
-print(a)
-
+preorder = [3,9,20,15,7] 
+inorder = [9,3,15,20,7]
+x= BuildTree(preorder, inorder)
+print(x.data)
 
 
