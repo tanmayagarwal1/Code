@@ -1,11 +1,10 @@
 def mincostTickets(days, costs):
-    Not_traveling = -1 
-    dp = [Not_traveling for _ in range(366)]
+    dp = [-1 for _ in range(366)]
     dp[0] = 0
     for day in days:
         dp[day] = 0
     for i in range(1,366):
-        if dp[i] == Not_traveling:
+        if dp[i] == -1:
             dp[i] = dp[i-1]
         else:
             dp[i] = min( dp[i-1] + costs[0],
