@@ -22,7 +22,7 @@
 \contentsline {subsection}{\numberline {6.3}Minimum Cost Path}{9}%
 \contentsline {subsection}{\numberline {6.4}Gold Mine}{10}%
 \contentsline {subsection}{\numberline {6.5}Regular Expression Matching (Leetcode Hard)}{10}%
-\contentsline {section}{\numberline {7} Matrix Based Problems }{11}%
+\contentsline {section}{\numberline {7} Matrix Based Problems and Unique Problems }{11}%
 \contentsline {subsection}{\numberline {7.1}Approach Strategy}{11}%
 \contentsline {subsubsection}{\numberline {7.1.1}Terminating Condition }{12}%
 \contentsline {subsubsection}{\numberline {7.1.2}The Recursive Part }{12}%
@@ -30,4 +30,13 @@
 \contentsline {subsection}{\numberline {7.2}Number Of Islands Problem}{12}%
 \contentsline {subsection}{\numberline {7.3}Surrounding X's}{13}%
 \contentsline {subsection}{\numberline {7.4}Word Search}{13}%
-\contentsline {section}{\numberline {8}Quick Foot Notes }{14}%
+\contentsline {subsection}{\numberline {7.5}Coin Change}{14}%
+\contentsline {subsection}{\numberline {7.6}Minimum Train Ticket Cost}{14}%
+\contentsline {subsection}{\numberline {7.7}Subsets}{15}%
+\contentsline {subsubsection}{\numberline {7.7.1}Bit Masking Approach}{15}%
+\contentsline {subsubsection}{\numberline {7.7.2}Using Simple loops}{15}%
+\contentsline {subsection}{\numberline {7.8}Permutations}{15}%
+\contentsline {subsection}{\numberline {7.9}Partitions}{16}%
+\contentsline {subsection}{\numberline {7.10}Next Closest Time}{16}%
+\contentsline {subsection}{\numberline {7.11}Maximum Length Of a Unique String}{16}%
+\contentsline {section}{\numberline {8}Quick Foot Notes }{17}%

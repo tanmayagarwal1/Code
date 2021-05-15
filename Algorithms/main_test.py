@@ -444,12 +444,343 @@ def NextClosestTime(time):
                 return answer + ' AM'
             else:
                 return answer + ' PM'
-matrix = [[1, 2, 3, 4], 
-          [5, 6, 7, 8],
-          [9,10,11,12]]
-          
-print(AntiSpiralMatrix(matrix))
 
+class node:
+    def __init__(self, data):
+        self.data = data
+        self.left = self.right = None
+def push(root, data):
+    if root== None:
+        return node(data)
+    else:
+        if root.data < data:
+            root.right = push(root.right, data)
+        elif root.data > data:
+            root.left = push(root.left, data)
+        return root 
 
-                
+def show(root):
+    if root:
+        show(root.left)
+        print(root.data)
+        show(root.right)
+    else:
+        return 
+
+def invert(root):
+    if root:
+        root.left, root.right = root.right, root.left
+        invert(root.left)
+        invert(root.right)
+    else:
+        return 
+def height(root):
+    if root == None:
+        return 0 
+    else:
+        l = height(root.left)
+        r = height(root.right)
+        if l< r:
+            return r+1
+        else:
+            return l+1
+def Adder(root):
+    if root == None:
+        return 0 
+    else:
+        return root.data + Adder(root.left) + Adder(root.right)
+
+def Leaf(root):
+    if root ==None:
+        return 0 
+    if root.left == None and root.right == None:
+        return 1
+    else:
+        return Leaf(root.left) + Leaf(root.right)
+def levelorder(root):
+    if root ==None:
+        return 
+    h = height(root)
+    for i in range(h):
+        levelorderU(root, i)
+def levelorderU(root, l):
+    if not root:
+        return 
+    if l == 0 :
+        print(root.data)
+    else:
+        levelorderU(root.left, l-1)
+        levelorderU(root.right, l-1)
+def subtree(root):
+    if root == None:
+        return 0
+    res = [-9999]
+    subtreeu(root, res)
+    return res[0]
+def subtreeu(root, res):
+    if not root:
+        return 0 
+    cur = root.data + subtreeu(root.left, res) + subtreeu(root.right, res)
+    res[0] = max(res[0], cur)
+    return cur 
+
+def kthanc(root, n, k):
+    if root == None:
+        return 
+    if root.data == n or kthanc(root.left, n, k) or kthanc(root.right, k, n):
+        if k[0] >= 0:
+            k[0] -=1
+        elif k[0] == 1:
+            print(root.data)
+            return None
+    return root 
+
+def isSymmetric(root):
+    return IsMirror(root.left, root.right)
+def  IsMirror(rootl, rootr):
+    q=[(rootl, rootr)]
+    while q:
+        x, y = q.pop()
+        if not x and not y:
+            continue 
+        if not x or not y:
+            return False 
+        if x.data != y.data:
+            return False 
+        else:
+            q.append((x.left, y.right))
+            q.append((x.right, y.left))
+        return True 
+
+def Isvalid(root):
+    return IsCorrect(root, float('-inf'), float('inf'))
+
+def IsCorrect(root, lower, upper):
+    if not root:
+        return 
+    else:
+        if lower < root.data < upper:
+            return IsCorrect(root.left, lower, root.data) and IsCorrect(root.right, root.data, upper)
+        return False 
+
+def Delete(root, n):
+    if root.left:
+        root.left = Delete(root.left, n)
+    if root.right:
+        root.right = Delete(root.right, n)
+    else:
+        if root.data == n:
+            return None
+    return root 
+
+def Search(root, n):
+    if not root:
+        return False 
+    if root.data == n:
+        return True
+    else:
+        return Search(root.left, n) or Search(root.right, n)
+def issubtree(root, subroot):
+    if root == None:
+        return 
+    if isSubtree(root, subtree):
+        return True 
+    return issubtree(root.left, subroot) or issubtree(root.right, subroot)
+def isSubtree(root, subroot):
+    if root and subroot:
+        if root.data == subroot.data and isSubtree(root.left, subroot.left) and isSubtree(root.right, subroot.right):
+            return True 
+        return root is subroot 
+
+def Blocks(arr, interests):
+    q = []
+    for i in arr:
+        count = 0 
+        for j, k in i.items():
+            for z in range(len(interests)):
+                if j == interests[z] and k ==True:
+                    count += 1
+        q.append(count)
+    res= 0 
+    for i in range(len(q)):
+        res = max(res, q[i])
+    return q.index(res) + 1
+
+def Houses(arr, budget):
+    n = len(arr)
+    q = []
+    for i in range(len(arr)):
+        if arr[i] > budget:
+            continue
+        count = 1
+        initial = arr[i]
+        for j in range(n):
+            if i == j:
+                continue
+            if arr[j] + initial <= budget:
+                initial = initial + arr[j]
+                count += 1
+        q.append(count)
+    res = q[0]
+    for i in range(len(q)):
+        res = max(res, q[i])
+    return res 
+
+def subarraysum(arr, k):
+    windowmax = sum(arr[:k])
+    res = 0 
+    for i in range(len(arr)-k):
+        windowmax = windowmax - arr[i] + arr[i+k]
+        res = max(res, windowmax)
+    return res 
+
+def maxelement(arr, k):
+    q = []
+    n = len(arr)
+    res = 0 
+    for i in range(k):
+        q.append(arr[i])
+    for i in range(n-k + 1):
+        for j in range(k):
+            res = max(res, q[j])
+        q.pop(0)
+        if i+k < n:
+            q.append(arr[i+k])
+    return res 
+
+def Unique(sti):
+    for i in range(len(sti)):
+        if sti[i] not in s:
+            s.add(sti[i])
+            q.append(sti[i])
+        else:
+            continue 
+    return ''.join(q)
+
+def StartingWith(arr, pattern):
+    q = []
+    for i in arr:
+        count = 0
+        for j in range(len(pattern)):
+            if i[j] == pattern[j]:
+                count += 1
+            else:
+                break 
+            if count == len(pattern):
+                q.append(i)
+    return q 
+
+def Trips(arr):
+    n = len(arr)
+    for i in range(n):
+        arr[i] = arr[i]**2
+    arr.sort()
+    for i in range(n):
+        j = 0
+        k = i-1
+        while j<k:
+            if arr[j] + arr[j] == arr[i]:
+                return True 
+            else:
+                if arr[j] + arr[k] < arr[i]:
+                    j += 1
+                else:
+                    k -= 1
+    return False 
+
+def RemoveDupString(sti):
+    n, q, s = len(sti), [], set()
+    for i in sti:
+        if i not in s:
+            s.add(i)
+            q.append(i)
+        else:
+            continue
+    return ''.join(q)
+
+def dup(arr):
+    s= set()
+    for i in arr:
+        if i not in s:
+            s.add(i)
+        else:
+            print(i)
+def dup2(arr):
+    n = len(arr)
+    for i in range(n-1,0,-1):
+        for j in range(0, i):
+            if arr[j] == arr[i]:
+                print(arr[j])
+def Kaden(arr):
+    n = len(arr)
+    i = arr[0]
+    j = 0
+    for k in range(n):
+        j += arr[k]
+        if i<j:
+            i = j 
+        if j < 0:
+            j = 0
+    return i 
+
+def target(arr, k):
+    for i in range(len(arr)):
+        for j in range(0, i):
+            if arr[i] + arr[j] == k:
+                return i, j
+    return -1 
+
+from collections import defaultdict
+class graph:
+    def __init__(self):
+        self.graph = defaultdict(list)
+    def append(self, s, d):
+        self.graph[s].append(d)
+    def Bfs(self, s):
+        visited = [False]*100
+        q =[]
+        q.append(s)
+        visited[s] = True 
+        while q:
+            s = q.pop(0)
+            print(s)
+            for x in self.graph[s]:
+                if visited[x] == False:
+                    q.append(x)
+                    visited[x] = True 
+    def Dfs(self, v):
+        s =set()
+        self.dfsu(s, v)
+    def dfsu(self, s, v):
+        s.add(v)
+        print(v)
+        for x in self.graph[v]:
+            if x not in s:
+                self.dfsu(s, x)
+class graph1:
+    def __init__(self, v):
+        self.v = v
+        self.graph = [[0 for _ in range(self.v)]for _ in range(self.v)]
+    def shortestpath(self, s):
+        dist = [float('inf')]*self.v
+        dist[s] = 0
+        visited = [False]*self.v
+        for _ in range(self.v):
+            u = self.minvertex(dist, visited)
+            visited[u] = True 
+            for i in range(self.v):
+                if self.graph[u][i] > 0 and visited[i] == False and dist[i] > dist[u] + self.graph[u][i]:
+                    dist[i]=dist[u] + self.graph[u][i]
+        self.printgrid(dist)
+    def minvertex(self, dist, visited):
+        min = float('inf')
+        for i in range(self.v):
+            if dist[i]< min and visited[i] == False:
+                min= dist[i]
+                min_index = i 
+        return min_index
+    def printgrid(self, dist):
+        for i in range(self.v):
+            print(f"{i} : {dist[i]}")
+
 
