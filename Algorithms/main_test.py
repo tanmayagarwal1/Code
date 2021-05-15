@@ -782,5 +782,10 @@ class graph1:
     def printgrid(self, dist):
         for i in range(self.v):
             print(f"{i} : {dist[i]}")
+cost= [[1, 2, 3],
+       [4, 8, 2],
+       [1, 5, 3]]
+
+print(MinimumCostPath(cost, 2, 2))
 
 
