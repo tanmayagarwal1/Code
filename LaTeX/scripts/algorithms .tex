@@ -158,7 +158,7 @@ The matching should cover the entire input string (not partial).
 \nd if the pattern is *, initially we assign the secind previous value of dp to the current value of dp. Then we check if the previous value of pattern(This will be j-2 index) is equal to . or the previous of pattern matches the current of string, then we assign the top value of dp to current value of dp. 
 
 \nd In the end we return dp[m][n]
-\section{ Matrix Based Problems } 
+\section{ Matrix Based Problems and Unique Problems } 
 In this section we will cover a few of my favourite matrix based problems. But first we will talk in dept about how to apprach a specific matrix based problem 
 
 \subsection {Approach Strategy}
@@ -207,6 +207,57 @@ In this problem we have X's and O's. We ignore the O's on the perimeter. Hence w
 In this we are given a grid of words. We do our initial things and start our double for loops. After initialsing the double for loops, we check if the the current grid cell matches the first letter of the word \textbf{and} we call our Helper function
 
 \nd In this helper function we first check if the count is equal to the length of the sting. If it is, We return true. Now we define our check, in this check we include if grid[i][j] != word[count] we return False. We use the count itself to index in the word. Now we start our recursion, after changing the current grid cell to something else, and in each recursion call we increment the count value and in the end we return the value of every call "OR'ed"
+
+\subsection{Coin Change}
+In this problem we are given two inputs : an array of coins and an amount. We need to return the minimum amount of coins required to form the given amount. If the amount cannot be formed using the denominations given in the coins matrix, we have to return -1. 
+
+\nd As thought, this problem is not so much trivial. We first start by defining a one dimensional array of length(amount +1). Now this array will be initialised to positive infinity (float(inf)). We explicitly change the value of the 0th index in the DP array to 0. 
+Now we iterate over the range(1, amount +1), which gives us the currentAmount,  and then again we iterate over each coin, in the coins array. We check if the currentAmount - coin value $\geq$ 0 . If it is then we say DP[currentAmount] = min(dp[currentAmount], dp[$currentAmount - Coin$] + 1. 
+
+\nd In the end we say that if the dp[amount] (last cell, can also be done as dp[-1]) is equal to the positive infinity, it signifies that the amount cannot be formed with any of the denominations in the coins array, and hence we return -1. Else, we return dp[Amount]
+
+\subsection{Minimum Train Ticket Cost}
+In this problem we will be give two inputs : An array which consists of the the days in which a certain passenger travels, and another array of definite length of 3 which contains 3 values which specify the costs of a 1 day, 7 day, 30 day pass of a train system. We need to output the minimum cost incurred by the person in traveling 
+
+\nd Now we start by initialising a one dimensional array of size 366 ( 0 - 355) signifying the number of days in a year. Now this array is initialised with -1. Now for each day in the array days we say that dp[day] = 0. A zero in the dp array means that the passenger will be travelling on the day represented by the index at which there is a zero, and wont be travelling at days which are indexed with - 1. Also we explicitly initialise dp[0] = 0 
+
+\nd Now we start a for loop from(1, 366). We check if the dp[i] == -1 . If it is, then it means that the passenger is not travelling and the cost incurred on that day will be zero. So the total cost will be the same as the previous say hence we say dp[i] = dp[i-1]
+
+\nd Now if dp[i] == 0, We say that dp[i] = min(dp[i-1] + costs[0] for one day pass, dp[max(i-7, 0)] + costs[1] which is for a 7 day pass and dp[max(i-30, 0)] + costs[1] which is for a 30 day pass). We use max in the index for 7 day, and 30 days pass to avoid negative values. Now in the end we return dp[365]
+
+\subsection{Subsets}
+In this problem we need to find the power set of a given array, There are two approaches to do this : 
+\subsubsection{Bit Masking Approach}
+In this approach our problem is basically a one line answer. in this we iterate over the entire array, and append the elements to a list if and only if the logical \textbf{And} operation between the 2 raised to the power of the current element's index and current bit in the range(2 to the power of len(arr)) are not equal to zero
+
+\nd More Clearly 
+\begin{equation*}
+[[arr[i] \text{for i in range(len(arr)) if}\,\,\, 1<<i \,\,\,  \& \,\,\, bit \neq 0]\,\, \text{for bit in } range(1 <<len(arr))] 
+\end{equation*} 
+
+\nd Here $1<<i$ and $1<<len(arr)$ is nothing but two raised to the power of i and len(arr), respectively (using left shifts). 
+
+\subsubsection{Using Simple loops}
+In this approach we declare a base case stating if the length of the array is less than or equal to zero we return -1. Else, we declatre a solutions array like [[]] and then we loops over every element in the array and say : solution += [current + [i] for current in range solution]. Using this every element in the array is added to the solutions in the form of a list which gives us our superset. 
+
+\subsection{Permutations}
+In this problem we are required to output all the possible permutations of a given array. 
+
+\nd To do this we first call a Helper fucntion which takes in the values of the arr, An empty path and an empty result. Now in the helper function, all we do is check if the arr == 0, we append the path to the result ( Note : both the result and paths are lists). Else, we iterate over the range of the length of the array and call back out helper function with arr[: i] + arr[i+1 : ], path + [arr[i]], res. The slicing of our array basically yeild in the removal of the current element at the current index from the array passed down to the next function call. We do not return anything in our recusive helper function, we just change the res, and in the main function we return the res. The recusion terminates when the for loop ends 
+
+\subsection{Partitions}
+We need to partition O objects while using a maximal of P divisions in a group. The base case is : if the number of maximal divisions = 1, then the total partitioning ways is gonna be one and if P == 0 or O < 0, then return 0. Else return partitions(O-P, p) + Partitions(O, P-1)
+
+\subsection{Next Closest Time}
+This problem defination is pretty trivial. Convert hours into minutes. We start iterating from the next minute upto 24 hours added. Modulo makes sure we do not get 24, 25.. values. Converting minutes back. Formatting back to time format. Direct comparison  using set(myTime) $\leq$ set(timeGiven). We output myTime
+
+\subsection{Maximum Length Of a Unique String} 
+In this problem we are given an array of strings, we need to find if we concatenate the strings, what will be the maximum length of the string such that each letter is unique. 
+
+\nd This is a simple. problem. We start by declaring a solutions array with a blank string : arr = [" "]. Now for string in solutions and for each element i in arr : a temporary string = string + i. If isValid(temp), append the temp string to the solutions array and modify the result variable which contains the maximum. return maximum 
+
+\nd The insvalid function contains nothing but return len(sti) == len(set(sti)) (Refer Qucik foot ntes)
+\newpage 
 \section {Quick Foot Notes }
 In the special reverse function problem we assign an initialise j outside of all the loops because for swapping we do not need the index to start from the first position always. 
 
@@ -215,5 +266,7 @@ In the special reverse function problem we assign an initialise j outside of all
 \nd Also we use while loops at many places because we would like to check a condition and then increment. For loops only check the condition for termination. While loops are used to increment after checking a few conditions. Inside a while loop, many if and else blocks can be placed to check multiple conditions and increment accordingly. In short use for loops when there is no condition required to check before incrementing(generally avoid for loops for array based problems )
 
 \nd From a 2D list to extract number of rows and cols : Rows : len(list) and cols : len(list[0])
+
+\nd To know whether a string has all unique characters or not just do a if len(sti) == len(set(sti)). As set contains only one occurrence of each alphabet, if any alphabet is repeated, the lengths will not be equal. 
 
 \end{document}
