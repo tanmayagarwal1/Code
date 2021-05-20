@@ -10,4 +10,5 @@ def License(sti, k):
         j -= k
     return '-'.join(res[::-1])
 
-print(License("2-4A0r7-4k", 3))
+#print(License("2-4A0r7-4k", 3))
+print(License("3R-34213-3213D", 5))

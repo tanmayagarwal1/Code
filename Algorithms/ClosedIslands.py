@@ -6,13 +6,13 @@ def ClosedIslands(grid):
 	count=0 
 	for i in range(1,n):
 		for j in range(1,m):
-			if grid[i][j]==0:
+			if grid[i][j]==1:
 				if IsClosedIsland(grid,i,j):
 					count+=1
 	return count
 
 def IsClosedIsland(grid,i,j):
-	if grid[i][j]!=0:
+	if grid[i][j]!=1:
 		return True 
 	if Onperimeter(grid,i,j):
 		return False 
@@ -30,10 +30,10 @@ def Onperimeter(grid,i,j):
 
 
 
-grid=[[1,1,1,1,1,1,1,0],
-      [1,0,0,0,0,1,1,0],
-      [1,0,1,0,1,1,1,0],
-      [1,0,0,0,0,1,0,1],
-      [1,1,1,1,1,1,1,0]]
+grid=[[0,0,0,0,0,0,0,1],
+      [0,1,1,1,1,0,0,1],
+      [0,1,0,1,0,0,0,1],
+      [0,1,1,1,1,0,1,0],
+      [0,0,0,0,0,0,0,1]]
 
 print(ClosedIslands(grid))

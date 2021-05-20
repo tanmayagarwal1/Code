@@ -32,11 +32,7 @@ print(a)
 sti="[{}]"
 print(checker(sti))
 
-#EGGS_MAX 
-print(egg_max(100,2))
 
-#WATER_COLLECTOR
-print(water_collector([0,1,0,2,1,0,1,3,2,1,2,1]))
 
 #ENCODING 
 ogmap='abcdefghijklmnopqrstuvwxyz'
@@ -147,13 +143,113 @@ print(regularexpression("c","a*c"))
 
 #LCS 
 
-print(lcs('tanmay','shivika'))
+print(Lcs('tanmay','shivika'))
+#EGGS_MAX 
+print(eggs_max(100,2))
+
+#WATER_COLLECTOR
+print(water_collector([0,1,0,2,1,0,1,3,2,1,2,1]))
+
+# Unique Paths
+print(UniquePaths(3,3))
+
+# Unique Paths 2 
+
+obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]]
+print(UniquePaths2(obstacleGrid))
+
+# Train Tickets
+days = [1,4,6,7,8,20]
+costs = [2,7,15]
+print(TrainTix(days, costs)) 
+
+# Coin Change 
+print(CoinChange([1,2,3,4],5))
+
+# Minimum Cost Path 
+cost= [[1, 2, 3],
+       [4, 8, 2],
+       [1, 5, 3]]
+
+print(MinimumCost(cost, 2, 2))
 
 
+# STRINGS 
+
+print(Unique('tanmay'))
+print(Startingwith(['tanmay','shivika','tanuuuu'],'tan'))
+print(License("3R-34213-3213D", 5))
+print(IsPalindorme("A man, a plan, a canal: Panama"))
+print(OneSwap('abc'))
+print(MinSwaps('ntiin'))
+arr = ["cha","r","act","ers"]
+print(UniqueMax(arr))
+print(FrequencySort("Aabb"))
+print(minFrequency("hogdheejnglfmaidocafjngkf"))
+
+# Pacific Atlantic 
+heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
+print(PacficAtlantic(heights))
+
+# Num Islands 
+grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+print(NumIslands(grid))
+
+# Count Islands 
+
+grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
+]
+print(CountIslands(grid))
 
 
+# Word Search 
+board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
+print(WordSearch(board,"ABCCED"))
 
+# Surrounding
+grid = [ ["X","X","X","X"],
+         ["X","O","O","X"],
+         ["X","X","O","X"],
+         ["X","O","X","X"]]
+Surrounding(grid)
 
+# Spiral Matrix
 
+matrix = [[1, 2, 3, 4], 
+          [5, 6, 7, 8],
+          [9,10,11,12]]
+          
+print(Spiral(matrix))
 
+# Anti Spiral Matric 
+matrix = [[1, 2, 3, 4], 
+          [5, 6, 7, 8],
+          [9,10,11,12]]
+          
+print(AntiSpiral(matrix))
+# Permutations
+print(Permutations([1,2,3]))
 
+# Combinations
+print(Combination([2,3,4], 7))
+
+# Subsets 
+print(Subsets2([1,2,3]))
+
+# Subsets with bitmask 
+print(Subsets([1,2, 3]))
+
+# Partitions 
+print(Partitions(5, 3))
+
+# Piles 
+print(PilesHeight([5, 2, 1]))
