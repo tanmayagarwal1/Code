@@ -257,9 +257,58 @@ In this problem we are given an array of strings, we need to find if we concaten
 \nd This is a simple. problem. We start by declaring a solutions array with a blank string : arr = [" "]. Now for string in solutions and for each element i in arr : a temporary string = string + i. If isValid(temp), append the temp string to the solutions array and modify the result variable which contains the maximum. return maximum 
 
 \nd The insvalid function contains nothing but return len(sti) == len(set(sti)) (Refer Qucik foot ntes)
+
+\subsection{License Plate Formating}
+In this problem we are given a licence plate string which is a combination of upper and lower case letters and also contains 'the license numbers separated with a dash (-). Now we will also be given a number and we need to bin the licence plate according to the number specified amount of groups. 
+
+\nd First we need to preprocess the given input string. The steps in this are : 1. Split the given string at the dash using the Split() function. Now we know that the python split function outputs a list, and hence the next step is 2. join the list resulted by split function, using the join function and the last step is to convert the entire string into upper case using upper() method 
+
+\nd In one line this is done as : ' '.join(sti.split('-')).upper()
+
+\nd Next we define the i and j variables. i will be our starting variable and j will be the last variable. Note that j will be = len(sti) and not len(sti) - 1 (Which we use in normal other problems) that is because we will be using j to slice into our string and when we slice it using j as the end value it ends at j-1. Hence keep j = len(sti)
+
+\nd Next we start a while loop by saying : While j greater than i, and then we check if sti[j-k : j] exists or not. If it does, we append it to our results array or else we append sti[ : j], and for the while loop the step will be j -= k. Now in the end we reverse the results list (reverse because the words have been appended from the back of out orginal string) and join it 
+
+\subsection{One Swap Is Palindrome}
+For this we define two pointers i and j pointing to the front and end respectively (0, len(sti) -1 ). Now while j is greater than i, if sti[i] == sti[j] : i += 1 and j -= 1. Else we define two string : one = sti[i:j] and two = sti[i+1:j+1]. We return one == one[::-1] or two == two[::-1] In the end of the function we return True 
+
+\subsection{Min Swaps Palindrome}
+In this problem first we need to check whether the give string has the potential to be a palindrome or not. If not then we return False. For this we call the IsValid function. 
+
+\nd The IsValid function takes in the string and initialises a dictionary. We find the occurrence of each letter in the string . If a string can be a palindrome the at most number of odd frequency letters it can have is one ( For how to count the frequency, check foot notes). Now we return the result of whether or not length of odd occurrences is one or not i,e : return len([i for i, j in d.items() if j\% 2 != 0) is less than or equal to 1 
+
+\nd Now in the main function we initialise two pointers front and back. While back is greater than front, if sti[f] == sti[b] we shrink the window. Else we assign a temp to index j and start a while loop saying : While temp is grater than or equal to i and sti[temp]!=sti[i] : temp -= 1. Now if temp == i, swap sti[temp] and sti[temp+1], increment the numSwaps value (We define this before main for loop) and continue. Do not shrink the window if temp == i 
+
+\nd Else, start a for loop for j in range(temp, b) : swap sti[k] and sti[k+1] and increment numSwaps after every swap and shrink the window. Return the numSwaps 
+
+\subsection{Is Palindrome Sentence}
+In this problem the main part is the pre-processing phase of the given sentence. In this we need to eliminate blank spaces, commas or any other exclamations altogether. To do this we first split the sentence at the blank space and the join(the resulting split list) and then convert into lower or upper (Similar to license plate). Now we need to get rid of punctuations. For this we define a queue. We iterate over every character of the sentence and check whether it is an alphabet/number or not. using isalnum() function. If yes, we append to q and in the end we return q == q[::-1]
+
+\subsection{Frequency Sort}
+Count the number of occurrences in a dict and append only the values of the dict in a queue, and initialise a blank solution string. Sort the queue and reverse it(so that its is descending order) and now for each value in the queue : for i, j in dict.items() : if i == k (that is the values match) : sol += j*k (k occurrence of j) and then break immediately(break because we dont want any other element with the same value to be added in the solution in the same iteration). Now delete the dict[j] so that it represents we have appended that character. return thr solution 
+
+\subsection{Max Deletions For Unique Frequency}
+In this first count the number of occurrences in a dict and then initialise an empty set and a count variable. For each value in dict : while value is greater than or equal to zero and value in set : value -= 1 and count += 1. When this breaks append the value to the set. As the values in the set are always unique we use a set. Return the count 
+
+\subsection{Anagrams and group Anagrams}
+For finding out anagrams we use the sorted fucntion. As two words which are anagrams of each other have the same number of same letter, sorted(string1) == sorted(string2)
+
+\nd Now for an array of words, we use a dictionary. The abstract idea is to index the sorted version of the word as a key and the word as the value. If two words have the same key ( which means sorted(word1) == sorted(word2) ) we say that the two words are anagrams to each other an append the word to the same key value 
+
+\nd Initialise a dict. for each word in array, temp = ''.join(sorted(word)) (as sorted returns a list we join). if temp in dic.keys() : d[temp].append(word), else d[temp] = [word]. Notice we index the word as a list so we cam append another word. 
+
+\nd return [i for i in dic.values] ( A list of lists) 
+
+\subsection{Unique array length that sum to zero}
+The formula is 2 * i - n+1 for each value in n 
+
+\subsection{HTML Parser}
+The probem description is pretty long so won't go into very depth. Basicaly each tag begins with an \& and ends with an ; So now we write a dictionary with the given maps and define a keywords list, an outputs list and a mode set to False initially. For every character in the input, if char == \& we append it to the keywords list and set Mode = True. Now elif only Mode = true, we append the charaters to the keywords and check after whether char = ; If yes, we join the keywords and then append the d[keywords] to the outputs. Note the append is as follows : outputs.append(d.get(keywords, keywrods)). It is to make sure that if the keyword does not exist in the dict, it means it is not an html tag and should be appended unchanged. after this we set mode = False and keywords = [] ( We do this beacuse as we joined the keyowrds, we need to convert it back to list to for future appends). If none of the above just append the character to the outputs. Now after iterating through the input length, for nothinf to be left behind, check if the mode is True or Flase. If True append the keywords as it is to outputs and them return joined outputs.
 \newpage 
 \section {Quick Foot Notes }
 In the special reverse function problem we assign an initialise j outside of all the loops because for swapping we do not need the index to start from the first position always. 
+
+\nd In headsort the parent starts from n-1//2 and in mergesort mid is just len(arr)//2
 
 \nd But for problems like finding duplicates and triplets and rest, we initialise the j index inside the i loop because we need the j to start from 0 every time the i loop is incremented
 
@@ -268,5 +317,8 @@ In the special reverse function problem we assign an initialise j outside of all
 \nd From a 2D list to extract number of rows and cols : Rows : len(list) and cols : len(list[0])
 
 \nd To know whether a string has all unique characters or not just do a if len(sti) == len(set(sti)). As set contains only one occurrence of each alphabet, if any alphabet is repeated, the lengths will not be equal. 
+
+\nd To calculate the frequency of occurrence, we need to define a dictionary. Now we iterate over every character of the input. and say d[char] = d.get(char, 0) + 1. This means that d[char] = 1 + current value (if value exists) or 0 + 1(if value does not exist). Another way to do it is to check if the char is in d.keys(), if Yes, d[char] += 1, else d[char] = 1 
+
 
 \end{document}
