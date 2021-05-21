@@ -212,6 +212,31 @@ def Paths(root):
         paths.append(str(root.data)+'->'+x)
     return paths
 
+def pathsum(root, n):
+    if root == None:
+        return Fase 
+    if not root.left and not root.right and root.data == n:
+        return True 
+    else:
+        pathsum(root.left, target - root.data)
+        pathsum(root.right, target - root.data)
+
+def pathsum2(root, target):
+    res = []
+    dfs(root, target, [], path)
+    return res 
+
+def dfs(root, target, path, res):
+    if not root:
+        return 
+    if not root.left and not root.right and root.data == target:
+        path.append(root.data)
+        res.append(path)
+    else:
+        dfs(root.left, target - root.data, path + [root.data], res)
+        dfs(root.right, target - root.data, path + [root.data], res)
+
+
 
 
 root=node(5)

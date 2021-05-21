@@ -253,3 +253,7 @@ print(Partitions(5, 3))
 
 # Piles 
 print(PilesHeight([5, 2, 1]))
+
+
+# Anagram Group 
+print(AnagramGroup(["eat","tea","tan","ate","nat","bat"]))

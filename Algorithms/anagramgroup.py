@@ -1,8 +1,14 @@
-def Bubble(arr):
-	n = len(arr)
-	for i in range(n):
-		for j in range(1+i, n):
-			if arr[j] < arr[i]:
-				arr[j], arr[i] = arr[i], arr[j] 
-	return arr
-print(Bubble([1,2,4,2,312,4,2,32]))
+def AnagramGroup(arr):
+	if len(arr) == 0:
+		return -1 
+	d = dict()
+	for word in arr:
+		temp = ''.join(sorted(word))
+		if temp not in d.keys():
+			d[temp] = [word]
+		else:
+			d[temp].append(word)
+	return [word for word in d.values()]
+
+print(AnagramGroup(["eat","tea","tan","ate","nat","bat"]))
+
