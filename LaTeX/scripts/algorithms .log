@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.11)  14 MAY 2021 15:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.10.11)  21 MAY 2021 16:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -106,18 +106,18 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
  (./algorithms .toc [1
 
-{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2])
 \tf@toc=\write3
 \openout3 = `"algorithms .toc"'.
 
- [2] [3] [4] [5] [6] [7] [8] [9] [10]
-[11]
+ [3] [4] [5] [6] [7] [8] [9] [10]
+[11] [12]
 Overfull \hbox (15.36186pt too wide) in paragraph at lines 184--186
 \OT1/cmr/m/n/10 This usu-ally con-sists of four func-tion call : dfs(Up), dfs(d
 own), dfs(Left), dfs(Right).
  []
 
-[12] [13] [14]
+[13] [14] [15]
 Overfull \hbox (21.41867pt too wide) detected at line 236
 \OT1/cmr/m/n/10 [[\OML/cmm/m/it/10 arr\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 i\OT1/c
 mr/m/n/10 ][]   1 \OML/cmm/m/it/10 << i   \OT1/cmr/m/n/10 &   \OML/cmm/m/it/10 
@@ -126,28 +126,34 @@ n/10 (1 \OML/cmm/m/it/10 << len\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 arr\OT1/cmr/m/
 n/10 ))]
  []
 
-[15] [16] [17] (./algorithms .aux) ) 
+[16] [17] [18] [19] [20]
+Overfull \hbox (1.66728pt too wide) in paragraph at lines 311--312
+\OT1/cmr/m/n/10 In head-sort the par-ent starts from n-1//2 and in merge-sort m
+id is just len(arr)//2 
+ []
+
+[21] (./algorithms .aux) ) 
 Here is how much of TeX's memory you used:
  1021 strings out of 480608
  13757 string characters out of 5903629
- 252864 words of memory out of 5000000
+ 253864 words of memory out of 5000000
  16963 multiletter control sequences out of 15000+600000
  537721 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,6n,25p,1116b,187s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2020/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy7.pfb>
-Output written on "algorithms .pdf" (17 pages, 145117 bytes).
+ 30i,6n,25p,1168b,187s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2020/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb>
+Output written on "algorithms .pdf" (21 pages, 153361 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 63 compressed objects within 1 object stream
+ 104 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

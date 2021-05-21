@@ -8,7 +8,7 @@ def minimumCostPath(cost,x,y):
 		tc[0][j]=tc[0][j-1]+cost[0][j]
 	for i in range(1,x+1):
 		for j in range(1,y+1):
-			tc[i][j]=min(tc[i-1][j-1],tc[i][j-1],tc[i-1][j])+cost[i][j]
+			tc[i][j]=min(tc[i][j] + tc[i-1][j], tc[i][j] + tc[i][j-1] )+cost[i][j]
 	return tc[x][y]
 
 

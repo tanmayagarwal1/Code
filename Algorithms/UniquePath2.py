@@ -19,7 +19,7 @@ def ObstacleAvoider(grid):
 
 
 
-obstacleGrid = [[0],[1]]
+obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]]
 
 
 
