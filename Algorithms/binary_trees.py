@@ -236,6 +236,73 @@ def dfs(root, target, path, res):
         dfs(root.left, target - root.data, path + [root.data], res)
         dfs(root.right, target - root.data, path + [root.data], res)
 
+# For doing a Left side or Right Side view I prefer to use a class
+
+class views:
+    def RightSideView(self, root):
+        self.max_levl = 0 
+        self.res = []
+        self.RightDfs(root, 1)
+        return res 
+
+    def RightDfs(self, root, level):
+        if root == None:
+            return 0 
+        if self.max_levl < level:
+            self.res.append(root.data)
+            self.max_levl = level
+        self.RightDfs(root.right, level + 1)
+        self.RightDfs(root.left, level + 1)
+
+    def LeftSideView(self, root):
+        self.max_level = 0 
+        self.res = []
+        self.LeftDfs(root, 1)
+        return res 
+
+    def LeftDfs(self, root, level):
+        if not root:
+            return 0 
+        if self.max_level < level:
+            self.res.append(root.data)
+            self.max_levl = level
+        self.LeftDfs(root.left, level + 1)
+        self.LeftDfs(root.right, level + 1)
+
+def SumLeftLeaves(root):
+    if root == None:
+        return 0 
+    if root.left != None and root.left.left == None and root.left.right == None:
+        return root.data + SumLeftLeaves(root.right)
+    else:
+        return SumLeftLeaves(root.left) + SumLeftLeaves(root.right)
+
+def SumRightLEaves(root):
+    if root == None:
+        return 0 
+    if root.right != None and root.right.left == None and root.right.right == None:
+        return self.data + SumRightLEaves(root.left)
+    else:
+        return SumRightLEaves(root.left) + SumRightLEaves(root.right)
+
+def BalanceBinaryTree(root):
+    if root == None:
+        return -1 
+    sol = InorderBuilder(root)
+    return Balancer(root, sol, 0, len(sol) - 1)
+
+def InorderBuilder(root):
+    if root:
+        return InorderBuilder(root.left) + [root.data] + InorderBuilder(root.right)
+    else:
+        return []
+
+def Balancer(root, sol, l, h):
+    if l > h: return None
+    mid = (l + h)//2
+    root = node(sol[mid])
+    root.left, root.right = Balancer(root, sol, l, mid - 1), Balancer(root, sol, mid + 1, h)
+    return root 
 
 
 
