@@ -1,11 +1,12 @@
-def DeviceApplicationPair(ins, outs, target):
-	if len(ins) == 0 or len(ins[0]) == 0 :
+def DeviceApplicationPair(foregroundAppList, backgroundAppList, deviceCapacity):
+	if len(foregroundAppList) == 0 or len(foregroundAppList[0]) == 0 :
 		return -1 
 	res = []
-	for i in ins:
-		for j in outs:
-			if i[1] + j[1] <= target:
+	for i in foregroundAppList:
+		for j in backgroundAppList:
+			if i[1] + j[1] <= deviceCapacity:
 				res.append([i[0], j[0], i[1] + j[1]])
+	if not res: return [[]]
 	global_max = max([i[2] for i in res])
 	return [[i[0], i[1]] for i in res if i[2] == global_max]
 

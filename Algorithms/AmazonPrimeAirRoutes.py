@@ -1,9 +1,9 @@
-def PrimeAirRoutes(ins, outs, target):
-	# ins and outs are lists of lists 
+def PrimeAirRoutes(forwardRouteList, returnRouteList, MaxTravelDist):
+	# forwardRouteList and returnRouteList are lists of lists 
 	res = []
-	for i in ins:
-		for j in outs:
-			if i[1] + j[1] <= target:
+	for i in forwardRouteList:
+		for j in returnRouteList:
+			if i[1] + j[1] <= MaxTravelDist:
 				res.append([i[0], j[0], i[1] + j[1]])
 	if not res: return -1 
 	else: global_max = max([i[2] for i in res])
