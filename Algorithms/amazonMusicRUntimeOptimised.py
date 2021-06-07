@@ -1,7 +1,7 @@
 def MusicRuntime(arr, target):
     if len(arr) == 0:
         return -1 
-    res, curr_max = dict(), float('-inf')
+    res, curr_max, result = dict(), float('-inf'), 0
     for i in range(len(arr)):
         find = target - 30 - arr[i]
         if find in res.keys():
@@ -14,6 +14,6 @@ def MusicRuntime(arr, target):
     else : return sorted(result)
 
 
-time = 100
+time = 65
 arr = [1, 10, 25, 35, 60]
 print(MusicRuntime(arr, time))

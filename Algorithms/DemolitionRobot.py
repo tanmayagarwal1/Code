@@ -21,5 +21,24 @@ def printgrid(grid):
             print(grid[i][j], end = ' ')
         print()
 
-grid = [[1, 0, 1], [1, 1, 1], [1, 1, 9]]
+
+def IsLeftPerimeter(grid, i, j):
+    if i < 0 or i >= len(grid) or j < 0 or j >= len(grid[0]) or grid[i][j] != 1:
+        return False
+    if j == 0 and grid[i][j] == 1:
+        return True 
+    return FindPerimeter(grid, i , j - 1) 
+
+def IsRightPerimeter(grid, i, j):
+    if i < 0 or i >= len(grid) or j < 0 or j >= len(grid[0]) or grid[i][j] == float('inf'):
+        return False
+    if i == 0 and grid[i][j] == 1:
+        return True 
+    return FindPerimeter(grid, i-1, j) 
+    
+
+
+grid = [[1, 1, 1, 1], [1, 0, 1, 0], [0, 1, 1, 1], [1, 1, 9, 1]]
+printgrid(grid)
+print()
 print(DemolitionRobot(grid))

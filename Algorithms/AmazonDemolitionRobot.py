@@ -21,5 +21,17 @@ def printgrid(grid):
             print(grid[i][j], end = ' ')
         print()
 
-grid = [[1, 0, 1], [1, 1, 1], [1, 1, 9]]
-print(printgrid(grid))
+grid = [[1, 1, 1, 0], [1, 1, 9, 0], [1, 1, 1, 1], [1, 1, 1, 1]] # 3
+grid1 = [[1,0,0], [1,0,0], [1,9,1]] # 3
+grid2 = [[1,0,0], [1,9,1], [1,0,0]] # 2
+grid3 = [[1,1,0], [9,1,0], [1,0,1]] # 1
+grid4 = [[1, 1, 0, 0], [1, 0, 1, 0], [1, 1, 1, 1], [1, 9, 1, 1]] # 4
+grid5 = [[1, 1, 1, 1], [1, 0, 1, 0], [0, 1, 1, 1], [1, 1, 9, 1]] # 5
+grid6 = [[1, 1, 1, 0], [0, 9, 1, 1]] # 2
+print(DemolitionRobot(grid))
+print(DemolitionRobot(grid1))
+print(DemolitionRobot(grid2))
+print(DemolitionRobot(grid3))
+print(DemolitionRobot(grid4))
+print(DemolitionRobot(grid5))
+print(DemolitionRobot(grid6))

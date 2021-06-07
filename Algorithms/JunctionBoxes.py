@@ -1,14 +1,14 @@
-def Sting(arr):
-	num_logs, word_log = [], []
-	for log in arr:
-		nums = log.split(' ')[1]
-		if nums.isnumeric():
-			num_logs.append(log)
+def Sting(boxList):
+	new_gen, old_gen = [], []
+	for box in boxList:
+		char = box.split(' ')[1]
+		if char.isnumeric():
+			new_gen.append(box)
 		else:
-			word_log.append(log)
-	word_log.sort(key = lambda x : (x.split(' ')[1:], x.split(' ')[0]))
-	word_log.extend(num_logs)
-	return word_log
+			old_gen.append(box)
+	old_gen.sort(key = lambda x : (x.split(' ')[1:], x.split(' ')[0]))
+	old_gen.extend(new_gen)
+	return old_gen
 
 
 
