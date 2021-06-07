@@ -8,6 +8,7 @@ def AmazonFresh(allLocations, numOfDeliveries):
 	while numOfDeliveries != 0:
 	    res.append(allLocations[ heappop(heap)[2] ])
 	    numOfDeliveries -=1
+	if not res : return [[]]
 	res.sort(key = lambda x : x[1])
 	return res
 

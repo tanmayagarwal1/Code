@@ -14,6 +14,6 @@ def MusicRuntime(arr, target):
     else : return sorted(result)
 
 
-time = 65
+time = 90
 arr = [1, 10, 25, 35, 60]
 print(MusicRuntime(arr, time))

@@ -1,5 +1,5 @@
 import heapq
-def MediaEncoderheap(arr):
+def MediaEncoderheap(arr): # Heap
     if len(arr) == 0:
         return -1 
     q, count, a, b= [], 0, 0, 0
@@ -13,7 +13,7 @@ def MediaEncoderheap(arr):
         heapq.heappush(q, temp)
     return count
 
-def MediaEncoder(arr):
+def MediaEncoder(arr): # Iterative
 	if not arr:
 		return 0 
 	elif len(arr) == 1:
@@ -32,7 +32,7 @@ def MediaEncoder(arr):
 	return sum(dp) 
 
 
-def MediaEncoderWithRecur(arr):
+def MediaEncoderWithRecur(arr): # Recusive 
 	if len(arr) <= 1:
 		return 0 
 	a = min(arr)
@@ -42,6 +42,6 @@ def MediaEncoderWithRecur(arr):
 	arr.append(a + b)
 	return a + b + MediaEncoderWithRecur(arr)
 
-arr = [4, 8, 6, 12]
-print(MediaEncoderWithRecur(arr))
+arr = [2, 2, 2, 2, 2, 2 ,2, 2, 2, 2]
+print(MediaEncoder(arr))
 

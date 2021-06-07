@@ -1,4 +1,4 @@
-def FullfillmentBuilder(arr):
+def FullfillmentBuilder(arr): # Iterative ~O(n)
 	if not arr:
 		return 0 
 	elif len(arr) == 1:
@@ -16,8 +16,23 @@ def FullfillmentBuilder(arr):
 			index += 1
 	return sum(dp) 
 
+import heapq
+def AmazonBuilder(arr):  # Heap ~ O(n log(k))
+    if len(arr) == 0:
+        return -1 
+    q, count, a, b= [], 0, 0, 0
+    for i in arr:
+        heapq.heappush(q, i)
+    while len(q) > 1:
+        a = heapq.heappop(q)
+        b = heapq.heappop(q)
+        temp = a + b 
+        count += temp 
+        heapq.heappush(q, temp)
+    return count
 
-def BuilderWithRecursion(arr):
+
+def BuilderWithRecursion(arr): # Recursive ~ O(n)
 	if len(arr) <= 1:
 		return 0 
 	a = min(arr)
@@ -26,6 +41,8 @@ def BuilderWithRecursion(arr):
 	arr.remove(b)
 	arr.append(a + b)
 	return a + b + BuilderWithRecursion(arr)
+
+
 
 
 
