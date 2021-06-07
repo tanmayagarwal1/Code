@@ -20,8 +20,8 @@ def AmazonFreshHeap(allLocations, numOfDeliveries):
 	    numOfDeliveries -=1
 	if not res : return [[]]
 	res.sort(key = lambda x : x[1])
-	return res
+	return res[::-1]
 
 
 arr = [[1,2], [3,4], [1, -1]]
-print(AmazonFresh(arr, 2))
+print(AmazonFreshHeap(arr, 2))

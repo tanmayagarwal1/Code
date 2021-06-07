@@ -1,6 +1,5 @@
 def MusicRuntime(arr, target):
-    if len(arr) == 0:
-        return -1 
+    if len(arr) == 0: return -1
     res, curr_max, result = dict(), float('-inf'), 0
     for i in range(len(arr)):
         find = target - 30 - arr[i]

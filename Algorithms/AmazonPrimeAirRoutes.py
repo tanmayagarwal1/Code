@@ -1,6 +1,6 @@
 def PrimeAirRoutes(forwardRouteList, returnRouteList, MaxTravelDist): # Change the names of a few local variables before submission
 	# forwardRouteList and returnRouteList are lists of lists 
-	if not forwardRouteList or not returnRouteList: return -1
+	if not forwardRouteList or not returnRouteList: return [[]]
 	res = []
 	for i in forwardRouteList:
 		for j in returnRouteList:
