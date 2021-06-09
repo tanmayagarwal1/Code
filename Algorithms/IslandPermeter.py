@@ -16,5 +16,8 @@ def IslandPerimeter(grid):
 
 	return (area*4) - (2*connect)
 
-grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
+grid = [[0,1,0,0],
+		[1,1,1,0],
+		[0,1,0,0],
+		[1,1,0,0]]
 print(IslandPerimeter(grid))
