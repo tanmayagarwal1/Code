@@ -281,7 +281,7 @@ def SumRightLEaves(root):
     if root == None:
         return 0 
     if root.right != None and root.right.left == None and root.right.right == None:
-        return self.data + SumRightLEaves(root.left)
+        return root.data + SumRightLEaves(root.left)
     else:
         return SumRightLEaves(root.left) + SumRightLEaves(root.right)
 

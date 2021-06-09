@@ -1,6 +1,5 @@
-def DeviceApplicationPair(foregroundAppList, backgroundAppList, deviceCapacity):
-	if len(foregroundAppList) == 0 or len(foregroundAppList[0]) == 0 :
-		return -1 
+def DeviceApplicationPair(foregroundAppList, backgroundAppList, deviceCapacity): # Change Local variable names
+	if len(foregroundAppList) == 0 or len(foregroundAppList[0]) == 0 : return [[]]
 	res = []
 	for i in foregroundAppList:
 		for j in backgroundAppList:

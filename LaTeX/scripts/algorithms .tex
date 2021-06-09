@@ -1,6 +1,9 @@
 \documentclass{article}
 \newcommand{\nd}{\noindent}
 \usepackage{amsmath}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage[left=1in,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
 \parskip 3mm
 \begin{document}
 \title{ALGORITHMS}
@@ -319,6 +322,8 @@ In the special reverse function problem we assign an initialise j outside of all
 \nd To know whether a string has all unique characters or not just do a if len(sti) == len(set(sti)). As set contains only one occurrence of each alphabet, if any alphabet is repeated, the lengths will not be equal. 
 
 \nd To calculate the frequency of occurrence, we need to define a dictionary. Now we iterate over every character of the input. and say d[char] = d.get(char, 0) + 1. This means that d[char] = 1 + current value (if value exists) or 0 + 1(if value does not exist). Another way to do it is to check if the char is in d.keys(), if Yes, d[char] += 1, else d[char] = 1 
+
+\nd \textbf{Sorted in Python} In this function we can also pass a key value. The key value only accepts a function. To sort strings based on length we use the key = len modification. Now to sort strings of multiple substring eg : ['A 34', 'B 67', 'C 12', 'D 1' ]. Now we need to sort the above list of strings with respect to the numbers and if two strings have the same numbers we need to sort them lexicographically. To do this we use key = lambda x : (x.split(' ')[1:], x.split(' ')[0) (Note : We can do x.split(' ')[1], but if just write the : in slicing for future problems). This lambda function gives first priority to sorting the list based on second substrings and then based on first. This is used in both Junction boxes and sort based on marks
 
 
 \end{document}
