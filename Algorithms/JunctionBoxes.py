@@ -6,6 +6,7 @@ def Sting(boxList):
 			new_gen.append(box)
 		else:
 			old_gen.append(box)
+	return old_gen
 	old_gen.sort(key = lambda x : (x.split(' ')[1:], x.split(' ')[0]))
 	old_gen.extend(new_gen)
 	return old_gen
