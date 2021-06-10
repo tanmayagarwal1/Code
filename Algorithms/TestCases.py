@@ -187,6 +187,8 @@ print(UniqueMax(arr))
 print(FrequencySort("Aabb"))
 print(minFrequency("hogdheejnglfmaidocafjngkf"))
 
+# ---------------------------------------------------------------------------------------------------------------------------------------
+
 # Pacific Atlantic 
 heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]
 print(PacificAtlantic(heights))
@@ -221,6 +223,31 @@ grid = [ ["X","X","X","X"],
          ["X","X","O","X"],
          ["X","O","X","X"]]
 Surrounding(grid)
+
+# Rotten Oranges
+grid = [[2,1,1],[1,1,0],[0,1,1]]
+print(RottenOranges(grid))
+
+
+# Flood Fill 
+grid = [[1,1,1],[1,1,0],[1,0,1]]
+sr = 1
+sc = 1
+newColor = 2
+print(FloodFill(grid, sr, sc, newColor))
+
+# Binary Matrix First One 
+grid = [[0,0,0],[1,1,1],[1,1,1]]
+print(MaxOnes(grid))
+
+# Binary Matrix max one row 
+grid = [[0,0,0],[1,1,1],[1,1,1]]
+print(MaxOnes(grid))
+
+# Diagonal Traversal
+print(diagonalTraversal([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+
+# -------------------------------------------------------------------------------------------------------------------------------------------
 
 # Spiral Matrix
 
@@ -257,3 +284,11 @@ print(PilesHeight([5, 2, 1]))
 
 # Anagram Group 
 print(AnagramGroup(["eat","tea","tan","ate","nat","bat"]))
+
+# Max Product Subarray 
+arr = [2,3,-2,4]
+print(MaxProductSubarray(arr))
+
+# Product Array 
+arr = [1, 2, 3, 4, 5]
+print(ProductArray(arr))

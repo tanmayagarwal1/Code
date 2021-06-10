@@ -24,7 +24,10 @@ def printgrid(grid):
 			print(grid[i][j], end = ' ')
 		print()
 
-grid = [[0,0,0],[0,1,1]]
-FloodFill(grid, 1, 1, 1)
+grid = [[1,1,1],[1,1,0],[1,0,1]]
+sr = 1
+sc = 1
+newColor = 2
+print(FloodFill(grid, sr, sc, newColor))
 
 

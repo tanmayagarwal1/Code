@@ -1,7 +1,7 @@
 def NextPermutation(arr):
 	if len(arr) == 0 : return -1 
 	i, j = len(arr) - 1, len(arr) - 1
-	while i > 0 and arr[i - 1] >= arr[i]: # Reach till the first elementn of subarray
+	while i > 0 and arr[i - 1] >= arr[i]: # Reach till the first element of subarray
 		i -= 1
 	k = i - 1 # pivot
 	while arr[j] <= arr[k]:
