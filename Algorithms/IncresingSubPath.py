@@ -36,4 +36,4 @@ def dfs(grid, dp, i, j):
     return dp[i][j]
 
 matrix = [[9,9,4],[6,6,8],[2,1,1]]
-print(MaximumPath(matrix))
+print(IncresingSubPath(matrix))
