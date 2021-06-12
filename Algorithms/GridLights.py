@@ -43,7 +43,8 @@ def printgrid(grid):
 			print(grid[i][j], end = ' ')
 		print()
 
-lamps = [[0,0],[0,1],[0,4]]
-queries = [[0,0],[0,1],[0,2]]
 
-print(Lights(5, lamps, queries))
+n = 5 
+lamps = [[0, 0], [0, 4]]
+queries = [[0,4],[0,1],[1,4]]
+print(Lights(n, lamps, queries))
