@@ -24,7 +24,7 @@ def RottenOranges(grid):
 				rotten.append((x, y))
 	return minutes if fresh_cnt == 0 else -1 
 
-grid = [[0, 2]]
+grid = [[2,1,1],[1,1,0],[0,1,1]]
 print(RottenOranges(grid))
 
 
