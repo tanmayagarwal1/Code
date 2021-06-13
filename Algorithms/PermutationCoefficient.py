@@ -6,7 +6,7 @@ def PermutationCOefficient(P, k):
 		f *= (P - i)
 	return f 
 
-print(PermutationCOefficient(10, 2))
+print(PermutationCOefficient(3, 2))
 
 
 #Time : O(n), space : O(1)
