@@ -131,12 +131,7 @@ g.graph = [[0, 4, 0, 0, 0, 0, 0, 8, 0],
           [0, 0, 2, 0, 0, 0, 6, 7, 0]
           ]
 
-##MINIMUM COST 
-cost= [[1, 2, 3],
-       [4, 8, 2],
-       [1, 5, 3]]
-
-print(minimumPath(cost, 2, 2))
+# ---------------------------------------------------------------------------------------------------------------------------------------
 
 #REGULAR EXPRESSION 
 print(regularexpression("c","a*c"))
@@ -171,9 +166,39 @@ cost= [[1, 2, 3],
        [4, 8, 2],
        [1, 5, 3]]
 
-print(MinimumCost(cost, 2, 2))
+print(MinimumCost(cost))
 
+# Knapsack
+val = [350, 400, 450, 20, 70, 8, 5, 5]
+wt  = [25, 35, 45, 5, 25 ,3, 2, 2]
+w   = 104
+print(Knapsack(wt, val, w))
 
+# Knapsack - Subset sum 
+arr = [2, 3, 7, 8, 10]
+target = 11
+print(SubsetSum(arr, target))
+
+# Knapsack - Count Subset Sum 
+arr = [1, 2, 3, 3]
+target = 6 
+print(totSubsets(arr, target))
+
+# Knapsack - Equal Sum Partition
+print(CanPartition([1, 2, 3, 5]))
+
+# Unbounded Knapsack 
+arr = [1, 5, 8, 9, 10, 17, 17, 20]
+length = [1, 2, 3, 4, 5, 6, 7, 8]
+n = 8 
+print(UnboundKnapsack(length, arr, n))
+
+# Word Break
+s = "applepenapple"
+wordDict = ["apple","pen"]
+print(WordBreak(s, wordDict))
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
 # STRINGS 
 
 print(Unique('tanmay'))
