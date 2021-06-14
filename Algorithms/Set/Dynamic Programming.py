@@ -123,7 +123,7 @@ def CoinChange(coins, ammount):
 	dp[0] = 0 
 	for i in range(1, ammount + 1):
 		for coin in coins:
-			dp[i - coin] >= 0 :
+			if dp[i - coin] >= 0 :
 				dp[i] = min(dp[i], dp[i - coin] + 1)
 	return dp[ammount]
 
@@ -167,5 +167,77 @@ def fib(n):
 		x = y 
 		y = temp 
 	return y 
+
+######################### KNAPSACK #################################
+
+def Knapsack(arr, val, max_wt):
+	if not arr or not max_wt : return 0 
+	return KnapsackRecur(arr, val, max_wt, len(arr))
+
+def KnapsackRecur(arr, val, target, n): # Recursive KnapSack
+	if not n or not target : return 0 
+	if arr[n - 1] <= target:
+		return max(val[n - 1] + KnapsackRecur(arr, val, target - arr[n - 1], n - 1), \
+								KnapsackRecur(arr, val, target, n - 1))
+	else:
+		return KnapsackRecur(arr, val, target, n - 1)
+ 
+def KnapsackDp(arr, val, max_wt):  # Knapsack using table 
+	if not arr or not max_wt : return 0 
+	dp = [[0 for _ in range(max_wt + 1)] for _ in range(len(arr) + 1)]
+	for i in range(1, len(arr) + 1):
+		for j in range(1, max_wt + 1):
+			if arr[i - 1] <= j :
+				dp[i][j] = max(val[i - 1] + dp[i - 1][j - arr[i - 1]], dp[i - 1][j])
+			else:
+				dp[i][j] = dp[i - 1][j]
+	return dp[len(arr)][max_wt]
+
+def Subsetsum(arr, target):
+	if not arr or not target : return 0 
+	return SubsetsumRecur(arr, target, len(arr))
+
+
+def SubsetsumRecur(arr, target, n): # Recusive Subset Sum
+	if not n and target : return False 
+	if n and not target : return True 
+	if arr[n - 1] <= target:
+		return SubsetsumRecur(arr, target - arr[n - 1], n - 1) or SubsetsumRecur(arr, target, n - 1)
+	else:
+		return SubsetsumRecur(arr, target, n - 1)
+
+def SubsetsumDp(arr, target): # SubSetSum Using Table
+	if not arr or not target : return -1 
+	dp = [[False for _ in range(target + 1)] for _ in range(len(arr) + 1)]
+	for i in range(len(arr) + 1):
+		dp[i][0] = True 
+	for i in range(1, len(arr) + 1):
+		for j in range(1, target + 1):
+			if arr[i - 1] <= j:
+				dp[i][j] = dp[i - 1][j - arr[i - 1]] or dp[i - 1][j]
+			else:
+				dp[i][j] = dp[i - 1][j]
+	return dp[len(arr)][target]
+
+
+def EqalSubsetSum(arr):
+	if len(arr) == 0 : return -1 
+	target = sum(arr)
+	if target & 1 : return False 
+	target >>= 1
+	return Subsetsum(arr, target)
+
+def TotSubsetSum(arr, target):
+	if not arr or not target : return - 1
+	dp = [[0 for _ in range(target +1 )] for _ in range(len(arr) + 1)]
+	for i in range(len(arr) + 1):
+		dp[i][0] = 1 
+	for i in range(len(arr) + 1):
+		for j in range(target + 1):
+			if arr[i - 1] <= target :
+				dp[i][j] = dp[i - 1][j - arr[i - 1]] + dp[i - 1][j]
+			else:
+				dp[i][j] = dp[i - 1][j]
+	return dp[len(arr)][target]
 
 
