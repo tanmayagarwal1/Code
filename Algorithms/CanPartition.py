@@ -12,4 +12,4 @@ def CanPartition(arr):
     return dp[target]
 
 
-print(CanPartition([1, 2, 3, 5]))
+print(CanPartition([2, 2, 3, 5]))

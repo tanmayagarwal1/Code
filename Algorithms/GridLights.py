@@ -1,4 +1,4 @@
-def Lights(n, lamps, queries):
+def Lights(n, lamps, queries): # 0 => On, 1 => Off
 	if not n or not lamps : return -1 
 	grid, res = [[1 for _ in range(n)] for _ in range(n)], []
 	neighbours = ((0,1), (0,-1), (1,0), (-1,0), (1,1), (1, -1), (-1, 1), (-1, -1))
@@ -12,6 +12,7 @@ def Lights(n, lamps, queries):
 				continue 
 			directionaldfs(grid, x, y, dx, dy)
 			grid[x - dx][y - dy] = 0
+			
 	for i, j in queries:
 		if not grid[i][j]:
 			res.append(1)
