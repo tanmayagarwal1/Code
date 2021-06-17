@@ -16,4 +16,4 @@ def decimal(x): # Binary to decimal
 
 Binary(10)
 print()
-print(decimal(101010))
+print(decimal(10))

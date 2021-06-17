@@ -106,6 +106,16 @@ push(root,6)
 push(root,8)
 push(root,1)
 
+root = node(20)
+root.left = node(8)
+root.left.left = node(4)
+root.left.right = node(12)
+root.left.right.left = node(10)
+root.left.right.right = node(14)
+root.right = node(22)
+root.right.right = node(25)
+
+
 
 #GRAPHS for BFS and DFS 
 g=graph()
@@ -271,6 +281,16 @@ print(MaxOnes(grid))
 
 # Diagonal Traversal
 print(diagonalTraversal([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+
+# Lamps Illumination
+n = 5 
+lamps = [[0, 0], [0, 4]]
+queries = [[0,4],[0,1],[1,4]]
+print(Lights(n, lamps, queries))
+
+# Diagonal Traversal
+grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+print(DiagonalTraversal(grid))
 
 # -------------------------------------------------------------------------------------------------------------------------------------------
 
