@@ -279,8 +279,9 @@ print(MaxOnes(grid))
 grid = [[0,0,0],[1,1,1],[1,1,1]]
 print(MaxOnes(grid))
 
-# Diagonal Traversal
-print(diagonalTraversal([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+# Grid Convolutions
+grid = [[100,200,100],[200,50,200],[100,200,100]]
+print(ImageSmoother(grid))
 
 # Lamps Illumination
 n = 5 

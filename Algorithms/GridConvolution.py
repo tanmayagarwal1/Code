@@ -8,8 +8,14 @@ def ImageSmoother(grid):
 	neighbours = ((0, 0), (0, 1), (0, -1), (1, 0), (-1, 0), (-1, 1), (-1, -1), (1, -1), (1, 1))
 	for i in range(m):
 		for j in range(n):
-			temp = [grid[i+m][j+n] for m,n in neighbours if 0<=i+m<row and 0<=j+n<col] 
-			res[i][j] = sum(temp)//len(temp)
+			tmp = []
+			for dx, dy in neighbours:
+				x = i + dx
+				y = j + dy 
+				if x < 0 or x >= len(grid) or y < 0 or y >= len(grid[0]):
+					continue 
+				tmp.append(grid[x][y])
+			res[i][j] = sum(tmp)//len(tmp)
 	return res 
 
 grid = [[100,200,100],[200,50,200],[100,200,100]]
