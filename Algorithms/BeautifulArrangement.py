@@ -5,7 +5,7 @@ class sol:
 		arr = [i for i in range(1, n + 1)]
 		self.res = 0 
 		def dfs(arr, i):
-			if i == n + 1:
+			if not arr:
 				self.res += 1
 				return 
 			for j, num in enumerate(arr):
@@ -16,5 +16,5 @@ class sol:
 
 n = 3
 sl = sol()
-print(sl.BeautifulArrangements(3))
+print(sl.BeautifulArrangements(6))
 

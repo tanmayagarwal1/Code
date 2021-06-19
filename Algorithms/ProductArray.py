@@ -17,5 +17,5 @@ def ProductArray(arr):
 	return prod
 
 
-arr = [1, 2, 3, 4, 5]
+arr = [1, 2, 3, 4]
 print(ProductArray(arr))
