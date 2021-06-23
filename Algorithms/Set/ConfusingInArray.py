@@ -151,6 +151,48 @@ def Rotate(arr, k):
 	reverse(arr, i, j)
 	return arr 
 
+def ProductSearch(arr, k):
+	if len(arr) == 0 : raise ValueError
+	d = dict()
+	prefix = 1 
+	for i in range(len(arr)):
+		if k//arr[i] in d and k % arr[i] == 0 and k % arr[d[k//arr[i]]] == 0:
+			return i, d[k // arr[i]]
+		d[arr[i]] = i 
+	return -1
+
+def AlternatingPostiveAndNegative(arr):
+	if len(arr) == 0 : return - 1
+
+	def Helper(arr):
+		i, j = 0, len(arr) - 1
+		while i < j :
+			while arr[j] < 0 :
+				j -= 1
+			while arr[i] >= 0:
+				i += 1
+			arr[i], arr[j] = arr[j], arr[i]
+			i += 1
+			j -= 1
+		return arr, i 
+
+	arr, j = Helper(arr)
+	i = 0 
+	while j < len(arr):
+		arr[i], arr[j] = arr[j], arr[i] 
+		j += 1
+		i += 2
+	return arr 
+
+
+
+# Alternating Negative and Positive 
+arr = [1, 2, 3, -4, -1, 4]
+print(AlternatingPostiveAndNegative(arr)) # [-1, 2, -4, 4, 1, 3]
+
+# Product Search 
+arr = [3, 2]
+print(ProductSearch(arr, 6))
 
 # Beautiful Arrangement
 n = 3 

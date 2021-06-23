@@ -300,6 +300,11 @@ lamps = [[0, 0], [0, 4]]
 queries = [[0,4],[0,1],[1,4]]
 print(Lights(n, lamps, queries))
 
+# Sub Islands - Grid Matching 
+grid = [[1,1,1,0,0],[0,1,1,1,1],[0,0,0,0,0],[1,0,0,0,0],[1,1,0,1,1]]
+gridd = [[1,1,1,0,0],[0,0,1,1,1],[0,1,0,0,0],[1,0,1,1,0],[0,1,0,1,0]]
+print(SubIslands(grid, gridd))
+
 # Diagonal Traversal
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 print(DiagonalTraversal(grid))
@@ -405,6 +410,15 @@ print(PilesHeight([5, 2, 1]))
 # Min operations to make array strictly increasing 
 arr = [1, 1, 1]
 print(MinOperationsArrayIncrease(arr))  # 3
+
+# Product Search 
+arr = [2, 3, 4, 5, 6]
+target = 20
+print(ProductSearch(arr, target)) # (2, 3)
+
+# Alternating Negative and Positive 
+arr = [1, 2, 3, -4, -1, 4]
+print(AlternatingPostiveAndNegative(arr)) # [-1, 2, -4, 4, 1, 3]
 
 # -------------------------------------------------------------------------------------------------------------------------------------------
 
