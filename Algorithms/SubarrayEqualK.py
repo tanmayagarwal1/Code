@@ -9,6 +9,6 @@ def SubarrayEqualK(arr, k):
 		d[prefix] = d.get(prefix, 0) + 1
 	return ans 
 
-arr = [23,2,4,6,6]
-k = 7
+arr = [1, 2, 3]
+k = 3
 print(SubarrayEqualK(arr, k))

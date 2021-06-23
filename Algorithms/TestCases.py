@@ -259,9 +259,20 @@ grid = [ ["X","X","X","X"],
          ["X","O","X","X"]]
 Surrounding(grid)
 
+# Walls and Gates
+grid = [[float('inf'), -1, 0, float('inf')], [float('inf'), float('inf'), float('inf'), -1], \
+    [float('inf'), -1, float('inf'), -1], [0, -1, float('inf'), float('inf')]]
+print(WallsAndGates(grid))
+
 # Rotten Oranges
 grid = [[2,1,1],[1,1,0],[0,1,1]]
 print(RottenOranges(grid))
+
+# Mine Sweeper 
+
+grid = [["E","E","E","E","E"],["E","E","M","E","E"],["E","E","E","E","E"],["E","E","E","E","E"]]
+click = [3,0]
+print(MineSweeper(grid, click))
 
 
 # Flood Fill 
@@ -293,8 +304,6 @@ print(Lights(n, lamps, queries))
 grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 print(DiagonalTraversal(grid))
 
-# -------------------------------------------------------------------------------------------------------------------------------------------
-
 # Spiral Matrix
 
 matrix = [[1, 2, 3, 4], 
@@ -309,6 +318,9 @@ matrix = [[1, 2, 3, 4],
           [9,10,11,12]]
           
 print(AntiSpiral(matrix))
+
+# -------------------------------------------------------------------------------------------------------------------------------------------
+
 # Permutations
 print(Permutations([1,2,3]))
 
@@ -324,17 +336,162 @@ print(Subsets([1,2, 3]))
 # Partitions 
 print(Partitions(5, 3))
 
-# Piles 
-print(PilesHeight([5, 2, 1]))
-
-
-# Anagram Group 
-print(AnagramGroup(["eat","tea","tan","ate","nat","bat"]))
-
 # Max Product Subarray 
 arr = [2,3,-2,4]
 print(MaxProductSubarray(arr))
 
+
+# Beautiful Arrangement 
+print(BeautifulArrangements(6)) # 36 
+
+# Beautiful arrangeent 2 
+print(Arrangement2(3, 2)) # [1, 3, 2]
+
+# Two sum 
+target = 14
+arr = [2, 3, 4, 5, 6, 7, 8] # (4, 6)
+print(TargetSum(arr, target))
+
+# Subarray Sum equal to k 
+arr = [1, 2, 3]
+k = 3
+print(SubarrayEqualK(arr, k)) # 2
+
+# subarray sum divisble by k 
+arr = [4,5,0,-2,-3,1]
+k = 5 
+print(SubarrayDivisibleK(arr, k)) # 7 
+
 # Product Array 
 arr = [1, 2, 3, 4, 5]
-print(ProductArray(arr))
+print(ProductArray(arr)) # [120, 60, 40, 30, 24]
+
+
+# Rotate 
+arr = [1,2,3,4,5,6,7]
+k = 3
+print(Rotate(arr, k)) # [5,6,7,1,2,3,4]
+
+# Cook Chef 
+arr = [1, 2, 3, 4]
+p = 10
+print(CookChef(arr, p)) # 12 
+
+# Boats 
+arr = [1,2,3,4,5,6,7,8,9,10]
+D = 5
+print(Boats(arr, D)) # 15
+
+# Painters 
+arr = [15, 17, 20]
+k = 2 
+print(PaintersPartition(arr, k)) # 32
+
+# Next Permutation 
+arr = [1,1,5]
+print(NextPermutation(arr)) # [1, 5, 1]
+
+# Peak Element 
+arr = [2, 23, 90, 67]
+print(PeakElement(arr)) # 90
+
+# Subarray Sorts the array
+arr = [10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60]
+print(SortSubarray(arr)) # (30, 35) => Nums ; (3, 8) => Indices
+
+# Piles 
+print(PilesHeight([5, 2, 1]))
+
+# Min operations to make array strictly increasing 
+arr = [1, 1, 1]
+print(MinOperationsArrayIncrease(arr))  # 3
+
+# -------------------------------------------------------------------------------------------------------------------------------------------
+
+# Anagram Groups 
+print(AnagramGroups(["eat","tea","tan","ate","nat","bat"])) # [['eat', 'tea', 'ate'], ['tan', 'nat'], ['bat']]
+
+# String Starting With 
+print(StartingWith(['tanmay','shivika','tanuuuu'],'tan')) # ['tanmay', 'tanuuuu']
+
+# License Plate 
+print(License("3R-34213-3213D", 5)) # 3R-34213-3213D
+
+# One swap palindrome 
+print(OneSwap('abc')) # False 
+
+# Min Swap Palindrome 
+print(MinSwap('ntiin')) # 1 
+
+# Unique Length Max 
+arr = ["cha","r","act","ers"]  
+print(UniqueLengthMax(arr)) # 6 
+
+# Frequency Sort 
+print(FrequencySort("Aabb")) # bbAa
+
+# Max deletions
+print(MaxDeletions("hogdheejnglfmaidocafjngkf")) # 39
+
+#BLOCKS 
+arr=[{'gym':False,'school':True,'store':False},  \
+   {'gym':True,'school':False,'store':False},  \
+     {'gym':True,'school':True,'store':False},   \
+     {'gym':False,'school':True,'store':False},  \
+     {'gym':False,'school':True,'store':True},]
+interests=['gym','store']
+print(Blocks(arr,interests)) # 2
+
+#REGULAR EXPRESSION 
+print(regularexpression("c","a*c")) # True
+
+# LCS
+print(Lcs('tanmay','shivika')) # 1 
+
+# Lonest Palindromic Subsequence 
+print(LongestPalindromicSub('agbcba')) # 5 
+
+# Unique Substrings
+print(SubStrings('abcd')) # {'a', 'c', 'b', 'abcd', 'bc', 'cd', 'bcd', 'd', 'abc', 'ab'}
+
+# Html Parser
+text = "&amp; is an HTML entity but &ambassador; is not."
+text_2 = "x &gt; y &amp;&amp; x &lt; y is always false"
+print(HtmlParser(text))   # & is an HTML entity but &ambassador; is not.
+print(HtmlParser(text_2)) # x > y && x < y is always false
+
+# Word Break 
+s = "applepenapple"
+wordDict = ["apple","pen"]
+print(WordBreak(s, wordDict)) # True 
+
+# Html Validator 
+print(HtmlValidator("<head><head> This is a Html headline </head></head>")) # True
+
+# Special Reverse
+print(Specialrev('abc&^def')) # fed&^cba
+
+# Is Rotation 
+sti = 'ABCD'
+other = 'CDAB'
+print(IsRotatation(sti, other)) # True 
+
+# Valid Shuffle 
+First = "XY"
+second = '12'
+arr = ["1XY2", "Y1X2", "Y21XX"]
+print(ValidShuffle(arr, First, second)) # ['1XY2', 'Y1X2']
+
+# Longest Palindromic Substring 
+sti = "babad"
+print(LongestPalindromicSubstring(sti)) # bab 
+
+# LevenshteinDistance 
+word1 = "horse"
+word2 = 'ros'
+print(LevenshteinDistance(word1, word2)) # 3
+
+# Minimum Adds to make balanced paranthesis 
+sti = '()))(('
+print(MinAddsToMakeBalanceParanthesis(sti)) # 4 
+
