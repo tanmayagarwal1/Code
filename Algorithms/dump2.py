@@ -1,23 +1,34 @@
-def OutOfBounds(m, n, sr, sc, max_moves):
-	dp = [[[-1]*(max_moves + 1) for _ in range(n + 1)] for _ in range(m + 1)]
+def SubIslands(grid, matrix):
+	def Helper(grid, i, j, seen):
+		if i < 0 or i >= len(grid) or j < 0 or j >= len(grid[0]) or grid[i][j] != 1:
+			return 
+		grid[i][j] = -1 
+		seen.add((i, j))
+		neighbours = ((0, 1), (1, 0), (-1, 0), (0, -1))
+		for dx, dy in neighbours:
+			Helper(grid, i + dx, j + dy, seen)
+		return 
 
-	def Helper(i, j, moves):
-		if moves < 0 : return 0 
-		if i < 0 or i >= m or j < 0 or j >= n : return 1 
-		if dp[i][j][moves] != - 1: return dp[i][j][moves]
-		Phi = Helper(i + 1, j, moves - 1)
-		Psi = Helper(i, j + 1, moves - 1)
-		Mu  = Helper(i, j - 1, moves - 1)
-		Nu  = Helper(i - 1, j, moves - 1)
-		dp[i][j][moves] = Phi + Psi + Mu + Nu 
-		return dp[i][j][moves]
+	if not grid or not matrix : raise ValueError 
+	for i in range(len(grid)):
+		for j in range(len(grid[0])):
+			if grid[i][j] == 1:
+				Helper(grid, i, j, set())
 
-	if not max_moves : raise ValuseError 
-	return Helper(sr, sc, max_moves)
+	res = 0 
+	for i in range(len(matrix)):
+		for j in range(len(matrix[0])):
+			if matrix[i][j] == 1:
+				seen = set()
+				Helper(matrix, i, j, seen)
+				if all(grid[dx][dy] == - 1 for dx, dy in seen):
+					res += 1
+	return res 
 
-m = 8
-n = 50
-maxMove = 23
-startRow = 5
-startColumn = 26
-print(OutOfBounds(m, n, startRow, startColumn, maxMove))
+try : 
+	grid = [[1,1,1,0,0],[0,1,1,1,1],[0,0,0,0,0],[1,0,0,0,0],[1,1,0,1,1]]
+	gridd = 0 
+	print(SubIslands(grid, gridd))
+
+except ValueError:
+	print("Empty Value Specified")
