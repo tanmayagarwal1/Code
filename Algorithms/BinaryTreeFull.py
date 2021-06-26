@@ -350,6 +350,7 @@ push(root,1)
 Kthlargest(root, 2, [0])
 #show(forest)
 #print(Paths(forest))
+IsBST
 
 
 

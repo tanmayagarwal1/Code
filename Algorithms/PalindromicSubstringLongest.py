@@ -1,5 +1,5 @@
 
-# In this we use expanding from the center approach. For add cases we expand from the same index (And hence i, i) and for even 
+# In this we use expanding from the center approach. For odd cases we expand from the same index (And hence i, i) and for even 
 # We expand from the middle two i.e : i, i + 1
 # Now we only increment j and decrement i if sti[i] == sti[j], else we return sti[i + 1:j]
 # [i + 1, j] because the palindrome substring will be between i and j ( as the loops stops only when sti[i] != sti[j] and hence -

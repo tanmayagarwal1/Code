@@ -1,397 +1,594 @@
-class node:
-	def __init__(self, data):
-		self.data = data
-		self.left = self.right = None
+import heapq 
+def Kadens(arr):
+	if len(arr) == 0 : return - 1
+	i = arr[0]
+	j = 0 
+	start, end, tmp = 0, 0, 0
+	for k in range(len(arr)):
+		j += arr[k]
+		if i < j:
+			i = j 
+			start = tmp 
+			end = k 
+		if j < 0 :
+			j = 0 
+			tmp = k 
+	return i, start, end 
 
-class dll:
-	def __init__(self):
-		self.head = self.tail = None
+def QuickSort(arr):
+	if len(arr) == 0 : return - 1
 
-	def construct(self, root):
-		if root : 
-			self.construct(root.left)
-			node = root
-			if not self.head : self.head = node 
-			else: 
-				self.tail.right = node 
-				node.left = self.tail 
-			self.tail = node
-			self.construct(root.right)
-			return self.head 
-		else: return 
+	def partition(arr, l, h):
+		if h < l : return 
+		i = l - 1 
+		pivot = arr[h]
+		for x in range(l, h):
+			if arr[x] <= pivot:
+				i += 1
+				arr[x], arr[i] = arr[i], arr[x]
+		arr[i + 1], arr[h] = arr[h], arr[i + 1]
+		return i + 1
 
-class sol:
-	def __init__(self):
-		self.max_level = 0 
-		self.arr = []
+	def QuickSortUtil(arr, l, h):
+		if h < l : return 
+		if h >= l :
+			mid = partition(arr, l, h)
+			QuickSortUtil(arr, l, mid - 1)
+			QuickSortUtil(arr, l, mid + 1)
 
-	def LeftView(self, root):
-		if not root : return 
-		self.dfsLeft(root, 1)
-		self.max_level = 0
-		return self.arr
-
-	def dfsLeft(self, root, level):
-		if not root : return 
-		if self.max_level < level:
-			self.arr.append(root.data)
-			self.max_level = level 
-		self.dfsLeft(root.left, level + 1)
-		self.dfsLeft(root.right, level + 1)
-
-	def RightView(self, root):
-		if not root : return 
-		self.dfsRight(root, 1)
-		self.max_level = 0
-		return self.arr
-
-	def dfsRight(self, root, level):
-		if not root : return 
-		if self.max_level < level:
-			self.arr.append(root.data)
-			self.max_level = level 
-		self.dfsRight(root.right, level + 1)
-		self.dfsRight(root.left, level + 1)
-
-def push(root, data):
-	if not root: return node(data)
-	if root.data < data  : root.right = push(root.right, data)
-	elif root.data > data: root.left = push(root.left, data)
-	return root 
-
-def show(root):
-	if root:
-		show(root.left)
-		print(root.data)
-		show(root.right)
-	else : return 
-
-def adder(root):
-	if not root: return 0 
-	return root.data + adder(root.left) + adder(root.right)
-
-def leafs(root):
-	if not root : return 0 
-	if not root.left and not root.right : return 1 
-	return leafs(root.left) + leafs(root.right)
-
-def delete(root, data):
-	if root.left : delete(root.left, data)
-	if root.right : delete(root.right, data)
-	else:
-		if root.data == data:
-			return None 
-	return root
-
-def search(root, data):
-	if not root : return False 
-	if root.data < data : search(root.right, data)
-	if root.data > data : search(root.left, data)
-	return True 
-
-def subtree(root):
-	if not root : return 0 
-	res = [-9999]
-	subtreeu(root, res)
-	return res[0]
-
-def subtreeu(root, res):
-	if not root : return 0 
-	cur = root.data + subtreeu(root.left, res) + subtreeu(root.right, res)
-	res[0] = max(res[0], cur)
-	return cur 
-
-def height(root):
-	if not root: return 0 
-	l = height(root.left)
-	r = height(root.right)
-	if l < r : return r + 1
-	else: return l + 1
-
-def width(root):
-	if not root : return 0 
-	h = height(root)
-	count = [0]*h
-	widthHelper(root, count, 0)
-	return max(count)
-
-def widthHelper(root, arr, idx):
-	if root :
-		arr[idx] += 1
-		widthHelper(root.left, arr, idx + 1)
-		widthHelper(root.right, arr, idx + 1)
-	else : return 
-
-def levelorder(root):
-	if not root : return 0 
-	q, arr= [root], []
-	while q:
-		node = q.pop(0)
-		arr.append(node.data)
-		if node.left  : q.append(node.left)
-		if node.right : q.append(node.right)
-	return arr
-
-def kthanc(root, n, k):
-	if not root : return 
-	if root.data == n or kthanc(root.left, n, k) or kthanc(root.right, n, k):
-		if k[0] > 0 : k[0] -= 1
-		elif k[0] == 0 :
-			print(root.data)
-			return None 
-		return root 
-
-def clock(root):
-	if not root : return -1 
-	q, arr, Mode = [root], [], False
-	while q:
-		tmp = len(q)
-		if not Mode:
-			while tmp > 0 :
-				tmp -= 1
-				node = q.pop(0)
-				arr.append(node.data)
-				if node.left  : q.append(node.left)
-				if node.right : q.append(node.right)
-		else:
-			while tmp > 0:
-				tmp -= 1
-				node = q.pop()
-				arr.append(node.data)
-				if node.right : q.insert(0, node.right)
-				if node.left  : q.insert(0, node.left)
-		Mode = not Mode 
+	QuickSortUtil(arr, 0, len(arr) - 1)
 	return arr 
 
-def counterclock(root):
-	if not root : return - 1
-	q, arr, Mode = [root], [], True
-	while q:
-		tmp = len(q)
-		if not Mode:
-			while tmp > 0 :
-				tmp -= 1
-				node = q.pop(0)
-				arr.append(node.data)
-				if node.left  : q.append(node.left)
-				if node.right : q.append(node.right)
-		else:
-			while tmp > 0:
-				tmp -= 1
-				node = q.pop()
-				arr.append(node.data)
-				if node.right : q.insert(0, node.right)
-				if node.left  : q.insert(0, node.left)
-		Mode = not Mode
+def HeapSort(arr):
+	if len(arr) == 0 : return -1 
+
+	def Heapify(arr, n, i):
+		large = i 
+		l = 2 * i + 1
+		r = 2 * i + 2 
+		if l < n and arr[large] < arr[l]:
+			i = l 
+		if r < n and arr[large] < arr[r]:
+			large = r 
+		if large != i :
+			arr[i], arr[large] = arr[large], arr[i]
+			Heapify(arr, n, large)
+
+	for i in range(len(arr) - 1//2, -1, -1):
+		Heapify(arr, len(arr), i)
+	for i in range(len(arr) - 1, 0 , -1):
+		arr[0], arr[i] = arr[i], arr[0]
+		Heapify(arr, i, 0) 
 	return arr 
 
-def sumLeftLeaves(root):
-	if not root : return 0 
-	if root.left and not root.left.left and not root.left.right : return root.data + sumLeftLeaves(root.right)
-	return sumLeftLeaves(root.left) + sumLeftLeaves(root.right)
+def Mergesort(arr):
+	if len(arr) > 1:
+		mid = len(arr)//2
+		l = arr[:mid]
+		r = arr[mid:]
+		Mergesort(l)
+		Mergesort(r)
+		i = j = k = 0 
+		while i < len(l) and j < len(r):
+			if l[i] < r[j]:
+				arr[k] = l[i]
+				i += 1
+			else:
+				arr[k] = r[j]
+				j += 1
+			k += 1
+		while i < len(l):
+			arr[k] = l[i]
+			i += 1
+			k += 1
+		while j < len(r):
+			arr[k] = r[j]
+			j += 1
+			k += 1
+		return arr 
 
-def sumRightLeaves(root):
-	if not root : return 0 
-	if root.right and not root.right.right and not root.right.left : return root.data + sumRightLeaves(root.left)
-	return sumRightLeaves(root.right) + sumRightLeaves(root.left)
+def BubbleSort(arr):
+	if len(arr) == 0 : return -1 
+	for i in range(len(arr)):
+		for j in range(len(arr) - i - 1):
+			if arr[j + 1] < arr[j]:
+				arr[j], arr[j + 1] = arr[j + 1], arr[j]
+	return arr 
 
-def pathToTarget(root, target):
-	if not root : return False 
-	if not root.left and not root.right and root.data == target : return True 
-	return pathToTarget(root.left, target - root.data) or pathToTarget(root.right, target - root.data)
+def Subsets(arr):
+	return [[arr[i] for i in range(len(arr)) if bit & 1<<i != 0]for bit in range(1<<len(arr))]
 
-def Paths(root):
-	if not root : return ''
-	if not root.left and not root.right : return [str(root.data)]
-	path = []
-	l = Paths(root.left)
-	r = Paths(root.right)
-	for i in l : path.append(str(root.data) + '->' + i)
-	for i in r : path.append(str(root.data) + '->' + i)
-	return path 
+def Subsets2(arr):
+	if len(arr) == 0  : return -1 
+	sol = [[]]
+	for num in arr:
+		sol += [curr + [num]for curr in sol]
+	return sol 
 
-def showPathToTarget(root, target):
-	if not root : return 0 
+def Permutations(arr):
+	if len(arr) == 0 :
+		return - 1
 	res = []
-	showPathToTargetHelper(root, target, [], res)
+	Permutate(arr, [], res)
 	return res 
 
-def showPathToTargetHelper(root, target, path, res):
-	if not root : return 
-	if not root.left and not root.right and root.data == target:
-		path.append(root.data)
+def Permutate(arr, path, res):
+	if not arr : 
 		res.append(path)
-	else:
-		showPathToTargetHelper(root.left, target - root.data, path + [root.data], res)
-		showPathToTargetHelper(root.right, target - root.data, path + [root.data], res)
+		return 
+	for i in range(len(arr)):
+		Permutate(arr[:i] + arr[i + 1:], path + [arr[i]], res)
 
-def IsSymmetric(root):
-	return IsMirror(root.left, root.right)
+def NextPermutation(arr):
+	if not arr : return 0 
+	i = j = len(arr) - 1
+	while i >= 0 and arr[i - 1] >= arr[i]:
+		i -= 1
+	if i == 0:
+		arr.reverse()
+		return arr 
+	pivot = i - 1
+	while arr[j] <= arr[pivot]:
+		j -= 1
+	arr[pivot], arr[j] = arr[j], arr[pivot]
+	l, h = pivot + 1, len(arr) - 1
+	while h > l :
+		arr[h], arr[l] = arr[l], arr[h]
+		l += 1
+		h -= 1
+	return arr 
 
-def IsMirror(rootl, rootr):
-	q = [(rootl, rootr)]
-	while q:
-		x, y = q.pop(0)
-		if not x and not y : continue 
-		if not x or not y : return False 
-		if x.data != y.data : return False 
-		q.append((x.left, y.right))
-		q.append((x.right, y.left))
-	return True
+def KthLeagrest(arr, k):
+	if len(arr) == 0 : raise ValueError
+	heapq.heapify(arr)
+	return arr[-k]
 
-def IsValid(root):
-	return IsBst(root, float('-inf'), float('inf'))
+def Beautifularrangements(n):
+	if not n : raise ValueError
+	arr = [i for i in range(1, n + 1)]
+	res = []
 
-def IsBst(root, lower, upper):
-	if not root : return True
-	if lower < root.data < upper : return IsBst(root.left, lower, root.data) and IsBst(root.right, root.data, upper) 
+	def Helper(arr, path, res, idx):
+		if not arr:
+			res.append(path)
+			return 
+		for j, num in enumerate(arr):
+			if num % idx == 0 or idx % num == 0 :
+				Helper(arr[:j] + arr[j + 1:], path + [arr[j]], res, idx + 1)
+
+	Helper(arr, [], res, 1)
+	return len(res)
+
+def ProductArray(arr):
+	if not arr : return -1 
+	res = [1]*len(arr)
+	for i in range(1, len(arr)):
+		res[i] = arr[i - 1] * res[i - 1]
+	prod = 1 
+	for i in range(len(arr) - 1, -1, -1):
+		res[i] = res[i] * prod 
+		prod = prod * arr[i]
+	return res 
+
+def EqualToK(arr, k):
+	if not arr : return - 1
+	d = {0 : 1}
+	prefix, count = 0, 0 
+	for num in arr:
+		prefix += num 
+		if prefix - k in d:
+			count += d[prefix - k]
+		d[prefix] = d.get(prefix, 0) + 1
+	return count 
+
+def DivisibleK(arr, k):
+	if not k : raise ValueError
+	d = {0 : 1}
+	prefix, count = 0, 0 
+	for num in arr:
+		prefix += num 
+		key = prefix % k 
+		if key in d:
+			count += d[key]
+		d[key] = d.get(key, 0) + 1
+	return count 
+
+def TwoSum(arr, target):
+	if not arr : raise ValueError
+	d = {}
+	for num in arr:
+		if target - num in d:
+			return d[target - num], arr.index(num)
+		d[num] = arr.index(num)
+	return -1 
+
+def PeakElement(arr):
+	if not arr : return - 1
+	l, h = 0, len(arr) - 1
+	while h >= l :
+		mid = l + (h - l)//2
+		if mid != 0 and mid != len(arr) - 1:
+			if arr[mid] > arr[mid - 1] and arr[mid] > arr[mid + 1]:
+				return [mid]
+			elif arr[mid - 1] > arr[mid] : h = mid - 1
+			else: l = mid + 1
+		elif mid == 0 :
+			if arr[mid] >arr[mid + 1] : return arr[mid]
+			else: return arr[mid + 1]
+		elif mid == len(arr) - 1:
+			if arr[mid] > arr[mid - 1] : return arr[mid]
+			else: return arr[mid - 1]
+	return - 1
+
+def SubarraySorts(arr):
+	if len(arr) == 0 : return - 1
+	i, j = 0, len(arr) - 1
+	while i < len(arr) and arr[i + 1] > arr[i]:
+		i += 1
+	while j >= 0 and arr[j] > arr[j - 1]:
+		j -= 1
+	mini, maxi = min(arr[i:j]), max(arr[i:j])
+	for x in range(0, i):
+		if arr[x] > maxi:
+			i = x 
+	for x in range(j, len(arr)):
+		if arr[x] < mini:
+			j = x 
+	return i, j 
+
+def Product(arr, target):
+	if not arr : raise ValueError
+	d = {}
+	for num in d:
+		if target //num in d and taregt % num == 0 :
+			return True 
+		d[num] = num 
 	return False 
 
+def AlternatePositiveAndNegative(arr):
+	if len(arr) == 0 : return -1 
 
-# ---------------- Builders --------------------------
+	def Helper(arr):
+		l, h = 0, len(arr) - 1
+		while l <= h :
+			while arr[l] >= 0 :
+				l += 1
+			while arr[h] < 0 : 
+				h -= 1
+			arr[l], arr[h] = arr[h], arr[l]
+		return arr, l 
 
-def arrayBST(arr):
-	if not arr : return - 1
-	return arrayBSTHelper(arr, 0, len(arr) - 1)
-
-def arrayBSTHelper(arr, l, h):
-	if h < l : return 
-	if h >= l :
-		mid = l + (h - l)//2
-		root = node(arr[mid])
-		root.left = arrayBSTHelper(arr, l, mid - 1)
-		root.right = arrayBSTHelper(arr, mid + 1, h)
-		return root 
-
-def treeToBst(root):
-	sol = Inorder(root)
-	sol.sort()
-	treeToBstHelper(root, sol)
-
-def Inorder(root):
-	if root : return Inorder(root.left) + [root.data] + Inorder(root.right)
-	else: return []
-
-def treeToBstHelper(root, arr):
-	if root:
-		treeToBstHelper(root.left)
-		root.data = arr[0]
-		arr.pop(0)
-		treeToBstHelper(root.right)
-	else: return 
-
-def BstToBalanced(root):
-	sol = Inorder(root)
-	return balancer(root, sol, 0, len(sol) - 1)
-
-def balancer(root, arr, l, h):
-	if h < l : return 
-	if h >= l :
-		mid = l + (h - l)//2
-		root = node(arr[mid])
-		root.left = balancer(root, arr, l, mid - 1)
-		root.right = balancer(root, arr, mid + 1, h)
-		return root 
-
-def BstToMaxHeap(root):
-	sol = Inorder(root)
-	return BstToMaxHeapHelper(root, sol)
-
-def BstToMaxHeapHelper(root, arr):
-	if root:
-		BstToMaxHeapHelper(root.left, arr)
-		BstToMaxHeapHelper(root.right, arr)
-		root.data = arr[0]
-		arr.pop(0)
-	else: return 
-
-def BstToMinHeap(root):
-	sol = Inorder(root)
-	return BstToMinHeapHelper(root, sol)
-
-def BstToMinHeapHelper(root, arr):
-	if root :
-		root.data = arr[0]
-		arr.pop(0)
-		BstToMinHeapHelper(root.left, arr)
-		BstToMinHeapHelper(root.right, arr)
-
-def listToBst(head):
-	if not head : return 
-	if not head.next : return node(head.data)
-	slow, fast = head, head.next.next
-	while fast != None and fast.next != None:
-		slow = slow.next 
-		fast = fast.next.next 
-	tmp = slow.next 
-	slow.next = None
-	root = node(tmp.data)
-	root.left = listToBst(head)
-	root.right = listToBst(tmp.next)
-	return root 
-
-def levelorderList(root):
-	if not root : return 
-	q, arr = [root], []
-	while q:
-		tmp, tmp_arr = len(q), []
-		while tmp > 0:
-			tmp -= 1
-			node = q.pop(0)
-			tmp_arr.append(node.data)
-			if node.left  : tmp_arr.append(node.left)
-			if node.right : tmp_arr.append(node.right)
-		arr.append(tmp_arr)
+	arr, i = Helper(arr)
+	j = 0 
+	while i < len(arr):
+		arr[j], arr[i] = arr[i], arr[j]
+		j += 2 
+		i += 1
 	return arr 
 
-def toDll(root): # returns head 
-	my_list = dll()
-	return my_list.construct(root)
+def DutchFlag(arr):
+	if not arr : return 
+	l, mid, h = 0, 0, len(arr) - 1
 
-#------------------------------------------------------------------------------
+	def swap(arr, l, h):
+		arr[l], arr[h] = arr[h], arr[l]
+		return 
 
-def showMaxHeap(root):
-	if root : return showMaxHeap(root.left) + showMaxHeap(root.right) + [root.data]
-	else: return []
+	while h >= mid:
+		if arr[mid] == 0:
+			swap(arr, l, mid)
+			l += 1 
+			mid += 1
+		elif arr[mid] == 1:
+			mid += 1
+		else:
+			swap(arr, h, mid)
+			h -= 1
+	return arr
 
-def showMinHeap(root):
-	if root : return [root.data] + showMinHeap(root.left) + showMinHeap(root.right)
-	else: return []
+def Floyd(arr):
+	if not arr : raise ValueError 
+	slow, fast, ans = 0, 0, 0
+	while True:
+		slow = arr[slow]
+		fast = arr[arr[fast]]
+		if fast == slow:
+			break 
+	while ans != slow:
+		ans = arr[ans]
+		slow = arr[slow]
+	return ans 
 
-def showlist(head):
-	if not head : return 
-	while head.right:
-		print(head.data)
-		head = head.right 
-	return 
-
-def widthpro(root):
-	if not root : return 
-	q = [root]
-	res = 0 
-	while q :
-		tmp, count = len(q), 0
-		while tmp > 0:
-			tmp -= 1
-			node = q.pop(0)
-			count += 1
-			if node.left  : q.append(node.left)
-			if node.right : q.append(node.right)
-		res = max(res, count)
+def Boats(arr, days):
+	if not arr : return -1 
+	l, h = max(arr), sum(arr)
+	while h >= l :
+		mid = l + (h - l)//2
+		if IsValid(arr, days, mid):
+			res = mid 
+			h = mid - 1
+		else:
+			l = mid + 1
 	return res 
 
-#------------------------------------------------------------------------------
+def IsValid(arr, days, mid):
+	curr_wt = 0 
+	day = 1 
+	for i in range(len(arr)):
+		curr_wt += arr[i]
+		if curr_wt > mid:
+			curr_wt = arr[i]
+			day += 1
+		if day > days : return False 
+	return True 
 
-root = node(20)
-root.left = node(8)
-root.left.left = node(4)
-root.left.right = node(12)
-root.left.right.left = node(10)
-root.left.right.right = node(14)
-root.right = node(22)
-root.right.right = node(25)
-print(widthpro(root))
+def CookChef(arr, p):
+	if not arr : return -1 
+	l, h = 0, 1e8
 
+	def Cook(arr, p, mid):
+		curr_p = 1 
+		for i in range(len(arr)):
+			time = arr[i]
+			j = 2 
+			while time <= mid:
+				time += arr[i]*j 
+				j += 1 
+				curr_p += 1
+			if curr_p >= p : return True 
+		return False 
+
+	while h >= l :
+		mid = l + (h - l)//2
+		if Cook(arr, p, mid):
+			res = mid 
+			h = mid - 1
+		else:
+			l = mid + 1
+	return res 
+
+def Partition(arr, stu):
+	if len(arr) == 0 : return -1 
+	l, h = max(arr), sum(arr)
+
+	def Part(arr, stu, mid):
+		curr_stu = 1 
+		part = 0 
+		for i in range(len(arr)) :
+			part += arr[i]
+			if part > mid:
+				part = arr[i]
+				curr_stu += 1
+			if curr_stu > stu : return False 
+		return True 
+
+	while h >= l :
+		mid = l + (h - l)//2
+		if Part(arr, stu, mid):
+			res = mid 
+			h = mid - 1
+		else:
+			l = mid + 1
+	return res 
+
+def MinimumLengthSubarray(arr, target):
+	if not arr : raise ValueError
+	prefix, l, res, r = 0, 0, len(arr) + 1, 0 
+	for i in range(len(arr)):
+		prefix += arr[i]
+		while prefix >= target:
+			res = min(res, i - l + 1)
+			prefix -= arr[l]
+			l += 1
+		r += 1
+	return res if res < len(arr) + 1 else 0 
+
+def MinimumOpsIncreasing(arr):
+	if not arr : return - 1
+	count = 0 
+	for i in range(1, len(arr)):
+		if arr[i] <= arr[i - 1]:
+			diff = arr[i - 1] - arr[i] + 1
+			count += diff
+			arr[i] = arr[i - 1] + 1
+	return count 
+
+def Houses(arr, b):
+	if not arr : return 0 
+	q = []
+	for i in range(len(arr)):
+		if arr[i] > b : continue 
+		ini = arr[i]
+		count = 1
+		for j in range(len(arr)):
+			if i == j : continue 
+			if arr[j] + ini <= b:
+				ini += arr[j]
+				count += 1
+		q.append(count)
+	res = q[0]
+	for i in range(len(q)):
+		res = max(res, q[i])
+	return res 
+
+def PilesHeight(arr):
+	arr.sort(reverse = True)
+	count =0 
+	for i in range(1, len(arr)):
+		if arr[i] != arr[i - 1]:
+			count += i 
+	return count 
+
+def Trips(arr):
+	if not arr : return - 1
+	arr.sort()
+	for i in range(len(arr) - 1, 1, -1):
+		j = 0 
+		k = i - 1
+		while j < k :
+			if arr[j] + arr[k] == arr[i]:
+				return True 
+			else:
+				if arr[j] + arr[k] < arr[i]:
+					j += 1
+				else:
+					k -= 1
+		return True 
+
+def Rotate(arr, k):
+	if not arr : return - 1
+	k = k % len(arr)
+	l, h = 0, len(arr) - 1
+	mid = h - k - 1
+
+	def Reverse(arr, l, h):
+		if h < l : reuturn 
+		while h > l :
+			arr[h], arr[l] = arr[l], arr[h]
+			h -= 1
+			l += 1
+
+	Reverse(arr, l, mid)
+	Reverse(arr, mid + 1, h)
+	Reverse(arr, l, h)
+	return arr 
+
+def Combinations(arr, target):
+	if not arr : return - 1
+
+	def combine(arr, target, idx, path, res):
+		if target < 0 : return 
+		if target == 0 :
+			res.append(path)
+			return 
+		for i in range(idx, len(arr)):
+			combine(arr, target - arr[i], i, path + [arr[i]], res)
+
+	res = []
+	combine(arr, target, 0, [], res)
+	return res 
+
+def Partitions(O, P):
+	if P == 1 : return 1 
+	if P == 0 or O < 0 : return 0 
+	return Partitions(O - P, P) + Partitions(O, P - 1)
+
+def MaxProdcutSubarray(arr):
+	arr2 = arr[::-1]
+	for i in range(1, len(arr)):
+		arr[i] *= arr[i - 1] or 1 
+		arr2[i] *= arr2[i -1] or 1 
+	return max(arr + arr2)
+
+print(Permutations([1,2,3]))
+
+# Combinations
+print(Combinations([2,3,4], 7))
+
+# Subsets 
+print(Subsets2([1,2,3]))
+
+# Subsets with bitmask 
+print(Subsets([1,2, 3]))
+
+# Partitions 
+print(Partitions(5, 3))
+
+# Beautiful Arrangement 
+print(Beautifularrangements(6)) # 36 
+
+# Two sum 
+target = 14
+arr = [2, 3, 4, 5, 6, 7, 8] # (4, 6)
+print(TwoSum(arr, target))
+
+# Subarray Sum equal to k 
+arr = [1, 2, 3]
+k = 3
+print(EqualToK(arr, k)) # 2
+
+# subarray sum divisble by k 
+arr = [4,5,0,-2,-3,1]
+k = 5 
+print(DivisibleK(arr, k)) # 7 
+
+# Product Array 
+arr = [1, 2, 3, 4, 5]
+print(ProductArray(arr)) # [120, 60, 40, 30, 24]
+
+
+# Rotate 
+arr = [1,2,3,4,5,6,7]
+k = 3
+print(Rotate(arr, k)) # [5,6,7,1,2,3,4]
+
+# Cook Chef 
+arr = [1, 2, 3, 4]
+p = 10
+print(CookChef(arr, p)) # 12 
+
+# Boats 
+arr = [1,2,3,4,5,6,7,8,9,10]
+D = 5
+print(Boats(arr, D)) # 15
+
+# Painters 
+arr = [15, 17, 20]
+k = 2 
+print(Partition(arr, k)) # 32
+
+# Next Permutation 
+arr = [1,1,5]
+print(NextPermutation(arr)) # [1, 5, 1]
+
+# Peak Element 
+arr = [2, 23, 90, 67]
+print(PeakElement(arr)) # 90
+
+# Subarray Sorts the array
+arr = [10, 12, 20, 30, 25, 40, 32, 31, 35, 50, 60]
+print(SubarraySorts(arr)) # (30, 35) => Nums ; (3, 8) => Indices
+
+# Piles 
+print(PilesHeight([5, 2, 1]))
+
+# Min operations to make array strictly increasing 
+arr = [1, 1, 1]
+print(MinimumOpsIncreasing(arr))  # 3
+
+# Product Search 
+arr = [2, 3, 4, 5, 6]
+target = 20
+print(Product(arr, target)) # (2, 3)
+
+# Alternating Negative and Positive 
+arr = [1, 2, 3, -4, -1, 4]
+print(AlternatePositiveAndNegative(arr)) # [-1, 2, -4, 4, 1, 3]
+
+# Kth Largest 
+arr = [2, 4, 3, 1, 5, 7, 6]
+print(KthLeagrest(arr, 3))
+
+#Dutch Flag 
+arr = [0, 1, 2, 1, 1, 0, 0, 2, 1, 1, 0, 1, 2, 1]
+print(DutchFlag(arr))
+
+# Floyds
+arr = [1, 3, 2, 5, 4, 1, 6]
+print(Floyd(arr))
+
+# Minimum Length Subarrau
+arr = [2,3,1,2,4,3]
+target = 7 
+print(MinimumLengthSubarray(arr, target)) # 2 
+
+# TRIPS
+a=[1,2,3,4,5,6,7,8,9]
+print(Trips(a))
+
+
+arr = [2,3,-2,4]
+print(MaxProdcutSubarray(arr))
 
 
 
