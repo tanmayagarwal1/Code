@@ -9,7 +9,7 @@ def OutOfBounds(m, n, sr, sc, max_moves):
 		Psi = Helper(i, j + 1, moves - 1)
 		Mu  = Helper(i, j - 1, moves - 1)
 		Nu  = Helper(i - 1, j, moves - 1)
-		dp[i][j][moves] = Phi + Psi + Mu + Nu 
+		dp[i][j][moves] = (Phi + Psi + Mu + Nu) % (10**9 + 7)
 		return dp[i][j][moves]
 
 	if not max_moves : raise ValuseError 
