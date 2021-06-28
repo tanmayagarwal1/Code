@@ -586,9 +586,9 @@ print(MinimumLengthSubarray(arr, target)) # 2
 a=[1,2,3,4,5,6,7,8,9]
 print(Trips(a))
 
-
+# Maximum Product Subarray 
 arr = [2,3,-2,4]
-print(MaxProdcutSubarray(arr))
+print(MaxProdcutSubarray(arr)) # 6 
 
 
 
