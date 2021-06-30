@@ -16,4 +16,4 @@ def ZigZagConversion(sti, n):
 	return ''.join(res)
 
 sti = "PAYPALISHIRING"
-print(zigZagConversion(sti, 3))
+print(ZigZagConversion(sti, 3))

@@ -480,6 +480,127 @@ def MaxProdcutSubarray(arr):
 		arr2[i] *= arr2[i -1] or 1 
 	return max(arr + arr2)
 
+def KDistinctElementsSubarrayCount(arr, k):
+	if not arr : raise ValueError 
+	def Helper(arr, k):
+		l, r, count, res = 0, 0, 0, 0
+		d = {}
+		while r < len(arr):
+			d[arr[r]] = d.get(arr[r], 0) + 1
+			if d[arr[r]] == 1: count += 1
+			r += 1
+			while l < r and count > k :
+				d[arr[l]] -= 1
+				if d[arr[l]] == 1 :
+					count -=1 
+				l += 1
+			res += r - l 
+		return res 
+
+	return Helper(arr, k) - Helper(arr, k - 1)
+
+def ThreeSum(arr):
+	res = set()
+	if not arr : raise ValueError 
+	n, p, z = [], [], []
+	for num in arr:
+		if num < 0 : n.append(num)
+		elif num > 0 : p.append(num)
+		else: z.append(num)
+
+	N, P = set(n), set(p)
+	if z:
+		for num in P:
+			if -1*num in N:
+				res.add((-1*num, 0, num))
+
+	if len(z) >= 3 : res.add((0, 0, 0))
+	for i in range(len(p)):
+		for j in range(i + 1, len(p)):
+			target = -1 * (p[i] + p[j])
+			if target in N :
+				res.add(tuple(sorted([p[i], p[j], target])))
+
+	for i in range(len(n)):
+		for j in range(i + 1, len(n)):
+			target = -1*(n[i] + n[j])
+			if target in P:
+				res.add(tuple(sorted([n[i], n[j], target])))
+	return res 
+
+def MaxLengthSubarrayWithKDistinctelements(arr, k):
+	if not arr : raise ValueError
+	def Helper(arr , k):
+		l, r, count, res = 0, 0, 0, 0
+		d = {}
+		while r < len(arr):
+			d[arr[r]] = d.get(arr[r], 0 ) + 1
+			if d[arr[r]] == 1 : count += 1
+			r += 1
+			while l < r and count > k:
+				d[arr[l]] -= 1
+				if d[arr[l]] == 1: count -=1 
+				l += 1
+			res = max(res, r - l)
+		return res 
+
+	return Helper(arr, k) - Helper(arr, k - 1)
+
+def MaximumWaterContainer(arr):
+	if not arr : raise ValueError
+	water = 0
+	i, j = 0, len(arr) - 1
+	while i < j :
+		water = max(water, (j - i) * min(arr[i], arr[j]))
+		if arr[i] < arr[j]:
+			i += 1
+		else:
+			j -= 1
+	return water 
+
+def PasaclasTraingleNthRow(row):
+	if not row : raise ValueError
+	my_row = []
+	for i in range(row):
+		my_row = [x + y for x, y in zip([0] + my_row, my_row + [0])]
+	return my_row 
+
+def PermuatationwithDups(arr):
+	def Helper(arr, path, res):
+		if not arr:
+			res.append(path)
+			return 
+		for i in range(len(arr)):
+			if i > 0 and arr[i - 1] == arr[i]:
+				continue 
+			Helper(arr[:i] + arr[i + 1:], path + [arr[i]], res)
+
+	if not arr : raise ValueError 
+	res = []
+	Helper(arr, [], res)
+	return res 
+
+def SquarePerms(arr):
+	def IsSquare(x):
+		return int(x**0.5)**2 == x 
+	def Helper(arr, path, res):
+		if not arr:
+			res.append(path)
+			return 
+		for i in range(len(arr)):
+			if i < 0 and arr[i - 1] == arr[i]:
+				continue 
+			elif path and not IsSquare(arr[i] + path[-1]):
+				continue
+			Helper(arr[:i] + arr[i + 1:], path + [arr[i]], res)
+
+	if not arr : raise ValueError 
+	res = []
+	Helper(arr, [], res)
+	return res 
+
+'''
+# Normal Permuatations 
 print(Permutations([1,2,3]))
 
 # Combinations
@@ -584,13 +705,40 @@ print(MinimumLengthSubarray(arr, target)) # 2
 
 # TRIPS
 a=[1,2,3,4,5,6,7,8,9]
-print(Trips(a))
+print(Trips(a)) # True 
 
 # Maximum Product Subarray 
 arr = [2,3,-2,4]
 print(MaxProdcutSubarray(arr)) # 6 
 
+#Three Sum 
+arr = [-1,0,1,2,-1,-4,-2,-3,3,0,4]
+print(ThreeSum(arr)) # {(-3, -1, 4), (-1, 0, 1), (-4, 1, 3), (-1, -1, 2), (-3, 1, 2), (-3, 0, 3), (-4, 0, 4), (-2, -1, 3), (-2, 0, 2)}
 
+# K distinct elements subarray count 
+arr = [1, 2, 1, 2, 3]
+k = 2
+print(KDistinctElementsSubarrayCount(arr, k)) # 13 
+
+# Maximum length subarray with k distinct elements 
+arr = [1, 2, 1, 2, 3]
+k = 2
+print(MaxLengthSubarrayWithKDistinctelements(arr, k)) # 3 
+
+# Square Permuatations 
+arr = [1, 17, 8]
+print(SquarePerms(arr)) # [[1, 8, 17], [17, 8, 1]]
+
+# Permutation with Duplicates 
+arr = [1, 1, 2]
+print(PermuatationwithDups(arr)) # [[1, 1, 2], [1, 2, 1], [2, 1, 1]]
+
+# Max Water Container
+arr = [1,8,6,2,5,4,8,3,7]
+print(MaximumWaterContainer(arr)) # 49
+
+
+'''
 
 
 
