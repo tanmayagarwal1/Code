@@ -16,6 +16,6 @@ def NiceSubarrays(arr, k):
 
 	return Helper(arr, k) - Helper(arr, k - 1)
 
-arr = [2, 4, 6]
-k = 1 
-print(NiceSubarrays(arr, k))
+arr = [2, 1, 3, 4, 1, 5, 7, 8, 0]
+k = 2
+print(NiceSubarrays(arr, k)) # 10
