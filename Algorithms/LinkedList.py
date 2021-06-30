@@ -1,3 +1,4 @@
+from heapq import heappush, heappop
 class node:
     def __init__(self,data):
         self.data=data 
@@ -82,7 +83,58 @@ class ll:
         while temp2 != None:
             li3.append(temp2.data)
             temp2=temp2.next  
-        return li3    
+        return li3  
+
+    def addTwoNums(self, li1, li2):
+        # We have been given two lists which contain a number in reverse 
+        # li1, li2 = heads of list1 and list 2 
+        # We need to add them and return in the form of a linked list 
+        tmp = root = node(0)  
+        carry = 0 # Carry will also contain the sum 
+        while li1 or li2 or carry:
+            if li1:
+                carry += li1.data
+                li1 = li1.next 
+            if li2:
+                carry += li2.data
+                li2 = li2.next 
+            root.next = node(carry % 10)
+            root = root.next 
+            carry /= 10
+        return tmp.next 
+
+    def MergeTwoLists(self, li1, li2):
+        # li1 and li2 are heads of two sorted lists 
+        tmp, root = node(0)
+        while li1 and li2:
+            if li1.data < li2.data:
+                root.next = li1
+                li1 = li1.next 
+            else:
+                root.next = li2 
+                li2 = li2.next 
+            root = root.next 
+        root.next = li1 or li2 # Case where any of the two lists still remain 
+        return tmp.next 
+
+    def MergeKLists(self, lists):
+        ll.__eq__ = lambda self, other : self.data == other.data 
+        ll.__lt__ = lambda self, other : self.data < other.data
+        h = [] # We will form heapq on this 
+        root =  node(0)
+        tmp = root 
+        for node in lists:
+            if node:
+                heapq.heappush(h, (node.val, node))
+        while h:
+            node = heapq.heappop(h)[1]
+            root.next = node
+            root = root.next 
+            if node.next:
+                heapq.heappush(h, (node.next.val, node.next))
+        return tmp.next 
+
+
 
     def remdup(self): # TO REMOVE DUPLICATES 
         temp=self.head
@@ -233,7 +285,12 @@ li4.append(4)
 li4.append(5)
 li4.append(6)
 li4.rotate(2)
-li4.show()
+#li4.show()
 #############################
 li2.dele(3)
 li2.dele(20)
+
+##############################
+my_li = ll()
+lists = [[1,4,5],[1,3,4],[2,6]]
+my_head = my_li.MergeKLists(lists)
