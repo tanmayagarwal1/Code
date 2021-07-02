@@ -12,10 +12,10 @@ def ProbabilityKnight(n, k, r, c):
 				Helper(i - 2, j - 1, moves - 1))/ 8 
 	return Helper(r, c, k)
 
-n = 3
-k = 2
-r = 0 
-c = 0 
+n = 3 # number of rows and cols n x n 
+k = 2 # Number of moves 
+r = 0 # starts row 
+c = 0 # Start col 
 print(ProbabilityKnight(n, k, r, c))
 
 

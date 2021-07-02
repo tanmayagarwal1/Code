@@ -1,6 +1,6 @@
 def Sort(arr):
 	if len(arr) == 0:
-		return -1 
+		raise ValueError
 	l, h, mid = 0, len(arr) - 1, 0
 	while mid <= h:
 		if arr[mid] == 0:

@@ -341,6 +341,57 @@ def Kthlargest(root, k, c):
         return None
     Kthlargest(root.left, k, c)
 
+def IsOddEven(root):
+    if not root : return 
+    q = [root]
+    count = 0 
+    while q:    
+        tmp = len(q)
+        if count == 0 :
+            while tmp > 0:
+                tmp -= 1
+                x = q.pop()
+                if x.left : q.append(x.left)
+                if x.right : q.append(x.right)
+
+        elif count % 2: # ODD Case 
+            temp = float('inf')
+            while tmp > 0:
+                tmp -= 1
+                x = q.pop(0)
+                if x.data % 2 == 1 : return False 
+                if x.data < temp : temp = x.data 
+                else: return False 
+                if x.left : q.append(x.left)
+                if x.right : q.append(x.right)
+        elif count % 2 == 0:
+            temp = float('-inf')
+            while tmp > 0: # Even Case 
+                tmp -= 1
+                x = q.pop(0)
+                if x.data % 2 == 0: return False 
+                if x.data > temp : temp = x.data 
+                else : return False 
+                if x.left : q.append(x.left)
+                if x.right : q.append(x.right)
+        count += 1
+
+    return True 
+
+def diameter(root):
+    res = 0 
+    def Helper(root):
+        if not root : return 0 
+        l = Helper(root.left)
+        r = Helper(root.right)
+        res = max(res, l + r + 1)
+        if l < r : return r + 1
+        return l + 1
+
+    Helper(root)
+    return best - 1
+
+
 root=node(5)
 push(root,10)
 push(root,15)
