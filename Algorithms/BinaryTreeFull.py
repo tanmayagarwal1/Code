@@ -398,10 +398,7 @@ push(root,15)
 push(root,6)
 push(root,8)
 push(root,1)
-Kthlargest(root, 2, [0])
-#show(forest)
-#print(Paths(forest))
-IsBST
+
 
 
 
