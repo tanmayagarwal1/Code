@@ -131,6 +131,64 @@ def greycode(n):
 		res.append(res[-1] ^ (i & ~i + 1))
 	return res 
 
+def KfrequentElementsHeap(arr, k):
+	if not arr : raise ValueError 
+	pq = []
+	d = {}
+	for num in arr:
+		d[num] = d.get(num, 0) + 1
+	for num, freq in d.items():
+		heapq.heappush(pq, (freq, num))
+		if len(pq) > k : heapq.heappop(pq)
+	return [i[1] for i in pq]
+
+def KFrequentElementsBuckets(arr, k):
+	if not arr : raise ValueError
+	buckets = [[] for _ in range(len(arr))]
+	d = {}
+	for num in arr:
+		d[num] = d.get(num, 0) + 1
+	for num, freq in d.items() : buckets[freq].append(num)
+	res = []
+	for i in range(len(buckets) - 1, -1, -1):
+		bucket = buckets[i]
+		if bucket:
+			for num in bucket:
+				res.append(num)
+	return res[:k]
+
+def KthLargest(arr, k):
+	if not arr : raise ValueError
+	pq = []
+	for num in arr:
+		heapq.heappush(pq, num)
+		if len(pq) > k : heapq.heappop(pq)
+	return heapq.heappop(pq)
+
+def KthLargestQuckSelect(arr, k):
+	def partition(arr, l, h):
+		i = l - 1
+		pivot = arr[h]
+		for j in range(l, h):
+			if arr[j] <= pivot:
+				i += 1
+				arr[i], arr[j] = arr[j], arr[i]
+		arr[i + 1], arr[h] = arr[h], arr[i + 1]
+		return i + 1
+
+	def Helper(arr, k):
+		if arr:
+			mid = partition(arr, 0, len(arr) - 1)
+			if k > mid + 1:
+				return Helper(arr[mid + 1 :], k - mid - 1)
+			elif k < mid + 1:
+				return Helper(arr[:mid], k)
+			else:
+				return arr[mid]
+	if not arr : raise ValueError
+	return Helper(arr, len(arr) - k + 1)
+
+
 # Stone Weight
 arr = [2,7,4,1,8,1]
 print(StoneWeights(arr)) # 1 
@@ -188,7 +246,25 @@ print(KclosestPointsToOrigin(points, k)) # [(-2, 4), (3, 3)]
 n = 3
 print(greycode(n)) # [0, 1, 3, 2, 6, 7, 5, 4]
 
+# K frequent elements Heap 
+arr = [1,1,1,2,2,3]
+k = 2
+print(KfrequentElementsHeap(arr, k)) # [2, 1]
 
+# K frequent elements buckets 
+arr = [1,1,1,2,2,3]
+k = 2
+print(KFrequentElementsBuckets(arr, k)) # [1, 2]
+
+# Kth Largest Heap 
+arr = [3,2,3,1,2,4,5,5,6]
+k = 4
+print(KthLargest(arr, k)) # 4 
+
+# Kth Largest QucikSelect 
+arr = [3,2,3,1,2,4,5,5,6]
+k = 4
+print(KthLargestQuckSelect(arr, k)) # 4 
 
 
 				

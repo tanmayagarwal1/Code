@@ -377,7 +377,7 @@ def MinimumLengthSubarray(arr, target):
 	for i in range(len(arr)):
 		prefix += arr[i]
 		while prefix >= target:
-			res = min(res, i - l + 1)
+			res = min(res, r - l + 1)
 			prefix -= arr[l]
 			l += 1
 		r += 1

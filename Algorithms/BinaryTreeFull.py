@@ -389,16 +389,42 @@ def diameter(root):
         return l + 1
 
     Helper(root)
-    return best - 1
+    return res - 1
+
+def VerticalPrint(root):
+    def Helper(root, d, idx):
+        if root : 
+            if idx in d:
+                d[idx].append(root.data)
+            else:
+                d[idx] = [root.data]
+            Helper(root.left, d, idx - 1)
+            Helper(root.right, d, idx + 1)
+        else:
+            return 
+
+    if not root : return 
+    d = dict()
+    idx = 0 
+    Helper(root, d, idx)
+    for i in sorted(d.keys()):
+        res = []
+        for num in d[i]:
+            res.append(num)
+        print(res)
 
 
-root=node(5)
-push(root,10)
-push(root,15)
-push(root,6)
-push(root,8)
-push(root,1)
 
+root = node(1)
+root.left = node(2)
+root.right = node(3)
+root.left.left = node(4)
+root.left.right = node(5)
+root.right.left = node(6)
+root.right.right = node(7)
+root.right.left.right = node(8)
+root.right.right.right = node(9)
+print(VerticalPrint(root))
 
 
 
