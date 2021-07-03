@@ -1,26 +1,21 @@
-def Swap(arr):
-	if len(arr) == 0 : return - 1
-	i, j = 0 ,len(arr) - 1
-	while i < j:
-		while arr[j] < 0 :
-			j -= 1
-		while arr[i] >= 0 : 
-			i += 1
-		arr[i], arr[j] = arr[j], arr[i]
-		i += 1
-		j -= 1
-	return arr, i 
+def Alternating(arr):
+	if not arr : raise ValueError 
+	def Helper(arr):
+		i = - 1
+		for j in range(len(arr)):
+			if arr[j] < 0:
+				i += 1
+				arr[i], arr[j] = arr[j], arr[i]
+		return arr, i + 1 # i will point to the last negative element ( all -ves are on left ), hence i + 1 will point to first postive element
 
-def ZigZag(arr):
-	if len(arr) == 0 : return - 1
-	arr, i = Swap(arr)
-	k = 1
-	while k < len(arr) and i < len(arr):
+	arr, i = Helper(arr)
+	k = 0 
+	while i < len(arr):
 		arr[k], arr[i] = arr[i], arr[k]
 		k += 2
 		i += 1
-	return arr
+	return arr 
 
 
-arr = [1, 2, 3, -4, -1, 4]
-print(ZigZag(arr))
+arr = [1, 2, 3, -4, -1, -4, -8, 7]
+print(Alternating(arr))

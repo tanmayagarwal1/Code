@@ -1,3 +1,4 @@
+# given a number check if the digits are incresing. If not return the largest monotonic number 
 def MonotonicArray(x):
 	if not x : raise ValueError 
 	n = x 

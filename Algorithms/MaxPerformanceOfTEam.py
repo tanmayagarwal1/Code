@@ -5,8 +5,11 @@ def MaxPerformance(n, k, speed, efficiency):
 	Speed_sum = 0 
 	res = 0 
 	for e, s in sorted(zip(efficiency, speed), reverse = 1):
-		pq.append((e, s))
-	return pq
+		heapq.heappush(pq, s)
+		Speed_sum += s 
+		if len(pq) > k : Speed_sum -= heapq.heappop(pq)
+		res = max(res, Speed_sum * e)
+	return res 
 
 
 n = 6 
