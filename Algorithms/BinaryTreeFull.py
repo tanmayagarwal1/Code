@@ -413,6 +413,33 @@ def VerticalPrint(root):
             res.append(num)
         print(res)
 
+def GreaterSumBst(root):
+    class sol:
+        def __init__(self):
+            self.val = 0 
+        def Helper(self, root):
+            if root:
+                self.Helper(root.right)
+                root.data = self.val = self.val + root.data
+                self.Helper(root.left)
+                return root 
+            else:
+                return 0
+    s = sol()
+    s.Helper(root)
+    return 
+
+def LowestCommonAncestor(root, p, q):
+    if root in (None, p, q) : return root 
+    lef_res, right_res = 0, 0 
+    if root.left:
+        lef_res = LowestCommonAncestor(root.left, p, q)
+    if root.right:
+        right_res = LowestCommonAncestor(root.right, p, q)
+    if lef_res and right_res:
+        return root 
+    return left_res or right_res
+
 
 
 root = node(1)
@@ -424,7 +451,8 @@ root.right.left = node(6)
 root.right.right = node(7)
 root.right.left.right = node(8)
 root.right.right.right = node(9)
-print(VerticalPrint(root))
+GreaterSumBst(root)
+show(root)
 
 
 
