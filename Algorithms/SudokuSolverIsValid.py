@@ -14,7 +14,7 @@ def IsValidSudokuSolver(grid):
 	def BoxHelper(grid): # Check Box. Note : its i, j in (0, 3, 6) and not range(0, 3, 6)
 		for i in (0, 3, 6):
 			for j in (0, 3, 6):
-				box = [grid[x][y] for x in range(i, i + 2) for y in range(j, j + 3)]
+				box = [grid[x][y] for x in range(i, i + 3) for y in range(j, j + 3)]
 				if not Helper(box):
 					return False 
 		return True 
