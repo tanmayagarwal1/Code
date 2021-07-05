@@ -440,6 +440,217 @@ def LowestCommonAncestor(root, p, q):
         return root 
     return left_res or right_res
 
+def PermsToGetSameBinaryTree(arr):
+    if not arr : raise ValueError 
+    def Fact(fac,  n):
+        fac[0] = 1 
+        for i in range(1, n):
+            fac[i] = fac[i - 1] * i 
+
+    def NcR(fac, n, r):
+        if r > n : return 0 
+        res = fac[n] // fac[r]
+        res //= fac[n - r]
+        return res 
+
+    def Helper(arr, fac):
+        n = len(arr)
+        if n <= 2 : return 1 
+        left_tree, right_tree = [], []
+        root = arr[0]
+        for i in range(1, n):
+            if arr[i] > root:
+                right_tree.append(arr[i])
+            elif arr[i] < root:
+                left_tree.append(arr[i])
+        n1 = len(left_tree)
+        n2 = len(right_tree)
+        left_count = Helper(left_tree, fac)
+        right_count = Helper(right_tree, fac)
+        return (NcR(fac, n - 1, n1) * left_count * right_count)
+
+    n = len(arr)
+    fac = [0]*len(arr)
+    Fact(fac, n)
+    return Helper(arr, fac)
+
+def Median(root, p, q):
+    def Helper(root, sol):
+        if root:
+            Helper(root.left, sol)
+            if root.data >= p and root.data <= q:
+                sol.append(root.data)
+            Helper(root.right, sol)
+        else:
+            return 
+    def MedianHelper(arr):
+        n = len(arr)
+        idx = (n - 1)//2
+        if n & 1 : return arr[idx]
+        else: return (arr[idx] + arr[idx + 1])//2
+
+    if not root : return 
+    sol = []
+    Helper(root, sol)
+    return MedianHelper(sol)
+
+# From this problem we define the iterators : Forwards and backwards iterators 
+# Forwards iterators iterate to left initially and bakcwards to right 
+# in the main while loop to move the iterator, forward iterator goes to right of the last element and recurses to the left 
+# Backwards iterator goes to left of last node and recurses to the right again
+# Problem that can be solved using this : Number of pairs equal target, Is pair equal target, Is pair in two trees equal target, triplets equal to target
+# minimum absolute differnece between nodes of two trees 
+def NumberOfNodesEqualSum(root, target):
+    if not root : return 
+    q  = [] # Forward iterator
+    pq = [] # Backward iterator
+    tmp = root 
+    while tmp:  # Forward iterator goes left 
+        q.append(tmp)
+        tmp = tmp.left
+    tmp = root 
+    while tmp: # Backwards iterator goes right
+        pq.append(tmp)
+        tmp = tmp.right 
+    count = 0 
+    while q[-1] != pq[-1]: # condition to terminate 
+        v1 = q[-1].data
+        v2 = pq[-1].data 
+        if v1 + v2 == target :
+            count += 1
+        if v1 + v2 <= target :
+            tmp = q[-1].right # Increment forward iterator : first go right on the last node and the recurse left 
+            q.pop()
+            while tmp:
+                q.append(tmp)
+                tmp = tmp.left
+        else:
+            tmp = pq[-1].left # Increment the backwards iterator : Go left on the last node and then go right 
+            pq.pop()
+            while tmp:
+                pq.append(tmp)
+                tmp = tmp.right 
+    return count 
+
+def BoundaryTraversalClockwise(root):
+    if not root : return 
+
+    def Leafs(root):
+        if root:
+            Leafs(root.right)
+            if not root.left and not root.right:
+                print(root.data)
+            Leafs(root.left)
+        else:
+            return None 
+
+    def Down(root):
+        if root:
+            if root.right:
+                print(root.data)
+                Down(root.right)
+            elif root.left:
+                print(root.data)
+                Down(root.left)
+        else:
+            return None 
+
+    def Up(root):
+        if root:
+            if root.left:
+                Up(root.left)
+                print(root.data)
+            elif root.right:
+                Up(root.right)
+                print(root.data)
+        else:
+            return None 
+
+    print(root.data)
+    Down(root.right)
+    Leafs(root.right)
+    Leafs(root.left)
+    Up(root.left)
+    return None 
+
+def AntiBoundary(root): # This one with auxillary space 
+    if not root : return None 
+    res = []
+
+    def Leafs(root, res):
+        if root:
+            Leafs(root.left, res)
+            if not root.left and not root.right:
+                res.append(root.data)
+            Leafs(root.right, res)
+        else:
+            return None 
+
+    def Down(root, res):
+        if root:
+            if root.left:
+                res.append(root.data)
+                Down(root.left, res)
+            elif root.right:
+                res.append(root.data)
+                Down(root.right, res)
+        else:
+            return 
+
+    def Up(root, res):
+        if root:
+            if root.right:
+                Up(root.right, res)
+                res.append(root.data)
+            elif root.left:
+                Up(root.left, res)
+                res.append(root.data)
+        else:
+            return 
+
+    res.append(root.data)
+    Down(root.left, res)
+    Leafs(root.left, res)
+    Leafs(root.right, res)
+    Up(root.right, res )
+    return res 
+
+def AdvancedZigZag(root):
+    if not root : return 
+    q, pq = [root], [root]
+    res1, res2 = [], []
+    while q and pq:
+        tmp1, tmp2 = [], []
+        le1, le2 = len(q), len(pq)
+        while le1 and le2:
+            le1 -= 1
+            le2 -= 1
+            x, y = q.pop(0), pq.pop()
+            tmp1.append(x.data)
+            tmp2.append(y.data)
+            if x.left:
+                q.append(x.left)
+            if x.right:
+                q.append(x.right)
+            if y.right:
+                pq.insert(0, y.right)
+            if y.left:
+                pq.insert(0, y.left)
+        res1.append(tmp1)
+        res2.append(tmp2)
+
+    #return res1, res2
+    i = 0 
+    j = len(res1) - 1
+    while i < j:
+        print(res1[i])
+        print(res2[j])
+        i += 1
+        j -= 1
+    return None 
+
+
+
 
 
 root = node(1)
@@ -451,8 +662,19 @@ root.right.left = node(6)
 root.right.right = node(7)
 root.right.left.right = node(8)
 root.right.right.right = node(9)
-GreaterSumBst(root)
-show(root)
+#GreaterSumBst(root)
+#print(Median(root, 3, 8))
+
+root1 = node(5)
+root1.left = node(3)
+root1.right = node(7)
+root1.left.left = node(2)
+root1.left.right = node(4)
+root1.right.left = node(6)
+root1.right.right = node(8)
+print(AdvancedZigZag(root))
+
+
 
 
 
