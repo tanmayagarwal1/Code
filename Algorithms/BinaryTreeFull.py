@@ -649,32 +649,153 @@ def AdvancedZigZag(root):
         j -= 1
     return None 
 
+def LeafSum(root):
+    if not root : return 0 
+    if not root.left and not root.right : return root.data 
+    return LeafSum(root.left) + LeafSum(root.right)
+
+def IsBalanced(root):
+    if not root : return 0 
+    if not root.left and not root.right : return 1 
+    l = IsBalanced(root.left)
+    if l == - 1: return -1 
+    r = IsBalanced(root.right)
+    if r == -1 : return - 1
+    if (abs(l - r) > 1):
+        return -1 
+    return max(l, r) + 1
+
+def ShowAllAncestors(root, target):
+    res = []
+    if not root : return None 
+    def Helper(root, res, target):
+        if not root : return False 
+        if root.data == target :
+            return True
+        if(Helper(root.left, res, target) or Helper(root.right, res, target)):
+            res.append(root.data)
+            return True 
+        return False 
+    Helper(root, res, target)
+    return res  
+
+def GetParent(root, target):
+    if not root : return False 
+    if root.left and root.left.data == target or root.right and root.right.data == target:
+        return root.data 
+    return GetParent(root.left, target) or GetParent(root.right, target)
+
+def GetSibling(root, target):
+    def Helper(root, target):
+        if not root : return False 
+        if root.left and root.left.data == target:
+            return root.right.data if root.right else False 
+        elif root.right and root.right.data == target:
+            return root.left.data if root.left else False 
+        return Helper(root.left, target) or Helper(root.right, target)
+
+    if not root : raise ValueError  
+    if root.data == target : return None 
+    return Helper(root, target)
+
+def isSiblings(root, p, q):
+    if not root : return False 
+    if root.left and root.right:
+        if root.left.data == p and root.right.data == q : return True
+        if root.left.data == q and root.right.data == p : return True
+    return isSiblings(root.left, p, q) or isSiblings(root.right, p, q)
+
+def DistanceBetweenTwoNodes(root, node1, node2):
+    def Helper(root, target, lev): # Finds the distance 
+        if not root : return -1 
+        if root.data == target : return lev
+        tmp = Helper(root.left, target, lev + 1)
+        if tmp != -1 : return tmp # If found on left return dist 
+        tmp = Helper(root.right, target, lev + 1) # Else search on right 
+        return tmp  
+
+    def Lca(root, p, q):  # This, instead of returung node of the lca, returns its data 
+        if not root : return None 
+        if root.data in (p, q) : return root.data
+        left_res, right_res = 0, 0
+        if root.left:
+            left_res = Lca(root.left, p, q)
+        if root.right:
+            right_res = Lca(root.right, p, q)
+        if left_res and right_res : 
+            return root.data 
+        return left_res or right_res 
+
+    def Getnode(root, num): # This takes that data and returns the node 
+        if not root : return 
+        if root.data == num:
+            return root 
+        return Getnode(root.left, num) or Getnode(root.right, num)
+
+    lca =  Getnode(root, Lca(root, node1, node2))
+    d1 = Helper(lca, node1, 0)
+    d2 = Helper(lca, node2, 0)
+    return d1 + d2 
 
 
+def MaxPAthCostFromRootToLeaf(root):
+    class sol : 
+        def __init__(self):
+            self.max = 0 
+        def Helper(self, root, summ):
+            if not root : return  
+            if not root.left and not root.right and summ + root.data > self.max:
+                self.max = summ + root.data
+                return 
+            self.Helper(root.left, summ + root.data)
+            self.Helper(root.right, summ + root.data)
+    s = sol()
+    s.Helper(root, 0)
+    return s.max
 
 
-root = node(1)
-root.left = node(2)
-root.right = node(3)
+def RemoveAllNodesIfSumLessThanK(root, k):
+    if not root : return 
+    def Helper(root, k, s):
+        if not root : return 0 
+        Helper(root.left, k, s + root.data)
+        Helper(root.right, k, s + root.data)
+        if not root.left and not root.right and s + root.data < k:
+            return None 
+
+    Helper(root, k, 0)
+    return 
+
+def CheckIfSequenceInRootToPath(root, arr):
+    if not arr or not root : raise ValueError
+    def Helper(root, arr, idx):
+        if not root : return False 
+        if idx >= len(arr) or root.data != arr[idx]:
+            return False 
+        if not root.left and not root.right and idx == len(arr) - 1:
+            return True 
+        return Helper(root.left, arr, idx + 1) or Helper(root.right, arr, idx + 1)
+
+    return Helper(root, arr, 0)
+
+root = node(20)
+root.left = node(8)
 root.left.left = node(4)
-root.left.right = node(5)
-root.right.left = node(6)
-root.right.right = node(7)
-root.right.left.right = node(8)
-root.right.right.right = node(9)
-#GreaterSumBst(root)
-#print(Median(root, 3, 8))
-
-root1 = node(5)
-root1.left = node(3)
-root1.right = node(7)
-root1.left.left = node(2)
-root1.left.right = node(4)
-root1.right.left = node(6)
-root1.right.right = node(8)
-print(AdvancedZigZag(root))
+root.left.right = node(12)
+root.left.right.left = node(10)
+root.left.right.right = node(14)
+root.right = node(22)
+root.right.right = node(25)
+print(CheckIfSequenceInRootToPath(root, [20, 22, 24]))
 
 
+# root :      20
+#            /  \
+#           8   22
+#          / \    \ 
+#         4  12   25
+#           /  \
+#          10  14
 
 
 
