@@ -778,6 +778,8 @@ def CheckIfSequenceInRootToPath(root, arr):
 
     return Helper(root, arr, 0)
 
+
+'''
 root = node(20)
 root.left = node(8)
 root.left.left = node(4)
@@ -786,8 +788,8 @@ root.left.right.left = node(10)
 root.left.right.right = node(14)
 root.right = node(22)
 root.right.right = node(25)
-print(CheckIfSequenceInRootToPath(root, [20, 22, 24]))
-
+#print(CheckIfSequenceInRootToPath(root, [20, 22, 24]))
+'''
 
 # root :      20
 #            /  \
