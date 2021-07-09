@@ -14,8 +14,12 @@ def SubarrayWithKDistinctelements(arr, k):
 			res += r - l 
 		return res 
 
-	return Helper(arr, k) - Helper(arr, k - 1)
+	return Helper(arr, k) #- Helper(arr, k - 1)
 
 arr = [1, 2, 1, 2, 3]
 k = 2
-print(SubarrayWithKDistinctelements(arr, k))
+arr2 = [ 1, 1, 2, 2, 3, 3, 4, 5]
+k2 = 2
+arr3 = [1, 2, 1, 2, 3]
+k3 = 2
+print(SubarrayWithKDistinctelements(arr3, k3))

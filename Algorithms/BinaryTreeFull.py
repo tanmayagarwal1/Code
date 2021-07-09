@@ -779,7 +779,126 @@ def CheckIfSequenceInRootToPath(root, arr):
     return Helper(root, arr, 0)
 
 
+def DeepestLevelWithLeaf(root):
+    # the level must be odd 
+    class sol:
+        def __init__(self):
+            self.max = 0 
+
+        def solver(self, root):
+            def Helper(root, level):
+                if not root : return 
+                if not root.left and not root.right and level > self.max and level & 1:
+                    self.max = level 
+                Helper(root.left, level + 1)
+                Helper(root.right, level + 1)
+
+            Helper(root, 1)
+
+    if not root : raise ValueError 
+    s = sol()
+    s.solver(root)
+    return s.max
+
+
+def DeepestLeftLeaf(root):
+    if not root :
+        raise ValueError 
+
+    class sol:
+        def __init__(self):
+            self.max = 0 
+            self.res = 0
+
+        def solver(self, root):
+            def Helper(root, level, isLeft):
+                if not root : return 
+                if not root.left and not root.right and level > self.max and isLeft:
+                    self.res = root.data 
+                    self.max = level 
+                Helper(root.left, level + 1, True)
+                Helper(root.right, level + 1, False)
+            Helper(root, 1, True)
+
+    s = sol()
+    s.solver(root)
+    return s.res 
+
+def NodesAtDistanceKFromRoot(root, k):
+    class sol:
+        def Solver(self, root, k):
+            self.k = k 
+            if not root : raise ValueError
+            def Helper(root, lvl):
+                if not root : return 
+                if lvl == self.k:
+                    print(root.data)
+                    return 
+                Helper(root.left, lvl + 1)
+                Helper(root.right, lvl + 1)
+            Helper(root, 0)
+
+    s = sol()
+    s.Solver(root, k)
+    return None 
+
+
+def Difference(root):
+    # Find the difference between even and odd level nodes 
+    class sol:
+        def __init__(self):
+            self.even = 0 
+            self.odd = 0 
+
+        def Solver(self, root):
+            if not root : raise ValueError
+            def Helper(root, level):
+                if not root : return 
+                if not level & 1 : self.even += root.data
+                else: self.odd += root.data 
+                Helper(root.left, level + 1)
+                Helper(root.right, level + 1)
+            Helper(root, 1)
+
+    s = sol()
+    s.Solver(root)
+    return abs(s.even - s.odd)
+
+
+def BuildTreePostorder(inorder, postorder):
+    if not inorder or not postorder : raise ValueError 
+    def Helper(ino, post):
+        if ino:
+            x = post.pop()
+            root = node(x)
+            idx = ino.index(x)
+
+            # As we build the tree from postorder, start building right to left 
+            root.right = Helper(ino[idx + 1 : ], post)
+            root.left = Helper(ino[:idx], post)
+            return root 
+    return Helper(inorder, postorder)
+
+
+def BuildTreePreOrder(inorder, preorder):
+    if not preorder or not inorder : raise ValueError
+    def Helper(pre, ino):
+        if ino:
+            x = pre.pop(0)
+            idx = ino.index(x)
+            root = node(x)
+
+            # Build normally from the left 
+            root.left = Helper(pre, ino[:idx])
+            root.right = Helper(pre, ino[idx + 1 :])
+            return root 
+    return Helper(preorder, inorder)
+
+
+
+
 '''
+
 root = node(20)
 root.left = node(8)
 root.left.left = node(4)
@@ -788,7 +907,8 @@ root.left.right.left = node(10)
 root.left.right.right = node(14)
 root.right = node(22)
 root.right.right = node(25)
-#print(CheckIfSequenceInRootToPath(root, [20, 22, 24]))
+print(DeepestLevelWithLeaf(root))
+
 '''
 
 # root :      20

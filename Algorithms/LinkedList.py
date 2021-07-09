@@ -134,6 +134,73 @@ class ll:
                 heapq.heappush(h, (node.next.val, node.next))
         return tmp.next 
 
+    def ReverseKNodes(self, head, k):
+        if not head : return 
+        curr, ne, pre = head, None, None 
+        count = 0 
+        tmp = head
+        while tmp and count <= k :
+            tmp = tmp.next 
+            count += 1
+        if count < k : return head 
+
+        count = 0 
+        while count < k :
+            count += 1
+            ne = curr.next 
+            curr.next = pre 
+            pre = curr 
+            curr = ne 
+        head.next = self.ReverseKNodes(ne, k)
+
+        return pre  
+
+
+def copyRandom(head):
+    if not head : return 
+
+    # Make Duplicate nodes : 1(# 3) -> dup(1) -> 2(# 1) -> dup(2) -> 3(# 3) -> dup(3) -> None 
+    # (# means the random pointer) : 1(# 3) means 1's random pointer points to node 3 
+    # currently dup nodes do not have any random assigned to them 
+
+    curr = head 
+    while curr:
+        tmp = curr.next 
+        curr.next = Node(curr.data)
+        curr.next.next = tmp 
+        curr = tmp 
+    
+    # Now copy the random pointers 
+    # let curr be pointing to the first original node : curr =>  1(# 3) 
+
+    # the formula is : curr.next.random = curr.random.next 
+    # To break it down I will add some parantheses : (curr.next).random = (curr.random).next 
+    # (curr.next) will give us access to the duplicate of the curr pointer's node ( dup(1) ) and -
+    # (curr.next).random gives us access to the dup node's random pointer ( dup(1 (# )) )
+
+    # it's next will be the duplicate of that same node ( dup(3) )
+    # And hence the curr node's duplicate's random,  must point to the curr's random original node's duplicate 
+
+    # List => 1(# 3) -> dup( 1 (# 3) ) -> 2(# 1) -> dup(2 (# 1) ) -> 3(# 3) -> dup(3 (# 3) ) -> None
+    
+    curr = head 
+    while curr:
+        if curr.random:
+            curr.next.random = curr.random.next 
+        curr = curr.next.next 
+    
+    # Now just seperate the list 
+
+    final = curr = head.next 
+    while head.next:
+        head.next = curr.next 
+        head = head.next 
+        curr.next = head.next 
+        curr = head.next 
+    head.next = None 
+    return final 
+
+
 
 
     def remdup(self): # TO REMOVE DUPLICATES 
@@ -284,13 +351,9 @@ li4.append(3)
 li4.append(4)
 li4.append(5)
 li4.append(6)
-li4.rotate(2)
 #li4.show()
 #############################
 li2.dele(3)
 li2.dele(20)
 
 ##############################
-my_li = ll()
-lists = [[1,4,5],[1,3,4],[2,6]]
-my_head = my_li.MergeKLists(lists)
