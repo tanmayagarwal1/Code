@@ -1,28 +1,10 @@
-from BinaryTreeFull import node, show
+from BinaryTreeFull import node, show, RemoveAllNodesIfSumLessThanK
 import heapq
+from math import * 
 
 
-def KthSmallest(root, k):
-	class sol:
-		def solver(self, root, k):
-			def Helper(root):
-				if root:
-					Helper(root.left)
-					if self.k == 0 : 
-						print(root.data)
-						return 
-					elif self.k < 0 : return 
-					else: self.k -= 1
-					Helper(root.right)
-				else:
-					return 
-
-			self.k = k 
-			return Helper(root)
-	s = sol()
-	s.solver(root, k)
-	return None 
-
+array = [[0 for j in range(2)] for i in range(2)]
+print(array)
 
 
 root = node(20)
@@ -33,8 +15,7 @@ root.left.right.left = node(10)
 root.left.right.right = node(14)
 root.right = node(22)
 root.right.right = node(25)
-#print(deepestLeftLeaf(root))
-print(KthSmallest(root, 2))
+#print(Difference(root))
 
 # root :      20
 #            /  \
@@ -43,3 +24,5 @@ print(KthSmallest(root, 2))
 #         4  12   25
 #           /  \
 #          10  14
+
+
