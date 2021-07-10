@@ -895,6 +895,28 @@ def BuildTreePreOrder(inorder, preorder):
     return Helper(preorder, inorder)
 
 
+def MaxSumExclusingNodes(root):
+    def Helper_grand(root, cache):
+        if not root : return 0 
+        summ = 0 
+        if root.left:
+            summ += (Helper(root.left.left, cache) + Helper(root.left.right, cache))
+        if root.right:
+            summ += (Helper(root.right.left, cache) + Helper(root.right.left, cache))
+        return summ 
+
+    def Helper(root, cache):
+        if not root : return 0 
+        if root in cache : return cache[root]
+        including = (root.data + Helper_grand(root, cache))
+        excluding = (Helper(root.left, cache) + Helper(root.right, cache))
+        cache[node] = max(including, excluding)
+        return cache[node]
+    
+    if not root : return 
+    cache = {}
+    return Helper(root, cache)
+
 
 
 '''
