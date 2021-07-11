@@ -7,6 +7,8 @@ array = [[0 for j in range(2)] for i in range(2)]
 print(array)
 
 
+
+
 root = node(20)
 root.left = node(8)
 root.left.left = node(4)
