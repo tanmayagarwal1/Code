@@ -312,6 +312,7 @@ def copyRandom(head):
             return 1
         return 0 
 
+
 ################################################################
     def show(self):
         temp=self.head
@@ -326,7 +327,30 @@ def copyRandom(head):
         temp=self.head
         while temp != None:
             print(f"{temp.data}-->")
-            temp=temp.next     
+            temp=temp.next  
+
+
+def ZerosAtStart(head):
+    if not head : raise ValueError 
+    Dummy = root = node(None)
+    dummy1 = root1 = node(None)
+    curr = head 
+    while curr:
+        if curr.data == 0 :
+            root.next = curr 
+            root = root.next 
+        else:
+            root1.next = curr
+            root1 = root1.next 
+        curr = curr.next 
+    root.next = dummy1.next  
+    return Dummy.next  
+
+def show(head):
+    if not head : return 
+    while head:
+        print(head.data)
+        head = head.next   
 
 #######################LIST 1
 li=ll()
@@ -335,6 +359,8 @@ li.push(1)
 li.push(0)
 li.push(0)
 li.push(1)
+my_head = ZerosAtStart(li.head)
+show(my_head)
 #######################LIST 2
 li2=ll()
 li2.push(3)

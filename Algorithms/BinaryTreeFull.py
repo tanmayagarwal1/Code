@@ -917,9 +917,52 @@ def MaxSumExclusingNodes(root):
     cache = {}
     return Helper(root, cache) 
 
+def UniValueTree(root):
+    if not root : raise ValueError 
+    def Helper(node): # here node is like another instance of the root. We create a duplicate root as node to check with root's value 
+        return not node or root.data == node.data and Helper(node.left) and Helper(node.right)
+    return Helper(root)
+
+def MaximumPathWithUniValue(root):
+    if not root : raise ValueError 
+    class sol:
+        def Solver(self, root):
+            self.res = 0 
+            def Helper(root):
+                if not root : return 0 
+                left = Helper(root.left)
+                right = Helper(root.right)
+                left = left + 1 if root.left and root.left.data == root.data else 0 
+                right = right + 1 if root.right and root.right.data == root.right else 0 
+                self.res = max(self.res, left + right)
+                return max(left, right)
+            Helper(root)
+    s = sol()
+    s.Solver(root)
+    return s.res 
+
+def CountPathsEqualToTarget(root, target):
+    if not root : raise ValueError 
+    class sol:
+        def Solver(self, root, target):
+            self.res = 0 
+            def Helper(root, d, curr_sum):
+                if not root : return 0 
+                curr_sum += root.data 
+                old_sum = curr_sum - target
+                self.res += d.get(old_sum, 0)
+                d[curr_sum] = d.get(curr_sum, 0) + 1
+                Helper(root.left, d, curr_sum)
+                Helper(root.right, d, curr_sum)
+                d[curr_sum] -= 1
+
+            d = {0 : 1}
+            Helper(root, d, 0)
+    s = sol()
+    s.Solver(root, target)
+    return s.res 
 
 
-'''
 
 root = node(20)
 root.left = node(8)
@@ -929,9 +972,9 @@ root.left.right.left = node(10)
 root.left.right.right = node(14)
 root.right = node(22)
 root.right.right = node(25)
-print(DeepestLevelWithLeaf(root))
+#print(CountPathsEqualToTarget(root, 12))
 
-'''
+
 
 # root :      20
 #            /  \
