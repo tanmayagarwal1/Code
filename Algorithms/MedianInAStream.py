@@ -23,7 +23,7 @@ class MedianInStream:
 			else:
 				return large_heap[0]
 
-# We maintain two heaps to store two healf of thr stream. The small_heap will store the first half of the stream and the large will store the next half of the stream 
+# We maintain two heaps to store two halfs of thr\e stream. The small_heap will store the first half of the stream and the large will store the next half of the stream 
 # The biggest from small heap and smallest from large heap form the middle element(s)
 # When we see that both the lengths are equal ( That means that the stream has even numbers ), and we need to add to the stream, We first add the element to the small heap
 # - then pick the maximum element from the small heap and add that to the max heap. This will maintain consistency ( Consistency in the sense that all the elements in small 
