@@ -13,7 +13,7 @@ def ContiguousArray(arr):
 	return res 
 
 
-arr = [1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1]
+arr = [0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1]
 print(ContiguousArray(arr))
 
 
