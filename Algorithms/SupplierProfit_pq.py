@@ -7,7 +7,7 @@ def Supplier(arr, k):
 	Profit, count = 0, 0 
 	while count < k :
 		x = heapq.heappop(pq)
-		heapq.heappush(pq, x + 1)
+		heapq.heappush(pq, x + 1) # As x in negative : x + 1 => x - 1
 		Profit += -(x)
 		count += 1
 	return Profit 

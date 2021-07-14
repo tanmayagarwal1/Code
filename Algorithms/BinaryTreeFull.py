@@ -972,7 +972,8 @@ root.left.right.left = node(10)
 root.left.right.right = node(14)
 root.right = node(22)
 root.right.right = node(25)
-#print(CountPathsEqualToTarget(root, 12))
+#print(CountPathsEqualToTarget(root, 34))
+    
 
 
 
