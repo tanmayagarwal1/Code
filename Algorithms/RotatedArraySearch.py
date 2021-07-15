@@ -29,6 +29,7 @@ def SearchInSorted(arr, target):
 		return -1 
 	if not arr : raise ValueError
 	idx = Minimum(arr)
+	return idx
 	left = Helper(arr, 0, idx - 1)
 	right = Helper(arr, idx, len(arr) - 1)
 	return left if left != -1 else right
@@ -36,3 +37,5 @@ def SearchInSorted(arr, target):
 
 arr = [4,5,6,7,0,1,2]
 print(SearchInSorted(arr, 2))
+
+

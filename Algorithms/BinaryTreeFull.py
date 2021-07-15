@@ -738,7 +738,7 @@ def DistanceBetweenTwoNodes(root, node1, node2):
     return d1 + d2 
 
 
-def MaxPAthCostFromRootToLeaf(root):
+def MaxPathCostFromRootToLeaf(root):
     class sol : 
         def __init__(self):
             self.max = 0 
