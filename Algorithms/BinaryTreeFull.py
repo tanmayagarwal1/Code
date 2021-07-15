@@ -939,29 +939,82 @@ def MaximumPathWithUniValue(root):
             Helper(root)
     s = sol()
     s.Solver(root)
-    return s.res 
+    return s.res  
 
-def CountPathsEqualToTarget(root, target):
+def FindSumofBinaryTreeNumbers(root):
+    # In this problem each node contains 0 or 1 
+    # the path from root to a leaf forms one binary number 
+    # Our task is to convert each such number to decimal and add it up 
+    # We use the formula : pow = 2 * pow + root.data while passing pow as a part of recusrive func calls 
+
+    def Helper(root):
+        if not root : return 
+        pow = 2 * pow + root.data 
+        if not root.left and not root.right : return pow 
+        Helper(root.left)
+        Helper(root.right)
+
     if not root : raise ValueError 
-    class sol:
-        def Solver(self, root, target):
-            self.res = 0 
-            def Helper(root, d, curr_sum):
-                if not root : return 0 
-                curr_sum += root.data 
-                old_sum = curr_sum - target
-                self.res += d.get(old_sum, 0)
-                d[curr_sum] = d.get(curr_sum, 0) + 1
-                Helper(root.left, d, curr_sum)
-                Helper(root.right, d, curr_sum)
-                d[curr_sum] -= 1
+    return Helper(root, 0)
 
-            d = {0 : 1}
-            Helper(root, d, 0)
-    s = sol()
-    s.Solver(root, target)
-    return s.res 
+def CountPathsToTarget(root, target):
+    if not root : raise ValueError 
+    def Helper(root, d, prefix):
+        nonlocal ans 
+        if not root : return 0
+        prefix += root.data
+        if prefix - target in d : 
+            ans += d[prefix - target]
+        d[prefix] = d.get(prefix, 0) + 1
+        Helper(root.left, d, prefix)
+        Helper(root.right, d, prefix)
+        d[prefix] -= 1
 
+    d = {0 : 1}
+    ans = 0 
+    Helper(root, d, 0)
+    return ans 
+
+def CountPalindromicPaths(root): # data value should be between 1 - 9 only 
+    if not root : raise ValueError
+    count = [0] * 10 
+    ans = 0 
+    def IsPalindomeCheck():
+        nonlocal count 
+        tmp = 0 
+        for i in range(10):
+            if count[i] & 1 : tmp += 1
+        return tmp <= 1
+
+    def Helper(root):
+        if not root : return 
+        nonlocal ans, count 
+        count[root.data] += 1
+        if not root.left and not root.right :
+            if IsPalindomeCheck():
+                ans += 1
+            count[root.data] -= 1 
+        Helper(root.left)
+        Helper(root.right)
+        count[root.data] -= 1
+
+    Helper(root)
+    return ans 
+
+def TrimBst(root):
+    if not root : raise ValueError 
+    def Helper(root, l, h):
+        if not root : return 
+        if root.data > h:
+            return Helper(root.left, l, h)
+        if root.data < l :
+            return Helper(root.right, l, h)
+        else:
+            root.left = Helper(root.left, l, h)
+            root.right = Helper(root.right, l, h) 
+        return root 
+
+    return Helper(root, l, h)
 
 
 root = node(20)
@@ -972,7 +1025,7 @@ root.left.right.left = node(10)
 root.left.right.right = node(14)
 root.right = node(22)
 root.right.right = node(25)
-#print(CountPathsEqualToTarget(root, 34))
+
     
 
 

@@ -10,7 +10,7 @@ def ColorGrid(n):
 
 print(ColorGrid(5000))
 
-# In this problem we find the realtion that each row can be encoded with either 2 or 3 colours beacsue we useonly one colour the - 
+# In this problem we find the realtion that each row can be encoded with either 2 or 3 colours beacsue we use only one colour the - 
 # the adjacent cells will not be of distinct colours. 
 # Hence we initialise 3 varialbles a121 and a123 denoting colour matrix by 2 colours (a121 - 1, 2, 3 represent three colours)
 # and a123 => 3 distinct colours. Now using two colours and two colours only we can fill the given row 6 ways i.e : 121, 131, 212, 232, 313, 323.
