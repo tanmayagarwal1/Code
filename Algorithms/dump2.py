@@ -9,7 +9,6 @@ class node:
 
 
 
-
 root = node(20)
 root.left = node(8)
 root.left.left = node(4)
