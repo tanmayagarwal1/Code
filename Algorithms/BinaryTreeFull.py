@@ -1016,6 +1016,39 @@ def TrimBst(root):
 
     return Helper(root, l, h)
 
+def TopView(root):
+    if not root : raise ValueError 
+    def Helper(root, lvl, dept, dict):
+        if not root : return 
+        if lvl not in dict:
+            dict[lvl] = [root.data, dept]
+        elif dict[lvl][1] > dept:
+            dict[lvl] = [root.data, dept]
+        Helper(root.left, lvl - 1, dept + 1, dict)
+        Helper(root.right, lvl + 1, dept + 1, dict)
+    d = {}
+    Helper(root, 1, 1, d)
+    for i in sorted(d.keys()):
+        print(d[i][0])
+    return 
+
+def BottomView(root):
+    if not root : raise ValueError 
+    d = {}
+    def Helper(root, d, lvl , dept):
+        if not root : return 
+        if not lvl in d:
+            d[lvl] = [root.data, dept]
+        elif dept > d[lvl][1]:
+            d[lvl] = [root.data, dept]
+        Helper(root.left, d, lvl - 1, dept + 1)
+        Helper(root.right, d, lvl + 1, dept + 1)
+
+    d = {}
+    Helper(root, d, 1, 1)
+    for i in sorted(d.keys()):
+        print(d[i][0])
+
 
 root = node(20)
 root.left = node(8)
@@ -1025,7 +1058,7 @@ root.left.right.left = node(10)
 root.left.right.right = node(14)
 root.right = node(22)
 root.right.right = node(25)
-
+#BottomView(root)
     
 
 
