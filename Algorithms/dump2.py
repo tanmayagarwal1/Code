@@ -7,29 +7,24 @@ class node:
 		self.data = data
 		self.left = self.right = None 
 
-def HeapSort(arr):
-	def Helper(arr, n, i):
-		large = i 
-		l = 2 * i + 1
-		r = 2 * i + 2
-		if l < n and arr[large] < arr[l]:
-			large = l 
-		if r < n and arr[large] < arr[r]:
-			large = r 
-		if large != i:
-			arr[large], arr[i] = arr[i], arr[large]
-			Helper(arr, n, large)
+def KthLagest(root, k):
+	if not root : raise ValueError 
+	c = [0]
+	k = k 
+	res = 0 
+	def Helper(root, c):
+		nonlocal k, res 
+		if not root or c[0] >= k : return 
+		Helper(root.right, c)
+		c[0] += 1
+		if c[0] == k:
+			res = root.data 
+			return 
+		Helper(root.left, c)
+	Helper(root, c)
+	return res 
+    
 
-	if not arr : raise ValueError 
-	for i in range(len(arr) - 1//2, -1, -1):
-		Helper(arr, len(arr), i)
-	for i in range(len(arr) - 1, 0, -1):
-		arr[i], arr[0] = arr[0], arr[i]
-		Helper(arr, i, 0)
-	return arr
-
-arr = [32, 43, 21, 13, 76, 1, 1, 3]
-print(HeapSort(arr))
 
 
 
@@ -41,7 +36,7 @@ root.left.right.left = node(10)
 root.left.right.right = node(14) # 14 
 root.right = node(22)
 root.right.right = node(25)
-#print(KthLargestBst(root, 1))
+print(KthLagest(root, 2))
 
 # root :      20
 #            /  \
