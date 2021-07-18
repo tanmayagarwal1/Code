@@ -18,4 +18,4 @@ def TripletsWhichFormATraingle(arr):
 
 arr = [4,2,3,4]
 arr2 = [0, 1, 0]
-print(TripletsWhichFormATraingle(arr2))
+print(TripletsWhichFormATraingle(arr))
