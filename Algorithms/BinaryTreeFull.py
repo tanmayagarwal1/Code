@@ -1049,6 +1049,18 @@ def BottomView(root):
     for i in sorted(d.keys()):
         print(d[i][0])
 
+def LCA_BST(root, p, q):
+    def Helper(root, p, q):
+        if not root : return 
+        if p < root.data and q < root.data:
+            return Helper(root.left, p, q)
+        if p > root.data and q > root.data:
+            return Helper(root.right, p, q)
+        else:
+            return root
+
+    return Helper(root, p, q)
+    
 
 root = node(20)
 root.left = node(8)
