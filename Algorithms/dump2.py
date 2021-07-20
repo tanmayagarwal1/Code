@@ -7,23 +7,64 @@ class node:
 		self.data = data
 		self.left = self.right = None 
 
-def KthLagest(root, k):
-	if not root : raise ValueError 
-	c = [0]
-	k = k 
-	res = 0 
-	def Helper(root, c):
-		nonlocal k, res 
-		if not root or c[0] >= k : return 
-		Helper(root.right, c)
-		c[0] += 1
-		if c[0] == k:
-			res = root.data 
-			return 
-		Helper(root.left, c)
-	Helper(root, c)
-	return res 
-    
+
+def MergeKSortedLists(arr):
+	ll.__lt__ : lambda self, other : self.data < other.data 
+	ll.__eq__ : lambda self, other : self.data == other.data 
+	if not arr : raise ValueError 
+	pq = []
+	for node in arr:
+		if node:
+			heapq.heappush(pq, (node.val, node))
+	dummy = root = node(0)
+	while pq:
+		node = heapq.heapop(pq)[1]
+		root.next = node
+		root = root.next 
+		if node.next:
+			heapq.heappush(pq, (node.next.val, node.next))
+	return dummy.next 
+
+def Addnumbers(head1, head2):
+	if not head1 or not head2 : raise ValueError
+	dummy = root = node(0)
+	carry = 0 
+	while head1 or head2 or carry:
+		if head1:
+			carry += head1.data 
+			head1 = head1.next 
+		if head2:
+			carry += head2.data 
+			head2 = head2.next 
+		root.next = node(carry % 10)
+		root = root.next 
+		carry //= 10 
+
+	return dummy.next 
+
+def CopyList(head):
+	if not head : raise ValueError 
+	curr = head 
+	while curr:
+		tmp = curr.next 
+		curr.next = node(curr.data)
+		curr.next.next = tmp 
+		curr = tmp 
+
+	curr = head 
+	while curr:
+		if curr.random:
+			curr.next.random = curr.random.next 
+		curr = curr.next.next 
+
+	final = curr = head.next 
+	while curr.next:
+		head.next = curr.next 
+		head = head.next 
+		curr.next = head.next 
+		curr = curr.next 
+	head.next = None 
+	return final 
 
 
 
@@ -36,7 +77,7 @@ root.left.right.left = node(10)
 root.left.right.right = node(14) # 14 
 root.right = node(22)
 root.right.right = node(25)
-print(KthLagest(root, 2))
+print(MaxLeafPath(root))
 
 # root :      20
 #            /  \
