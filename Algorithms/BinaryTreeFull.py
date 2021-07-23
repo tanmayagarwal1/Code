@@ -1060,7 +1060,18 @@ def LCA_BST(root, p, q):
             return root
 
     return Helper(root, p, q)
-    
+
+def BinaryTreePruning(root):
+    if not root : raise ValueError
+    def Helper(root):
+        if not root : return 
+        root.left = Helper(root.left)
+        root.right = Helper(root.right)
+        if not root.left and not root.right and not root.data : return None 
+        return root 
+
+    return Helper(root)
+
 
 root = node(20)
 root.left = node(8)
