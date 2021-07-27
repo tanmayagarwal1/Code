@@ -7,20 +7,30 @@ class node:
 		self.data = data
 		self.left = self.right = None 
 
-
-def isBalanced(root):
+def FindDistance(root, p, q):
 	if not root : raise ValueError 
-	def Helper(root):
-		if not root : return 0 
-		l = Helper(root.left)
-		if l == - 1 : return - 1
-		r = Helper(root.right)
-		if r == - 1: return -1 
-		if abs(r - l) > 1: return - 1
-		return max(r, l) + 1
-	res = Helper(root)
-	return True if res >= 0 else False 
+	def Lca(root, p, q):
+		if not root : return 
+		if root.data in (p, q) : return root
+		left, right = 0, 0 
+		if root.left:
+			left = Lca(root.left, p, q)
+		if root.right:
+			right = Lca(root.right, p, q)
+		return root if left and right else left or right
 
+	def dist(root, p, lvl):
+		if not root : return - 1
+		if root.data == p : return lvl 
+		left = dist(root.left, p, lvl + 1)
+		if left != - 1: return left 
+		left = dist(root.right, p, lvl + 1)
+		return left 
+
+	lca = Lca(root, p, q)
+	left = dist(lca, p, 0)
+	right = dist(lca, q, 0)
+	return left + right
 
 
 
@@ -32,7 +42,8 @@ root.left.right.left = node(10)
 root.left.right.right = node(14) # 14 
 root.right = node(22)
 root.right.right = node(25)
-print(isBalanced(root))
+print(FindDistance(root, 8, 14))
+
 
 # root :      20
 #            /  \
