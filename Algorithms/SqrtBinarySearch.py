@@ -8,9 +8,9 @@ def Sqrt(x):
 			h = mid - 1
 		else:
 			l = mid + 1
-	return (res - 1)**2
+	#return (res - 1)**2
 
 
 	return res 
 
-print(Sqrt(8))
+print(Sqrt(10))
