@@ -1073,6 +1073,27 @@ def BinaryTreePruning(root):
     return Helper(root)
 
 
+def AllPathsEqualToTarget(root, target):
+    if not root : raise ValueError 
+    res = []
+    def Helper(root, target, path):
+        nonlocal res 
+        if not root : return 
+        path.append(root.data)
+        Helper(root.left, target, path)
+        Helper(root.right, target, path)
+        Sum = 0 
+        for i in range(len(path) - 1, -1, -1):
+            Sum += path[i]
+            if Sum == target:
+                print(path)
+        path.pop()
+
+    Helper(root, target, [])
+    return  
+
+
+
 root = node(20)
 root.left = node(8)
 root.left.left = node(4)
@@ -1081,7 +1102,21 @@ root.left.right.left = node(10)
 root.left.right.right = node(14)
 root.right = node(22)
 root.right.right = node(25)
-#BottomView(root)
+
+
+
+new_root = node(1)
+new_root.left = node(3)
+new_root.left.left = node(2)
+new_root.left.right = node(1)
+new_root.left.right.left = node(1)
+new_root.right = node(-1)
+new_root.right.left = node(4)
+new_root.right.left.left = node(1)
+new_root.right.left.right = node(2)
+new_root.right.right = node(5)
+new_root.right.right.right = node(2)
+print(AllPathsEqualToTarget(new_root, 5))
     
 
 

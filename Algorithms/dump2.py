@@ -203,16 +203,56 @@ def DistanceBetweenNodes(root, p, q):
 	return d1 + d2 
 
 
+def FindAllPaths(root, k):
+	if not root : raise ValueError 
+	def Helper(root, path, k):
+		if not root : return 
+		path.append(root.data)
+		Helper(root.left, path, k)
+		Helper(root.right, path, k) 
+		Sum = 0 
+		for i in range(len(path) - 1, -1, -1):
+			Sum += path[i]
+			if Sum == k :
+				print(path)
+		path.pop()
 
-root = node(20)
-root.left = node(8)
-root.left.left = node(4)
-root.left.right = node(12) # 12 
-root.left.right.left = node(10)
-root.left.right.right = node(14) # 14 
-root.right = node(22)
-root.right.right = node(25)
-print(DistanceBetweenNodes(root, 8, 14))
+	Helper(root, [], k)
+	return 
+
+
+
+
+
+root = node(1)
+root.left = node(3)
+root.left.left = node(2)
+root.left.right = node(1)
+root.left.right.left = node(1)
+root.right = node(-1)
+root.right.left = node(4)
+root.right.left.left = node(1)
+root.right.left.right = node(2)
+root.right.right = node(5)
+root.right.right.right = node(2)
+FindAllPaths(root, 5)
+
+
+
+
+
+
+
+
+#root = node(20)
+#root.left = node(8)
+#root.left.left = node(4)
+#root.left.right = node(12) # 12 
+#root.left.right.left = node(10)
+#root.left.right.right = node(14) # 14 
+#root.right = node(22)
+#root.right.right = node(25)
+#print(DistanceBetweenNodes(root, 8, 14))
 
 
 
