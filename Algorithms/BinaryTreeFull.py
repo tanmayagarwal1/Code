@@ -1001,7 +1001,7 @@ def CountPalindromicPaths(root): # data value should be between 1 - 9 only
     Helper(root)
     return ans 
 
-def TrimBst(root):
+def TrimBst(root, l, h):
     if not root : raise ValueError 
     def Helper(root, l, h):
         if not root : return 
@@ -1116,7 +1116,7 @@ new_root.right.left.left = node(1)
 new_root.right.left.right = node(2)
 new_root.right.right = node(5)
 new_root.right.right.right = node(2)
-print(AllPathsEqualToTarget(new_root, 5))
+#print(AllPathsEqualToTarget(new_root, 5))
     
 
 
