@@ -21,4 +21,4 @@ def HighestPeak(grid):
 	return dp
 
 grid = [[0,0,1],[1,0,0],[0,0,0]]
-print(HighestPeak(grid))
+print(HighestPeak(grid)) 
