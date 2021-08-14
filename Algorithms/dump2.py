@@ -272,5 +272,3 @@ Root.left.right = node(4)
 Root.left.right.right = node(5)
 Root.left.right.right.right = node(6)
 #print(TopView(Root))
-def MainTes():
-	pass 
