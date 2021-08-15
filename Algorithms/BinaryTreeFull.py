@@ -1093,30 +1093,34 @@ def AllPathsEqualToTarget(root, target):
     return  
 
 
+def Main():
+    root = node(20)
+    root.left = node(8)
+    root.left.left = node(4)
+    root.left.right = node(12)
+    root.left.right.left = node(10)
+    root.left.right.right = node(14)
+    root.right = node(22)
+    root.right.right = node(25)
 
-root = node(20)
-root.left = node(8)
-root.left.left = node(4)
-root.left.right = node(12)
-root.left.right.left = node(10)
-root.left.right.right = node(14)
-root.right = node(22)
-root.right.right = node(25)
 
 
+    new_root = node(1)
+    new_root.left = node(3)
+    new_root.left.left = node(2)
+    new_root.left.right = node(1)
+    new_root.left.right.left = node(1)
+    new_root.right = node(-1)
+    new_root.right.left = node(4)
+    new_root.right.left.left = node(1)
+    new_root.right.left.right = node(2)
+    new_root.right.right = node(5)
+    new_root.right.right.right = node(2)
+    print(AllPathsEqualToTarget(new_root, 5))
 
-new_root = node(1)
-new_root.left = node(3)
-new_root.left.left = node(2)
-new_root.left.right = node(1)
-new_root.left.right.left = node(1)
-new_root.right = node(-1)
-new_root.right.left = node(4)
-new_root.right.left.left = node(1)
-new_root.right.left.right = node(2)
-new_root.right.right = node(5)
-new_root.right.right.right = node(2)
-#print(AllPathsEqualToTarget(new_root, 5))
+if __name__ == '__main__':
+    Main()
+
     
 
 
