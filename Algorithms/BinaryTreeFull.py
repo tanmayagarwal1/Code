@@ -1093,6 +1093,27 @@ def AllPathsEqualToTarget(root, target):
     return  
 
 
+def GoodNodes(root):
+    if not root : raise ValueError
+    def Helper(root, val):
+        if not root : return 0 
+        mx = max(root.data, val)
+        return (root.data >= val) + Helper(root.left, mx) + Helper(root.right, mx)
+
+    return Helper(root, root.data)
+
+def LevelOrderNewApproach(root):
+    if not root : raise ValueError 
+    q = [root]
+    res = []
+    while q:
+        tmp = q.pop(0)
+        res.append(tmp.data)
+        for kid in tmp.left, tmp.right:
+            if kid:
+                q.append(kid)
+    return res 
+
 def Main():
     root = node(20)
     root.left = node(8)
@@ -1102,6 +1123,8 @@ def Main():
     root.left.right.right = node(14)
     root.right = node(22)
     root.right.right = node(25)
+    print(LevelOrderNewApproach(root))
+
 
 
 
@@ -1116,7 +1139,7 @@ def Main():
     new_root.right.left.right = node(2)
     new_root.right.right = node(5)
     new_root.right.right.right = node(2)
-    print(AllPathsEqualToTarget(new_root, 5))
+    #print(AllPathsEqualToTarget(new_root, 5))
 
 if __name__ == '__main__':
     Main()
