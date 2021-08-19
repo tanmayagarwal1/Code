@@ -1114,6 +1114,21 @@ def LevelOrderNewApproach(root):
                 q.append(kid)
     return res 
 
+def SplitTreeForMaximumProduct(root):
+    if not root : raise ValueError 
+    res = []
+    def Helper(root):
+        if not root : return 0 
+        nonlocal res 
+        ans = root.data + Helper(root.left) + Helper(root.right)
+        res.append(ans)
+        return ans 
+
+    mx = Helper(root)
+    return max([(ans - x) * x for x in res]) % ((10**9) + 7)
+
+
+
 def Main():
     root = node(20)
     root.left = node(8)
