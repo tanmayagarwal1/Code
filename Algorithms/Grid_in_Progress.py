@@ -307,21 +307,21 @@ def findKeys(grid):
 						q.append((x, y, key))
 	return -1 
 
-def OutOfBounds(m, n, moves, i, j):
+def OutOfBounds(m, n, i, j, moves):
 	if m == 0 or n == 0 : raise ValueError
 	dp = [[[-1]*(moves + 1) for _ in range(n + 1)]for _ in range(m + 1)]
-	def Helper(m, n, moves):
-		if moves < 0  : return 0 
+	def Helper(i, j, moves): 
 		if i < 0 or i >= m or j < 0 or j >= n : return 1 
-		if dp[m][n][moves] : return dp[m][n][moves]
-		Phi = Helper(m + 1, n, moves - 1)
-		Psi = Helper(m, n + 1, moves - 1)
-		Mu  = Helper(m, n - 1, moves - 1)
-		Nu  = Helper(m - 1, n, moves - 1)
-		dp[i][j][moves] = (Phi + Psi + Mu + Nu ) % (10**9) + 7
+		if moves < 0 : return 0
+		if dp[m][n][moves] != -1 : return dp[m][n][moves]
+		Phi = Helper(i + 1, j, moves - 1)
+		Psi = Helper(i, j + 1, moves - 1)
+		Mu  = Helper(i, j - 1, moves - 1)
+		Nu  = Helper(i - 1, j, moves - 1)
+		dp[i][j][moves] = (Phi + Psi + Mu + Nu ) % ((10**9) + 7)
 		return dp[i][j][moves]
 
-	return Helper(m, n, i, j)
+	return Helper(i, j, moves)
 
 
 def Resize(grid, r, c):
@@ -432,6 +432,8 @@ def DungeonGame(grid):
 		for j in range(n - 1, -1, -1):
 			dp[i][j] = max(min(dp[i + 1][j], dp[i][j + 1]) - grid[i][j], 1)
 	return dp[0][0]
-
+	
+matrix = [[9,9,4],[6,6,8],[2,1,1]]
+print(IncreasingSubPath(matrix))
 
 

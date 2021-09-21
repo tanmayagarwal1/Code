@@ -10,6 +10,7 @@ def LongestSubstringwithAtmostKDistinct(sti, k ):
 			while l < r and count >  k :
 				d[sti[l]] -= 1
 				if d[sti[l]] == 0 : count -= 1
+				l +=1 
 			res = max(res, r - l) # If we want total count then res += r - l else if we want the longest/ shortest => max/min(res, l - 1)
 		return res 
 	

@@ -870,7 +870,7 @@ class MedianInStream:
 
 	def median(self):
 		if len(self.large) == len(self.small):
-			return (self.large[0] + self.small[0])//2
+			return (self.large[0] + -self.small[0])//2
 		else:
 			return self.large[0]
 
@@ -922,7 +922,7 @@ def SortKSortedArray(arr, k):
 	if not arr : raise ValueError 
 	idx = 0 
 	pq = arr[:k]
-	heapq.heapify(arr)
+	heapq.heapify(pq)
 	for i in range(k, len(arr)):
 		arr[idx] = heapq.heappop(pq)
 		heapq.heappush(pq, arr[i])
