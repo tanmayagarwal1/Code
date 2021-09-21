@@ -18,7 +18,7 @@ def wordLadder(start, end, words):
 			lcl_visited = set()
 			for _ in range(len(q)):
 				word, path = q.pop(0)
-				for i in range(len(start)):
+				for i in range(len(word)):
 					s = word[:i] + '*' + word[i + 1:]
 					neighbours = d.get(s, [])
 					for neighbour in neighbours:

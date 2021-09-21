@@ -1128,7 +1128,6 @@ def SplitTreeForMaximumProduct(root):
     return max([(ans - x) * x for x in res]) % ((10**9) + 7)
 
 
-
 def Main():
     root = node(20)
     root.left = node(8)

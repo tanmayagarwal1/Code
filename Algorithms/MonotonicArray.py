@@ -14,4 +14,4 @@ def MonotonicArray(x):
 	return int(''.join([str(i) for i in arr[::-1]]))
 
 
-print(MonotonicArray(332))
+print(MonotonicArray(342))
