@@ -240,4 +240,4 @@ def TotSubsetSum(arr, target):
 				dp[i][j] = dp[i - 1][j]
 	return dp[len(arr)][target]
 
-
+print(3 % 5)
