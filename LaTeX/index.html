@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!---<title> Responsive Registration Form | CodingLab </title>--->
+    <link rel="stylesheet" href="style.css">
+    <script defer src="code.js"></script>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="container">
+    <div class="title">Champion Nomination</div>
+    <div class="content">
+      <form action="#" id = "championForm">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Submitter Name</span>
+            <input type="text" id = "submitter_name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Submitter phone</span>
+            <input type="text" id = "submitter_phone" placeholder="Enter your phone" required>
+          </div>
+          <div class="input-box">
+            <span class="details" >Submitter Email</span>
+            <input type="text" id = "submitter_email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Submitter State</span>
+            <input type="text" id = "submitter_state" placeholder="Enter your state" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Champion Name</span>
+            <input type="text" id = "champion_name" placeholder="Enter name of champion" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Champion Phone</span>
+            <input type="text" id = "champion_phone" placeholder="Enter champion's phone" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Champion Email</span>
+            <input type="text" id = "champion_email" placeholder="Enter champion's email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Champion State</span>
+            <input type="text" id = "champion_state" placeholder="Enter champion's state" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Comment</span>
+            <input type="text" id = "comment1" placeholder="Write your comment" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Comment</span>
+            <input type="text" id = "comment2" placeholder="Write another comment" required>
+          </div>
+          <div class="input-box">
+            <span class="details">File Upload</span>
+            <input type="file" id = "fileId" onchange="imageUploaded()" placeholder="Upload a file or Image" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <!-- <input type="radio" name="gender" id="dot-3"> -->
+          <span class="gender-title">Submit as anonymous</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Yes</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">No</span>
+          </label>
+          <!-- <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label> -->
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" id = "submitBtn" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
